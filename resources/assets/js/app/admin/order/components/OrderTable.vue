@@ -1,0 +1,195 @@
+<template>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>
+                Auftragsliste
+                <button v-if="canCreate" href="#" @click="newOrder" class="btn btn-primary pull-right">Neuer Auftrag</button>
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="table-view">
+                <div class="table-view__header">
+                    <div>
+                        <i class="pointer fa fa-refresh text-primary" @click="reset"></i>
+                    </div>
+                    <div class="table-view__header-columns">
+                        <input class="form-control input-sm" v-model="query.search_input" placeholder="Suche nach..." @keyup.enter="search">
+                    </div>
+                    <div class="table-view__header-columns">
+                        <select class="form-control input-sm" v-model="query.client_location" @change="search">
+                            <option value="">Standort auswählen...</option>
+                            <option value="Bonn">Bonn</option>
+                            <option value="Köln">Köln</option>
+                            <option value="Düsseldorf">Düsseldorf</option>
+                        </select>
+                    </div>
+                    <div class="table-view__header-columns">
+                        <select class="form-control input-sm" v-model="query.client_id" @change="search">
+                            <option value="">Kunden auswählen...</option>
+                            <option v-for="client in clients" :value="client.id">{{ client.name }}</option>
+                        </select>
+                    </div>
+                    <div class="table-view__header-columns">
+                        <select class="form-control input-sm" v-model="query.status" @change="search">
+                            <option value="">Status...</option>
+                            <option value="canceled">Storno</option>
+                            <option value="requested">Angefragt</option>
+                            <option value="time_recorded">Zeiterfasst</option>
+                            <option value="not_recorded">Nicht zeiterfasst</option>
+                        </select>
+                    </div>
+                    <div class="table-view__header-columns">
+                        <select class="form-control input-sm" v-model="query.time" @change="search">
+                            <option value="">Zeitraum...</option>
+                            <option value="-30">Letzter Monat</option>
+                            <option value="-7">Letzte Woche</option>
+                            <option value="w">Diese Woche</option>
+                            <option value="m">Diesen Monat</option>
+                            <option value="7">Nächste Woche</option>
+                            <option value="14">Nächste 2 Wochen</option>
+                            <option value="30">Nächsten Monat</option>
+                            <option value="date">Auftrag am ..</option>
+                            <option value="range">Von .. bis ..</option>
+                        </select>
+                    </div>
+                    <div class="table-view__header-columns" v-show="query.time == 'date'">
+                        <datepicker name="date" v-model="query.date" placeholder="Auftrag am" @dateSelected="search"></datepicker>
+                    </div>
+                    <div class="table-view__header-columns" v-show="query.time == 'range'">
+                        <datepicker name="start" v-model="query.start" placeholder="Auftrag vom" @keyup.enter="search"></datepicker>
+                    </div>
+                    <div class="table-view__header-columns" v-show="query.time == 'range'">
+                        <datepicker name="end" v-model="query.end" placeholder="Auftrag bis" @keyup.enter="search"></datepicker>
+                    </div>
+                    <div>
+                        <button class="btn btn-default btn-sm" @click="search">Filtern</button>
+                    </div>
+                </div>
+                <div class="table-view__body">
+                    <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th class="sortable" @click="toggleOrder('id')">
+                            Auftragsnr. <i v-html="getSortingIcon('id')"></i>
+                        </th>
+                        <th>Mitarbeiter</th>
+                        <th>Kunde</th>
+                        <th class="sortable" @click="toggleOrder('client_location')">
+                            Standort <i v-html="getSortingIcon('client_location')"></i>
+                        </th>
+                        <th class="sortable" @click="toggleOrder('start_date')">
+                            Beginn <i v-html="getSortingIcon('start_date')"></i>
+                        </th>
+                        <th class="sortable" @click="toggleOrder('end_date')">
+                            Ende <i v-html="getSortingIcon('end_date')"></i>
+                        </th>
+                        <th>Erfasst</th>
+                        <th>Status</th>
+                        <th>
+                            <span class="dv-table-column">Aktion</span>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="row in model.data">
+                        <td width="45px">
+                            <span v-if="row.parent_id" :title="'Unterauftrag von Auftrag ' + row.parent_id" class="pull-left"><i class="fa fa-child"></i></span>
+                            <span v-if="row.is_parent" class="pull-left" title="Hauptauftrag"><i class="fa fa-universal-access"></i></span></td>
+                        <td><a :href="source + '/' + row.id + '/show'">{{ row.id }}</a></td>
+                        <td>{{ row.staff_planned }} von {{ row.staff_required }}</td>
+                        <td><a :href="'client/' + row.client_id + '/show'">{{ row.client.short_name }}</a></td>
+                        <td>{{ row.client_location }}</td>
+                        <td>{{ row.start }}</td>
+                        <td>{{ row.end }}</td>
+                        <td><span v-if="row.time_recorded">{{ hour(row.total_min/60) }} Std.</span><span v-else>-</span></td>
+                        <td>
+                            <i title="Angefragt" v-if="row.status == 'requested'" class="fa fa-question fa-lg text-warning"></i>
+                            <i title="Zeiterfasst" v-if="row.time_recorded" class="fa fa-clock-o fa-lg text-success"></i>
+                            <i title="Storniert" v-if="row.status == 'canceled'" class="fa fa-ban fa-lg text-danger"></i>
+                            <i title="Öffentlich" v-if="row.status == 'public'" class="fa fa-eye fa-lg text-info"></i>
+                        </td>
+                        <td>
+                            <a v-if="canUpdate" @click="editOrder(row)" class="btn btn-sm btn-primary">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a :href="source + '/' + row.id + '/timetracking'" class="btn btn-sm btn-primary">
+                                <i class="fa fa-clock-o"></i>
+                            </a>
+                            <a v-if="row['sent']" :href="source + '/' + row.id + '/attendance-list'" class="btn btn-sm btn-success" title="moment(row['sent]).format('lll') + ' Uhr'">
+                                <i class="fa fa-envelope-o"></i>
+                            </a>
+                            <a v-if="! row['sent']" :href="source + '/' + row.id + '/attendance-list'" class="btn btn-sm btn-default">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a v-if="canDelete" class="btn btn-sm btn-default" @click="deleteRessource(row.id)">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="table-view__footer">
+                    <div class="table-view__footer-item">
+                        <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                    </div>
+                    <div class="table-view__footer-item">
+                        <div class="table-view__footer-sub">
+                            <i class="btn fa fa-angle-double-left pointer" @click="prev()"></i>
+                            <input v-model="query.page" class="form-control input-sm" @keyup.enter="fetchData">
+                            <i class="btn fa fa-angle-double-right pointer" @click="next()"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    import Table from '../../../mixins/Table'
+
+    export default {
+        data() {
+            return {
+                query: {
+                    client_id: '',
+                    client_location: '',
+                    status: '',
+                    time: '',
+                    date: '',
+                    range: '',
+                    start: '',
+                    end: ''
+                }
+            }
+        },
+        props: ['clients'],
+        mixins: [Table],
+
+        methods: {
+            newOrder() {
+                let data = {
+                    'startDate': '',
+                    'clients' : this.clients
+                };
+
+                modal('New Order Modal', 'Neuer Auftrag', data);
+            },
+
+            editOrder(order) {
+                let data = {
+                    'order': order
+                };
+
+                modal('Edit Order Modal', 'Auftrag bearbeiten', data);
+            }
+        },
+
+        created() {
+            events.$on(['order.created', 'order.updated'], this.fetchData);
+        }
+
+    }
+</script>
