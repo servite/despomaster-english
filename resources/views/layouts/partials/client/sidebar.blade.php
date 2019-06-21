@@ -32,6 +32,7 @@
                     <i class="fa fa-cog"></i> <span>Einstellungen</span>
                 </a>
             </li>
+            <li id="google_translate_element"></li>
         </ul>
     </section>
 </aside>

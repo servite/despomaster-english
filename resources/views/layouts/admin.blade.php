@@ -23,6 +23,11 @@
         #google_translate_element{
             display: none !important;
         }
+        .goog-text-highlight {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
     </style>
 
 </head>
@@ -135,13 +140,13 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function fireEvent(element,event){
+            $("#goog-gt-tt").remove();
             if (document.createEventObject){
                 var evt = document.createEventObject();
                 return element.fireEvent('on'+event,evt)
             }else{
                 var evt = document.createEvent("HTMLEvents");
                 evt.initEvent(event, true, true );
-                console.log(element);
                 return !element.dispatchEvent(evt);
             }
         }

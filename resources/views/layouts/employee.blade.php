@@ -17,6 +17,17 @@
 
     <style>
         [v-cloak] {display: none;}
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        #google_translate_element{
+            display: none !important;
+        }
+        .goog-text-highlight {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
     </style>
 
 </head>
@@ -101,9 +112,38 @@
             }
         });
     });
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'de', 
+            includedLanguages: 'ar,en,gu,hi,pa,ur,de',       
+            autoDisplay: false,
+            
+        }, 'google_translate_element');
 
+        setTimeout(function () {
+            var jObj = $('.goog-te-combo');
+            var db = jObj.get(0);
+            jObj.val('en');
+            fireEvent(db, 'change');
+       }, 300);
+        
+    }
 </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function fireEvent(element,event){
+            $("#goog-gt-tt").remove();
+            if (document.createEventObject){
+                var evt = document.createEventObject();
+                return element.fireEvent('on'+event,evt)
+            }else{
+                var evt = document.createEvent("HTMLEvents");
+                evt.initEvent(event, true, true );
+                return !element.dispatchEvent(evt);
+            }
+        }
 
+    </script>
 @yield('scripts')
 </body>
 

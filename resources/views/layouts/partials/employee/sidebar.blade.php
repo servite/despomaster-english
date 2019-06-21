@@ -22,6 +22,7 @@
                     <i class="fa fa-edit"></i> <span>Historie</span>
                 </a>
             </li>
+            <li id="google_translate_element"></li>
         </ul>
     </section>
 </aside>
