@@ -73,26 +73,29 @@
 
     </div>
 </div>
+<span id="google_translate_element"></span>
 <script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'de', 
-            includedLanguages: 'ar,en,gu,hi,pa,ur,de',       
-            autoDisplay: false,
-            
-        }, 'google_translate_element');
-
-        setTimeout(function () {
-            var jObj = $('.goog-te-combo');
-            var db = jObj.get(0);
-            jObj.val('en');
-            fireEvent(db, 'change');
-       }, 300);
-        
-    }
+    
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'de', 
+                includedLanguages: 'ar,en,gu,hi,pa,ur,de',       
+                autoDisplay: false,
+                
+            }, 'google_translate_element');
+
+            setTimeout(function () {
+                var jObj = $('.goog-te-combo');
+                var db = jObj.get(0);
+                jObj.val('en');
+                fireEvent(db, 'change');
+           }, 300);
+            
+        }
         function fireEvent(element,event){
             $("#goog-gt-tt").remove();
             if (document.createEventObject){
