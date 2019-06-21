@@ -110,6 +110,7 @@
                     </ul>
                 </li>
             @endif
+            <li id="google_translate_element"></li>
         </ul>
     </section>
 </aside>
