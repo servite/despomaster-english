@@ -17,6 +17,7 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'Willkommen' => 'Welcome',
     'DispoM@ste' => 'DispoM@ste',
+    'DispoM@ster' => 'DispoM@ster',
     'Passwort' => 'Password',
     'remain Angemeldet' => 'stay logged in',
     'Passwort vergessen?' => 'Forgot Password?',
