@@ -5,7 +5,7 @@
         {!! csrf_field() !!}
         <div class="row">
             <div class="col-md-5 form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                <label>E-Mail</label>
+                <label>{{trans('admin.E-Mail')}}</label>
                 <input class="form-control input-sm" name="email" value="{{ old('email', $user->email) }}">
                 @if ($errors->has('email'))
                     <span class="help-block">{{ $errors->first('email') }}</span>
@@ -13,7 +13,7 @@
             </div>
             @if($user->hasRole('master_admin'))
                 <div class="col-md-5 col-md-offset-1 form-group {{ $errors->has('cc_email') ? 'has-error' : '' }}">
-                    <label>E-Mail (Back-up)</label>
+                    <label>{{trans('admin.E-Mail (Back-up)')}}</label>
                     <input class="form-control input-sm" name="cc_email" value="{{ $user->cc_email }}">
                     @if ($errors->has('cc_email'))
                         <span class="help-block">{{ $errors->first('cc_email') }}</span>
@@ -23,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-md-5 form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                <label>Benutzername</label>
+                <label>{{trans('admin.Benutzername')}}</label>
                 <input class="form-control input-sm" name="name" value="{{ $user->name }}">
                 @if ($errors->has('name'))
                     <span class="help-block">{{ $errors->first('name') }}</span>
@@ -32,14 +32,14 @@
         </div>
         <div class="row">
             <div class="col-md-5 form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                <label>Neues Passwort</label>
+                <label>{{trans('admin.Neues Passwort')}}</label>
                 <input class="form-control input-sm" name="password" type="password">
                 @if ($errors->has('password'))
                     <span class="help-block">{{ $errors->first('password') }}</span>
                 @endif
             </div>
             <div class="col-md-5 col-md-offset-1 form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                <label>Passwort bestätigen</label>
+                <label>{{trans('admin.Passwort bestätigen')}}</label>
                 <input class="form-control input-sm" name="password_confirmation" type="password">
                 @if ($errors->has('password_confirmation'))
                     <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
@@ -48,7 +48,7 @@
         </div>
         <div class="row">
             <div class="col-md-5 form-group {{ $errors->has('current_password') ? 'has-error' : '' }}">
-                <label>Aktuelles Passwort</label>
+                <label>{{trans('admin.Aktuelles Passwort')}}</label>
                 <input class="form-control input-sm" name="current_password" type="password">
                 @if ($errors->has('current_password'))
                     <span class="help-block">{{ $errors->first('current_password') }}</span>
@@ -59,7 +59,7 @@
         @if (auth()->user()->hasRole('dispomanager') || auth()->user()->hasRole('local_manager'))
             <div class="row">
                 <div class="col-md-5 form-group {{ $errors->has('old_password ') ? 'has-error' : '' }}">
-                    <label>Zugewiesene Standorte</label>
+                    <label>{{trans('admin.Zugewiesene Standorte')}}</label>
                     <input class="form-control input-sm" name="locations" disabled="disabled" value="{{ implode(', ', $user->locations) }}">
                 </div>
             </div>

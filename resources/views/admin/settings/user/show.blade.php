@@ -4,7 +4,7 @@
     <div class="col-md-7">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Nutzer bearbeiten</h2>
+                <h2>{{trans('admin.Nutzer bearbeiten')}}</h2>
             </div>
             <div class="panel-body">
                 <form-wrapper action="{{ url('admin/settings/user/' . $user->id . '/update') }}">
@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-7 col-md-offset-5 small text-right">
                                 <div>
-                                    <label>Angelegt am</label>
+                                    <label>{{trans('admin.Angelegt am')}}</label>
                                     {{ Date::format($user->created_at, 'date_time') .' Uhr - ' . $user->user->name }}
                                 </div>
                             </div>
@@ -24,13 +24,13 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group" :class="{'has-error': form.errors.name }">
-                                    <label>Name</label>
+                                    <label>{{trans('admin.Name')}}</label>
                                     <input class="form-control input-sm" name="name" value="{{ $user->name }}">
                                     <span v-if="form.errors.username" class="help-block">@{{ form.errors.name }}</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-md-offset-1">
-                                <label>Status</label>
+                                <label>{{trans('admin.Status')}}</label>
                                 <br>
                                 <label class="radio-inline">
                                     <input type="radio" name="active" value="1" {{ $user->active ? 'checked' : ''}}>Aktiv
@@ -43,14 +43,14 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group" :class="{'has-error': form.errors.email }">
-                                    <label>E-Mail Adresse</label>
+                                    <label>{{trans('admin.E-Mail Adresse')}}</label>
                                     <input class="form-control input-sm" name="email" value="{{ $user->email }}">
                                     <span v-if="form.errors.email" class="help-block">@{{ form.errors.email }}</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-md-offset-1">
                                 <div class="form-group" :class="{'has-error': form.errors.cc_email }">
-                                    <label>E-Mail Adresse (Back-Up)</label>
+                                    <label>{{trans('admin.E-Mail Adresse (Back-Up)')}}</label>
                                     <input class="form-control input-sm" name="cc_email" value="{{ $user->cc_email }}">
                                     <span v-if="form.errors.cc_email" class="help-block">@{{ form.errors.cc_email }}</span>
                                 </div>
@@ -59,9 +59,9 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group" :class="{'has-error': form.errors.user_role }">
-                                    <label>Rolle</label>
+                                    <label>{{trans('admin.Rolle')}}</label>
                                     <select name="role" class="form-control input-sm">
-                                        <option value="">Auswählen...</option>
+                                        <option value="">{{trans('admin.Auswählen...')}}</option>
                                         @foreach($roles as $role)
                                             <option value="{{ $role->id }}" {{ $user->hasRole($role->name) ? 'selected="selected"' : '' }}>{{ $role->display_name}}</option>
                                         @endforeach
@@ -72,7 +72,7 @@
 
                         </div>
 
-                        <label>Standort</label>
+                        <label>{{trans('admin.Standort')}}</label>
                         @foreach(config('settings.locations') as $location)
                             <div class="checkbox">
                                 <label>

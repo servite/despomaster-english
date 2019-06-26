@@ -5,13 +5,13 @@
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="panel-title">Monatliche Lohnabrechnungen</div>
+                    <div class="panel-title">{{trans('admin.Monatliche Lohnabrechnungen')}}</div>
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" action="{{ url('admin/employee/' . $employee->id . '/payroll/pdf') }}" method="GET" target="_blank">
                         <div class="form-group">
                             <select name="month" id="month" class="form-control input-sm" required>
-                                <option value="">Monat..</option>
+                                <option value="">{{trans('admin.Monat..')}}</option>
                                 @foreach(config('settings.months') as $key => $month)
                                     <option value="{{ $key }}">{{ $month }}</option>
                                 @endforeach
@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <select name="year" id="year" class="form-control input-sm" required>
-                                <option value="">Jahr..</option>
+                                <option value="">{{trans('admin.Jahr..')}}</option>
                                 @for($i = 2017; $i <= date('Y'); $i++)
                                     <option value="{{ $i }}">{{ $i}}</option>
                                 @endfor

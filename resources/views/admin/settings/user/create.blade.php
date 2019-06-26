@@ -15,7 +15,7 @@
                                     {!! csrf_field() !!}
                                     <div class="row">
                                         <div class="col-md-5 form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                            <label>Name</label>
+                                            <label>{{trans('admin.Name')}}</label>
                                             <input class="form-control input-sm" name="name" value="{{ old('name') }}">
                                             @if ($errors->has('name'))
                                                 <span class="help-block">{{ $errors->first('name') }}</span>
@@ -24,14 +24,14 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-5 form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                            <label>E-Mail</label>
+                                            <label>{{trans('admin.E-Mail')}}</label>
                                             <input class="form-control input-sm" name="email" value="{{ old('email') }}">
                                             @if ($errors->has('email'))
                                                 <span class="help-block">{{ $errors->first('email') }}</span>
                                             @endif
                                         </div>
                                         <div class="col-md-5 col-md-offset-1 form-group {{ $errors->has('cc_email') ? 'has-error' : '' }}">
-                                            <label>E-Mail (CC)</label>
+                                            <label>{{trans('admin.E-Mail (CC)')}}</label>
                                             <input class="form-control input-sm" name="cc_email" value="{{ old('cc_email') }}">
                                             @if ($errors->has('email'))
                                                 <span class="help-block">{{ $errors->first('cc_email') }}</span>
@@ -40,9 +40,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-5 form-group {{ $errors->has('role') ? 'has-error' : '' }}">
-                                            <label>Rolle</label>
+                                            <label>{{trans('admin.Rolle')}}</label>
                                             <select name="role" class="form-control input-sm">
-                                                <option value="">Auswählen...</option>
+                                                <option value="">{{trans('admin.Auswählen...')}}</option>
                                                 @foreach($roles as $role)
                                                     <option value="{{ $role->id }}">{{ $role->display_name}}</option>
                                                 @endforeach
@@ -53,7 +53,7 @@
                                         </div>
 
                                         <div class="col-md-6 col-md-offset-1">
-                                            <label>Standort</label>
+                                            <label>{{trans('admin.Standort')}}</label>
                                             @foreach(config('settings.locations') as $location)
                                                 <div class="checkbox">
                                                     <label>

@@ -6,20 +6,20 @@
                 <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Berichte</h3>
+                            <h3 class="box-title">{{trans('admin.Berichte')}}</h3>
                         </div>
                         <div class="box-body no-padding">
                             <div class="pad">
                                 <table class="table table-condensed table-striped">
                                     <thead>
                                     <tr>
-                                        <td>KW</td>
-                                        <td>Aufträge</td>
-                                        <td>Eingesetzte MA</td>
-                                        <td>Geleistete Std.</td>
-                                        <td>Netto-Umsatz</td>
-                                        <td>Lohnkosten</td>
-                                        <td>Einnahmen</td>
+                                        <td>{{trans('admin.KW')}}</td>
+                                        <td>{{trans('admin.Aufträge')}}</td>
+                                        <td>{{trans('admin.Eingesetzte MA')}}</td>
+                                        <td>{{trans('admin.Geleistete Std.')}}</td>
+                                        <td>{{trans('admin.Netto-Umsatz')}}</td>
+                                        <td>{{trans('admin.Lohnkosten')}}</td>
+                                        <td>{{trans('admin.Einnahmen')}}</td>
                                     </tr>
                                     </thead>
                                     @foreach($groupedOrders as $week => $weeklyOrders)
@@ -59,13 +59,13 @@
                                 <table class="table table-condensed table-striped">
                                     <thead>
                                     <tr>
-                                        <td>KW</td>
-                                        <td>Aufträge</td>
-                                        <td>Eingesetzte MA</td>
-                                        <td>Geleistete Std.</td>
-                                        <td>Netto-Umsatz</td>
-                                        <td>Lohnkosten</td>
-                                        <td>Einnahmen</td>
+                                        <td>{{trans('admin.KW')}}</td>
+                                        <td>{{trans('admin.Aufträge')}}</td>
+                                        <td>{{trans('admin.Eingesetzte MA')}}</td>
+                                        <td>{{trans('admin.Geleistete Std.')}}</td>
+                                        <td>{{trans('admin.Netto-Umsatz')}}</td>
+                                        <td>{{trans('admin.Lohnkosten')}}</td>
+                                        <td>{{trans('admin.Einnahmen')}}</td>
                                     </tr>
                                     </thead>
                                     @foreach($groupedOrdersLastYear as $week => $weeklyOrders)

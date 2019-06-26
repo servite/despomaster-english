@@ -4,7 +4,7 @@
     <div class="row" style="text-align: left;">
         <div class="col-md-12">
             <div class="panel" style="background: #e8e8e8;">
-                <div class="panel-heading" style="background: #e8e8e8;"><h3>Passwort zurücksetzen</h3></div>
+                <div class="panel-heading" style="background: #e8e8e8;"><h3>{{trans('auth.Passwort zurücksetzen')}}</h3></div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -21,7 +21,7 @@
 
                             <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
 
-                                <label for="email" class="control-label">E-Mail</label>
+                                <label for="email" class="control-label">{{trans('auth.E-Mail')}}</label>
 
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                                 <i class="fa fa-envelope-o form-control-feedback"></i>
@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="control-label">Passwort</label>
+                            <label for="password" class="control-label">{{trans('auth.Passwort')}}</label>
 
                             <input id="password" type="password" class="form-control" name="password" required>
                             <i class="fa fa-lock form-control-feedback"></i>
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="control-label">Passwort bestätigen</label>
+                            <label for="password" class="control-label">{{trans('auth.Passwort bestätigen')}}</label>
 
                             <input id="password_confirmation" name="password_confirmation" type="password" class="form-control" name="password" required>
                             <i class="fa fa-lock form-control-feedback"></i>
@@ -62,7 +62,7 @@
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block" style="background:#605ca8">
-                                Zurücksetzen
+                                {{trans('auth.Zurücksetzen')}}
                             </button>
                         </div>
                     </form>

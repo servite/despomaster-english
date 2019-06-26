@@ -5,7 +5,7 @@
         <div class="col-md-6 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Bewegungsdaten für Lohnabrechnung</h4>
+                    <h4>{{trans('admin.Bewegungsdaten für Lohnabrechnung')}}</h4>
                 </div>
 
                 <div class="panel-body">
@@ -13,7 +13,7 @@
                         <form class="form-inline" action="{{ url('admin/employee/payroll') }}" method="GET" target="_blank">
                             <div class="form-group">
                                 <select class="form-control input-sm" name="month">
-                                    <option value="">Monat</option>
+                                    <option value="">{{trans('admin.Monat')}}</option>
                                     @foreach(Date::monthNames() as $key => $month)
                                         <option value="{{ $key }}">{{ $month['full'] }}</option>
                                     @endforeach
@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control input-sm" class="form-control" name="year">
-                                    <option value="">Jahr</option>
+                                    <option value="">{{trans('admin.Jahr')}}</option>
                                     @foreach(range(2017, date('Y')) as $year)
                                         <option value="{{ $year }}">{{ $year }}</option>
                                     @endforeach

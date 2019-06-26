@@ -5,17 +5,17 @@
         <div class="col-md-8">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li {{ set_active('admin/invoice/*/prepare') }}><a href="{{ url('admin/invoice/' . $invoice->id . '/prepare') }}">Rechnung</a></li>
-                    <li {{ set_active('admin/invoice/*/warning') }}><a href="{{ url('admin/invoice/' . $invoice->id . '/warning') }}">Zahlungserinnerung</a></li>
+                    <li {{ set_active('admin/invoice/*/prepare') }}><a href="{{ url('admin/invoice/' . $invoice->id . '/prepare') }}">{{trans('admin.Rechnung')}}</a></li>
+                    <li {{ set_active('admin/invoice/*/warning') }}><a href="{{ url('admin/invoice/' . $invoice->id . '/warning') }}">{{trans('admin.Zahlungserinnerung')}}</a></li>
                 </ul>
                 <div class="tab-content" role="tab-content">
                     <div role="tabpanel" class="tab-pane active">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="pull-left">Rechnung verschicken</h4>
+                                <h4 class="pull-left">{{trans('admin.Rechnung verschicken')}}</h4>
                                 <div class="pull-right">
-                                    <a class="btn btn-primary" href="{{ url('admin/invoice/' . $invoice->id . '/show') }}" target="_blank">Rechnung</a>
-                                    <a class="btn btn-primary" href="{{ url('admin/invoice/' . $invoice->id . '/proof-of-work') }}" target="_blank">Stundennachweis</a>
+                                    <a class="btn btn-primary" href="{{ url('admin/invoice/' . $invoice->id . '/show') }}" target="_blank">{{trans('admin.Rechnung')}}</a>
+                                    <a class="btn btn-primary" href="{{ url('admin/invoice/' . $invoice->id . '/proof-of-work') }}" target="_blank">{{trans('admin.Stundennachweis')}}</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -24,7 +24,7 @@
                                     @if (count($mails))
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <p>Rechnung bereits versendet</p>
+                                                <p>{{trans('admin.Rechnung bereits versendet')}}</p>
                                             </div>
                                             <div class="col-md-7">
                                                 <ul>
@@ -48,7 +48,7 @@
                                         {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <p>Wird versendet an</p>
+                                                <p>{{trans('admin.Wird versendet an')}}</p>
 
                                                 <div class="form-group">
                                                     @foreach($contacts as $contact)

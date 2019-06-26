@@ -2,7 +2,7 @@
 
 @section('panel')
     <div class="panel-heading">
-        <h2>Textbausteine - Allgemein</h2>
+        <h2>{{trans('admin.Textbausteine - Allgemein')}}</h2>
     </div>
     <div class="panel-body">
         <textblocks-signature :data="{{ $textblocks }}"></textblocks-signature>

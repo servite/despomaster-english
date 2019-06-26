@@ -5,10 +5,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2>
-                    Nutzerliste
+                    {{trans('admin.Nutzerliste')}}
 
                     @if(Auth::user()->can('create', \App\Models\User\User::class))
-                        <a class="btn btn-primary pull-right" href="{{ url('admin/settings/user/create') }}">Neuer Nutzer</a>
+                        <a class="btn btn-primary pull-right" href="{{ url('admin/settings/user/create') }}">{{trans('admin.Neuer Nutzer')}}</a>
                     @endif
                 </h2>
             </div>

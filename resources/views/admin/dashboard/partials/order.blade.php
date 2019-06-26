@@ -2,10 +2,10 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>Datum</th>
-            <th>Information</th>
-            <th>Auftragsnr.</th>
-            <th>Bearbeiter</th>
+            <th>{{trans('admin.Datum')}}</th>
+            <th>{{trans('admin.Information')}}</th>
+            <th>{{trans('admin.Auftragsnr.')}}</th>
+            <th>{{trans('admin.Bearbeiter')}}</th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
         </tbody>
     </table>
 @else
-    <p>Keine Notizen</p>
+    <p>{{trans('admin.Keine Notizen')}}</p>
 @endif
 
 

@@ -13,7 +13,7 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <h4>Kunde: <a href="{{ url('admin/client/' . $client->id . '/show') }}">{{ $client->name }}</a></h4>
+                                                <h4>{{trans('admin.Kunde:')}} <a href="{{ url('admin/client/' . $client->id . '/show') }}">{{ $client->name }}</a></h4>
                                                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                                     <input class="form-control input-sm" name="name" value="{{ old('name', $invoice->name) }}">
                                                 </div>
@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="col-md-5">
                                                 @if (count($contacts))
-                                                    <label for="contacts">Ansprechpartner</label>
+                                                    <label for="contacts">{{trans('admin.Ansprechpartner')}}</label>
                                                     @foreach($contacts as $contact)
                                                         @continue(! $contact->accounting)
                                                         <div class="checkbox">
@@ -55,15 +55,15 @@
                                             <div class="col-md-3">
                                                 <table class="table">
                                                     <tr>
-                                                        <td><strong>Rechnungsnr: </strong></td>
+                                                        <td><strong>{{trans('admin.Rechnungsnr:')}} </strong></td>
                                                         <td>RE{{ $invoice->id }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>Kundennummer: </strong></td>
+                                                        <td><strong>{{trans('admin.Kundennummer:')}} </strong></td>
                                                         <td>{{ $client->id }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>Rechnungsdatum: </strong></td>
+                                                        <td><strong>{{trans('admin.Rechnungsdatum:')}} </strong></td>
                                                         <td>{{ Date::format($invoice->invoice_date) }}</td>
                                                     </tr>
                                                 </table>
@@ -73,11 +73,11 @@
 
                                     <div class="row">
                                         <div class="col-md-6 form-group {{ $errors->has('intro') ? 'has-error' : '' }}">
-                                            <label for="intro">Einleitungstext</label>
+                                            <label for="intro">{{trans('admin.Einleitungstext')}}</label>
                                             <html-editor name="intro" model="{{ old('intro', $invoice->intro) }}" height="120"></html-editor>
                                         </div>
                                         <div class="col-md-6 form-group {{ $errors->has('outro') ? 'has-error' : '' }}">
-                                            <label for="outro">Schlusstext</label>
+                                            <label for="outro">{{trans('admin.Schlusstext')}}</label>
                                             <html-editor name="outro" model="{{ old('outro', $invoice->outro) }}" height="120"></html-editor>
                                         </div>
                                     </div>
@@ -98,13 +98,13 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th class="text-center">Pos.</th>
-                                                <th>Leistung</th>
-                                                <th>USt.</th>
-                                                <th>Rabatt</th>
-                                                <th>Menge</th>
-                                                <th class="text-right">Einzel</th>
-                                                <th class="text-right">Gesamt</th>
+                                                <th class="text-center">{{trans('admin.Pos.')}}</th>
+                                                <th>{{trans('admin.Leistung')}}</th>
+                                                <th>{{trans('admin.USt.')}}</th>
+                                                <th>{{trans('admin.Rabatt')}}</th>
+                                                <th>{{trans('admin.Menge')}}</th>
+                                                <th class="text-right">{{trans('admin.Einzel')}}</th>
+                                                <th class="text-right">{{trans('admin.Gesamt')}}</th>
                                                 <th class="text-right"></th>
                                             </tr>
                                             </thead>
@@ -185,7 +185,7 @@
                                             <tfoot>
                                             <tr>
                                                 <td colspan="6" class="text-left" style="border-top: 2px solid black">
-                                                    Zwischensumme (netto)
+                                                    {{trans('admin.Zwischensumme (netto)')}}
                                                 </td>
                                                 <td class="text-right" style="border-top: 2px solid black">{{ money($sum) }}</td>
                                                 <td style="border-top: 2px solid black"></td>
@@ -194,7 +194,7 @@
                                                 @continue($value == 0)
                                                 <tr>
                                                     <td colspan="6" class="text-left">
-                                                        Rabatt {{ $percentage . ' % auf ' . money($value/($percentage/100)) . ')' }}
+                                                        {{trans('admin.Rabatt')}} {{ $percentage . ' % auf ' . money($value/($percentage/100)) . ')' }}
                                                     </td>
                                                     <td class="text-right">{{ money($value) }}</td>
                                                     <td></td>
@@ -203,7 +203,7 @@
                                             @if (array_sum($discount))
                                                 <tr>
                                                     <td colspan="6" class="text-left;" style="border-top: 1px solid black">
-                                                        Zwischensumme (netto)
+                                                        {{trans('admin.Zwischensumme (netto)')}}
                                                     </td>
                                                     <td class="text-right" style="border-top: 1px solid black">{{ money($sum - array_sum($discount)) }}</td>
                                                     <td style="border-top: 1px solid black"></td>
@@ -218,7 +218,7 @@
                                                 @continue($value == 0)
                                                 <tr>
                                                     <td colspan="6" class="text-left;">
-                                                        Umsatzsteuer {{ $tax . ' %' }} {{ count(array_filter($discounted)) > 1 ? '(auf ' . money($value) . ')' : '' }}</td>
+                                                        {{trans('admin.Umsatzsteuer')}} {{ $tax . ' %' }} {{ count(array_filter($discounted)) > 1 ? '(auf ' . money($value) . ')' : '' }}</td>
                                                     <td class="text-right">{{ money($value * $tax/100) }}</td>
                                                     <td></td>
                                                 </tr>
@@ -229,7 +229,7 @@
                                             @endforeach
                                             <tr>
                                                 <td colspan="6" class="text-left;" style="border-top: 1px solid black">
-                                                    <strong>Gesamtbetrag</strong></td>
+                                                    <strong>{{trans('admin.Gesamtbetrag')}}</strong></td>
                                                 <td class="text-right" style="border-top: 1px solid black">
                                                     <strong>{{ money(array_sum($discounted) + $taxes) }}</strong>
                                                 </td>
@@ -240,7 +240,7 @@
                                     @endif
                                     <div>
                                         <a href="{{ url('admin/invoice/' . $invoice->id . '/new-item') }}" class="btn btn-success btn-sm pull-left">
-                                            <i class="fa fa-plus"></i> Neu
+                                            <i class="fa fa-plus"></i> {{trans('admin.Neu')}}
                                         </a>
                                         <input type="submit" value="Speichern" class="btn btn-success btn-md pull-right">
                                     </div>

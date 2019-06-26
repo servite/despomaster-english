@@ -21,14 +21,14 @@
                 <ul class="treeview-menu">
                     <li class="treeview {{ set_active('admin/dashboard*', false) }}">
                         <a href="{{ url('admin/dashboard') }}">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <i class="fa fa-dashboard"></i> <span>{{trans('admin.Dashboard')}}</span>
                         </a>
                     </li>
 
                     @if (Gate::allows('orders'))
                         <li class="treeview {{ set_active('admin/calendar', false) }}">
                             <a href="{{ url('admin/calendar') }}">
-                                <i class="fa fa-calendar"></i><span>Kalenderübersicht</span>
+                                <i class="fa fa-calendar"></i><span>{{trans('admin.Kalenderübersicht')}}</span>
                             </a>
                         </li>
                     @endif
@@ -37,51 +37,51 @@
 
             <li class="treeview {{ set_active(['*calendar/orders*', '*calendar/employees*', 'admin/order*', 'admin/employee*', 'admin/client*', 'admin/timetracking', 'admin/invoice*'] , false) }}">
                 <a href="#">
-                    <i class="fa fa-pencil"></i><span>Einsatzplanung</span>
+                    <i class="fa fa-pencil"></i><span>{{trans('admin.Einsatzplanung')}}</span>
                 </a>
                 <ul class="treeview-menu">
                     @if (Gate::allows('orders'))
 
                         <li class="treeview {{ set_active('admin/calendar/orders*', false) }}">
                             <a href="{{ url('admin/calendar/orders/by/week') }}">
-                                <i class="fa fa-calendar-plus-o"></i><span>Auftrags-Kalender</span>
+                                <i class="fa fa-calendar-plus-o"></i><span>{{trans('admin.Auftrags-Kalender')}}</span>
                             </a>
                         </li>
 
                         <li class="treeview {{ set_active('admin/calendar/employees*', false) }}">
                             <a href="{{ url('admin/calendar/employees') }}">
-                                <i class="fa fa-id-card-o"></i><span>Mitarbeiter-Kalender</span>
+                                <i class="fa fa-id-card-o"></i><span>{{trans('admin.Mitarbeiter-Kalender')}}</span>
                             </a>
                         </li>
                         <li class="treeview {{ set_active('admin/order*', false) }}">
                             <a href="{{ url('admin/order') }}"><i class="fa fa-list"></i>
-                                <span>Aufträge</span>
+                                <span>{{trans('admin.Aufträge')}}</span>
                             </a>
                         </li>
                     @endif
                     <li class="treeview {{ set_active('admin/employee*', false) }}">
                         <a href="{{ url('admin/employee') }}">
-                            <i class="fa fa-users"></i><span>Mitarbeiter</span>
+                            <i class="fa fa-users"></i><span>{{trans('admin.Mitarbeiter')}}</span>
                         </a>
                     </li>
                     @if (Gate::allows('clients'))
                         <li class="treeview {{ set_active('admin/client*', false) }}">
                             <a href="{{ url('admin/client') }}">
                                 <i class="fa fa-list"></i>
-                                <span>Kunden</span>
+                                <span>{{trans('admin.Kunden')}}</span>
                             </a>
                         </li>
                     @endif
 
                     <li class="treeview {{ set_active('admin/timetracking*', false) }}">
                         <a href="{{ url('admin/timetracking') }}">
-                            <i class="fa fa-clock-o"></i><span>Zeiterfassung</span>
+                            <i class="fa fa-clock-o"></i><span>{{trans('admin.Zeiterfassung')}}</span>
                         </a>
                     </li>
                     @if (Gate::allows('financials'))
                         <li class="treeview {{ set_active('admin/invoice*', false) }}">
                             <a href="{{ url('admin/invoice') }}">
-                                <i class="fa fa-eur"></i><span>Rechnung</span>
+                                <i class="fa fa-eur"></i><span>{{trans('admin.Rechnung')}}</span>
                             </a>
                         </li>
                     @endif
@@ -92,20 +92,20 @@
             @if (Gate::allows('reports'))
                 <li class="treeview {{ set_active(['admin/report*'] , false) }}">
                     <a href="#">
-                        <i class="fa fa-book"></i><span>Auswertung</span>
+                        <i class="fa fa-book"></i><span>{{trans('admin.Auswertung')}}</span>
                     </a>
                     <ul class="treeview-menu">
                         <li {{ set_active('admin/reports/orders') }}>
-                            <a href="{{ url('admin/reports/orders') }}"><i class="fa fa-bar-chart"></i> Aufträge</a>
+                            <a href="{{ url('admin/reports/orders') }}"><i class="fa fa-bar-chart"></i> {{trans('admin.Aufträge')}}</a>
                         </li>
                         <li {{ set_active('admin/reports/employees') }}>
-                            <a href="{{ url('admin/reports/employees') }}"><i class="fa fa-table"></i> Mitarbeiter</a>
+                            <a href="{{ url('admin/reports/employees') }}"><i class="fa fa-table"></i> {{trans('admin.Mitarbeiter')}}</a>
                         </li>
                         <li {{ set_active('admin/reports') }}>
-                            <a href="{{ url('admin/reports') }}"><i class="fa fa-book"></i> Reports</a>
+                            <a href="{{ url('admin/reports') }}"><i class="fa fa-book"></i> {{trans('admin.Reports')}}</a>
                         </li>
                         <li {{ set_active('admin/audit') }}>
-                            <a href="{{ url('admin/audit') }}"><i class="fa fa-book"></i> eBP</a>
+                            <a href="{{ url('admin/audit') }}"><i class="fa fa-book"></i> {{trans('admin.eBP')}}</a>
                         </li>
                     </ul>
                 </li>

@@ -5,7 +5,7 @@
         {!! csrf_field() !!}
         <div class="row">
             <div class="col-md-10 form-group {{ $errors->has('signature') ? 'has-error' : '' }}">
-                <label>Signatur</label>
+                <label>{{trans('admin.Signatur')}}</label>
                 <html-editor name="signature" model="{{ old('signature', $user->signature ?? $signature->value) }}" height="400"></html-editor>
                 @if ($errors->has('signature'))
                     <span class="help-block">{{ $errors->first('signature') }}</span>

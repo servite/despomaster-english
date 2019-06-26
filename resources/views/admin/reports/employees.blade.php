@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="box box-primary" style="height: 400px;">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><a href="{{ url('admin/reports/employees') }}">Mitarbeiterpool</a></h3>
+                    <h3 class="box-title"><a href="{{ url('admin/reports/employees') }}">{{trans('admin.Mitarbeiterpool')}}</a></h3>
                 </div>
                 <div class="box-body no-padding">
                     <div class="row">
@@ -33,7 +33,7 @@
         <div class="col-md-6">
             <div class="box box-primary" style="height: 400px;">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><a href="{{ url('admin/reports/employees') }}">Mitarbeiterpool</a></h3>
+                    <h3 class="box-title"><a href="{{ url('admin/reports/employees') }}">{{trans('admin.Mitarbeiterpool')}}</a></h3>
                 </div>
                 <div class="box-body no-padding">
                     <div class="row">

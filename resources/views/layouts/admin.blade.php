@@ -98,7 +98,7 @@
         <modal></modal>
 
     </div>
-
+    
     <script>
 
         if (Boolean(localStorage.getItem('sidebar-collapsed'))) {
@@ -106,10 +106,12 @@
         }
 
     </script>
-
+    <script src="{{route('assets.lang')}}"></script>
     <script src="{{ asset('/js/all.js') }}"></script>
-
+    
+    <trans-view></trans-view>
     <script>
+        console.log(window.i18n);
         $(document).ready(function () {
 
             $('.sidebar-toggle').click(() => {
@@ -137,7 +139,7 @@
             
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
     <script type="text/javascript">
         function fireEvent(element,event){
             $("#goog-gt-tt").remove();

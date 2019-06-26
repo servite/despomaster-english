@@ -7,13 +7,13 @@
             <table class="table">
                 <tbody>
                 <tr>
-                    <td>Auftragsnr.</td>
-                    <td>Kunde</td>
-                    <td>Beginn</td>
-                    <td>Ende</td>
-                    <td>Gesamt</td>
-                    <td>Lohn</td>
-                    <td>Kosten</td>
+                    <td>{{trans('admin.Auftragsnr.')}}</td>
+                    <td>{{trans('admin.Kunde')}}</td>
+                    <td>{{trans('admin.Beginn')}}</td>
+                    <td>{{trans('admin.Ende')}}</td>
+                    <td>{{trans('admin.Gesamt')}}</td>
+                    <td>{{trans('admin.Lohn')}}</td>
+                    <td>{{trans('admin.Kosten')}}</td>
                 </tr>
                 <tr>
                     <td><a href="{{ url('admin/order/' . $order->id . '/show') }}">{{ $order->id }}</a></td>
@@ -33,14 +33,14 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Datum</th>
-                        <th>Mitarbeiter</th>
-                        <th>Startzeit</th>
-                        <th>Endzeit</th>
-                        <th>Pause</th>
-                        <th class="text-right">Gesamtzeit</th>
-                        <th class="text-right">Lohn</th>
-                        <th class="text-right">Kosten</th>
+                        <th>{{trans('admin.Datum')}}</th>
+                        <th>{{trans('admin.Mitarbeiter')}}</th>
+                        <th>{{trans('admin.Startzeit')}}</th>
+                        <th>{{trans('admin.Endzeit')}}</th>
+                        <th>{{trans('admin.Pause')}}</th>
+                        <th class="text-right">{{trans('admin.Gesamtzeit')}}</th>
+                        <th class="text-right">{{trans('admin.Lohn')}}</th>
+                        <th class="text-right">{{trans('admin.Kosten')}}</th>
                     </tr>
                     </thead>
 
@@ -102,7 +102,7 @@
                         @endforeach
                         <tr class="text-right">
                             <td colspan="4"></td>
-                            <td class="text-left"><strong>Gesamt</strong></td>
+                            <td class="text-left"><strong>{{trans('admin.Gesamt')}}</strong></td>
                             <td>{{ Time::output($order->total_min, false) }}</td>
                             <td>{{ money($order->total_wage) }}
                             <td>{{ money($order->total_cost) }}
@@ -132,24 +132,24 @@
 
                     <tr>
                         <td colspan="7">
-                            <h4>{{ count($order->children) ? 'Zugehörige Unteraufträge' : 'Hauptauftrag' }}</h4>
+                            <h4>{{ count($order->children) ? {{trans('admin.Zugehörige Unteraufträge')}} : {{trans('admin.Hauptauftrag')}} }}</h4>
                         </td>
                     </tr>
                     <tr style="font-weight: bold;">
-                        <td>Auftragsnr.</td>
+                        <td>{{trans('admin.Auftragsnr.')}}</td>
                         <td></td>
-                        <td>Beginn</td>
-                        <td>Ende</td>
-                        <td>Gesamt</td>
-                        <td>Lohn</td>
-                        <td>Kosten</td>
+                        <td>{{trans('admin.Beginn')}}</td>
+                        <td>{{trans('admin.Ende')}}</td>
+                        <td>{{trans('admin.Gesamt')}}</td>
+                        <td>{{trans('admin.Lohn')}}</td>
+                        <td>{{trans('admin.Kosten')}}</td>
                     </tr>
                     @foreach($orders as $order)
                         <tr>
                             <td>
                                 <a href="{{ url('admin/order/' . $order->id . '/timetracking') }}">{{ $order->id }}</a>
                                 @if($order->status == 'canceled')
-                                    <span class="label label-warning margin-l-10">Storniert</span>
+                                    <span class="label label-warning margin-l-10">{{trans('admin.Storniert')}}</span>
                                 @endif
                             </td>
                             <td></td>

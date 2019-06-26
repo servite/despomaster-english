@@ -6,7 +6,7 @@
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Letzte Aufträge</h4>
+                    <h4>{{trans('admin.Letzte Aufträge')}}</h4>
                 </div>
                 <div class="panel-body">
                     <employee-history :items="{{ $orders }}"></employee-history>
@@ -17,16 +17,16 @@
         <div class="col-md-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Einsätze beim Kunden</h4>
+                    <h4>{{trans('admin.Einsätze beim Kunden')}}</h4>
                 </div>
                 <div class="panel-body">
                     @if (count($timetrackings_by_client))
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Kunde</th>
-                                <th>Zeiterfasst</th>
-                                <th>Einsätze</th>
+                                <th>{{trans('admin.Kunde')}}</th>
+                                <th>{{trans('admin.Zeiterfasst')}}</th>
+                                <th>{{trans('admin.Einsätze')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,7 @@
                             </tbody>
                         </table>
                     @else
-                        <p>Keine zeiterfassten Aufträge</p>
+                        <p>{{trans('admin.Keine zeiterfassten Aufträg')}}e</p>
                     @endif
                 </div>
             </div>
@@ -52,15 +52,15 @@
             @if (count($timetrackings_by_date))
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Erfasste Stunden pro Monat</h4>
+                        <h4>{{trans('admin.Erfasste Stunden pro Monat')}}</h4>
                     </div>
                     <div class="panel-body">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Monat</th>
-                                <th>Zeiterfasst</th>
-                                <th>Einsätze</th>
+                                <th>{{trans('admin.Monat')}}</th>
+                                <th>{{trans('admin.Zeiterfasst')}}</th>
+                                <th>{{trans('admin.Einsätze')}}</th>
                             </tr>
                             </thead>
                             <tbody>
