@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel-title">Kalender</div>
+                    <div class="panel-title">{{trans('admin.Kalender')}}</div>
                 </div>
                 <div class="col-md-6 h5">
                     <ul class="pager list-unstyled pull-right">
@@ -11,7 +11,7 @@
                             <i @click="sub('months')" class="fa fa-angle-left fa-lg pointer margin-r-5 text-primary"></i>
                         </li>
                         <li>
-                            {{ moment(start).locale('de').format('MMMM YYYY') }}
+                            {{trans('admin.'+ moment(start).locale('de').format('MMMM') )}} {{ moment(start).locale('de').format('YYYY') }}
                         </li>
                         <li>
                             <i @click="add('months')" class="fa fa-angle-right fa-lg  pointer margin-l-5 text-primary"></i>
@@ -26,7 +26,7 @@
                 <tr class="bg-black-light">
                     <td style="width:40px;"></td>
                     <td v-for="(weekday, date) in week" class="padding-5">
-                        {{ weekday }}
+                        {{trans('admin.'+ weekday)}}
                         <a href="#" @click.prevent="newOrder(date)" class="pull-right">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -43,7 +43,7 @@
                         <div v-for="order in orders[date]" class="bg-grey-light" :class="getOrderStatus(order)">
                             <div class="margin-5">
                                 <div>
-                                    <strong class="pointer" @click="openOrder(order)" :title="order.title">Auftrag</strong>
+                                    <strong class="pointer" @click="openOrder(order)" :title="order.title">{{trans('admin.Auftrag')}}</strong>
                                 </div>
                                 <i class="fa fa-clock-o"></i> {{ order.start_time }}
                                 <div class="pointer text-right" @click="assignEmployees(order)">

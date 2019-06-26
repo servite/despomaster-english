@@ -14,7 +14,7 @@
                 <i class="fa fa-map-marker"></i> {{ shorten(order.work_location, 14) }}
             </div>
             <div class="margin-t-5 pointer" @click="assignEmployees">
-                <strong>Mitarbeiter</strong>
+                <strong>{{ trans('admin.Mitarbeiter' )}}</strong>
 
                 <div class="pull-right">
                     <strong>{{ order.staff_planned + ' / ' + order.staff_required }}</strong>

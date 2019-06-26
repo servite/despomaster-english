@@ -26,7 +26,7 @@
                 <thead>
                 <tr class="bg-grey-light">
                     <th v-for="(weekday, date) in week">
-                        {{ weekday + ', ' + moment(date).format('l') }}
+                        {{ trans('admin.'+ weekday) +', ' + moment(date).format('l') }}
                     </th>
                 </tr>
                 </thead>
@@ -61,7 +61,8 @@
             return {
                 start: moment().format(),
                 week: [],
-                orders: []
+                orders: [],
+
             }
         },
         mixins: [Calendar],

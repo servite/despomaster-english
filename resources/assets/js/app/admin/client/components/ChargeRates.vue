@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-7 panel-title">
-                    Verrechnungssatz
+                    {{trans('admin.Verrechnungssatz')}}
                 </div>
                 <div class=" col-md-5">
                     <div class="pull-right margin-t-5">
@@ -18,11 +18,11 @@
                 <template slot-scope="form">
                     <div class="row">
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.valid_from }">
-                            <label>Gültig ab</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
+                            <label>{{trans('admin.Gültig ab')}}</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
                             <datepicker name="valid_from"></datepicker>
                         </div>
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.amount }">
-                            <label>Betrag in €</label> <i v-if="form.errors.amount" class="fa fa-warning text-danger" :title="form.errors.amount"></i>
+                            <label>{{trans('admin.Betrag in')}} €</label> <i v-if="form.errors.amount" class="fa fa-warning text-danger" :title="form.errors.amount"></i>
                             <input class="form-control input-sm" name="amount">
                         </div>
                     </div>
@@ -33,15 +33,15 @@
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Gültig von</th>
-                    <th>Gültig bis</th>
-                    <th>Betrag</th>
+                    <th>{{trans('admin.Gültig von')}}</th>
+                    <th>{{trans('admin.Gültig bis')}}</th>
+                    <th>{{trans('admin.Betrag')}}</th>
                     <th v-if="canDelete"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="(entry, index) in items">
-                    <td :title="'Eingetragen am ' + moment(entry.created_at).format('lll') + ' Uhr'">
+                    <td :title="trans('admin.Eingetragen am')  + moment(entry.created_at).format('lll') + ' Uhr'">
                         {{ moment(entry.valid_from).format('ll') }}
                     </td>
                     <td>

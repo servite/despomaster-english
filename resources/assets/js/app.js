@@ -19,6 +19,9 @@ window.flash = (message, level = 'success') => events.$emit('flash', {message, l
 
 window.modal = (modalName, title, data, width = null) => events.$emit('open.modal', data, title, modalName, width);
 
+window.trans = (string) => _.get(window.i18n, string);    
+
+
 require('./app/admin/components');
 
 Vue.mixin({
@@ -59,6 +62,7 @@ Vue.mixin({
         }
     }
 });
+
 
 let app = new Vue({
     el: '#app',

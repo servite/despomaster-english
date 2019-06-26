@@ -20,7 +20,7 @@
                     let canvas = this.$el.getContext('2d');
 
                     const data = response.data;
-
+                    console.log(data);
                     this.chart = new Chart(canvas, {
                         type: 'pie',
                         data : {
@@ -45,6 +45,7 @@
                     })
 
                 });
+                console.log(this.title);
             }
         },
 

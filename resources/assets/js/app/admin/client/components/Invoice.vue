@@ -4,38 +4,38 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Rechnungsadresse
+                    {{trans('admin.Rechnungsadresse')}}
                     <span class="pull-right"><i @click="editInvoice('invoiceData')" class="fa fa-pencil pointer"></i></span>
                 </div>
 
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-7 form-group">
-                            <label>Name</label>
+                            <label>{{trans('admin.Name')}}</label>
                             <div>{{ invoiceData.name }}</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <label>Strasse</label>
+                            <label>{{trans('admin.Strasse')}}</label>
                             <div>{{ invoiceData.street}}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Strasse - Zusatz</label>
+                            <label>{{trans('admin.Strasse - Zusatz')}}</label>
                             <div>{{ invoiceData.address_addition ? invoiceData.address_addition : ''}}</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <label>Postleitzahl</label>
+                            <label>{{trans('admin.Postleitzahl')}}</label>
                             <div>{{ invoiceData.postal_code }}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Stadt</label>
+                            <label>{{trans('admin.Stadt')}}</label>
                             <div>{{ invoiceData.city }}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Land</label>
+                            <label>{{trans('admin.Land')}}</label>
                             <div>{{ invoiceData.country }}</div>
                         </div>
                     </div>
@@ -43,18 +43,18 @@
             </div>
             <div v-if="client.invoices" class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Rechnungen</h4>
+                    <h4>{{trans('admin.Rechnungen')}}</h4>
                 </div>
 
                 <div class="panel-body">
                     <table v-if="client.invoices.length" class="table">
                         <thead>
                         <tr>
-                            <th>Rechnungsnr</th>
-                            <th>Rechnungsdatum</th>
-                            <th>Betrag</th>
-                            <th>Bezahlt</th>
-                            <th>Aktion</th>
+                            <th>{{trans('admin.Rechnungsnr')}}</th>
+                            <th>{{trans('admin.Rechnungsdatum')}}</th>
+                            <th>{{trans('admin.Betrag')}}</th>
+                            <th>{{trans('admin.Bezahlt')}}</th>
+                            <th>{{trans('admin.Aktion')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -63,8 +63,8 @@
                             <td>{{ moment(invoice.invoice_date).format('L') }}</td>
                             <td>{{ money(invoice.sum) + ' Euro' }}</td>
                             <td>
-                                <span v-if="invoice.pay_date" class="label label-success">Bezahlt am {{ moment(invoice.pay_date).format('L') }}</span>
-                                <span v-else class="label label-danger">offen</span>
+                                <span v-if="invoice.pay_date" class="label label-success">{{trans('admin.Bezahlt am')}} {{ moment(invoice.pay_date).format('L') }}</span>
+                                <span v-else class="label label-danger">{{trans('admin.offen')}}</span>
                             </td>
                             <td>
                                 <a :href="'/admin/invoice/' + invoice.id + '/show'" target="_blank" class="btn btn-sm btn-default">
@@ -77,7 +77,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <p v-else>Keine Rechnungen</p>
+                    <p v-else>{{trans('admin.Keine Rechnungen')}}</p>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Ansprechpartner für Rechnung
+                    {{trans('admin.Ansprechpartner für Rechnung')}}
                     <div class="pull-right">
                         <i class="fa fa-pencil pointer margin-r-5" @click="editContacts"></i>
                         <i class="fa fa-plus text-primary pointer" @click="newContact"></i>
@@ -103,24 +103,24 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Weitere Rechnungsdaten
+                    {{trans('admin.Weitere Rechnungsdaten')}}
                     <span class="pull-right"><i @click="editInvoice('invoiceTexts')" class="fa fa-pencil pointer"></i></span>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label>Einleitungstext</label>
+                        <label>{{trans('admin.Einleitungstext')}}</label>
                         <div v-html="invoiceData.intro"></div>
                     </div>
                     <div class="form-group">
-                        <label>Schlusstext</label>
+                        <label>{{trans('admin.Schlusstext')}}</label>
                         <div v-html="invoiceData.outro"></div>
                     </div>
                     <div class="form-group">
-                        <label>Zahlungsfrist</label>
+                        <label>{{trans('admin.Zahlungsfrist')}}</label>
                         <div>{{ invoiceData.payment_period }} Tage</div>
                     </div>
                     <div class="form-group">
-                        <label>Umsatzsteuer</label>
+                        <label>{{trans('admin.Umsatzsteuer')}}</label>
                         <div>{{ invoiceData.default_tax_rate }} %</div>
                     </div>
                 </div>

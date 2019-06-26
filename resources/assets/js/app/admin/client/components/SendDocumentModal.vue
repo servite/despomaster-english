@@ -4,7 +4,7 @@
             <div class="col-md-6 form-group">
                 <label>An</label>
                 <select name="email" class="form-control input-sm">
-                    <option value="">Kontakt auswählen</option>
+                    <option value="">{{trans('admin.Kontakt auswählen')}}</option>
                     <option v-for="contact in contacts" :value="contact.email">{{ contact.last_name + ' - ' + contact.email }}</option>
                 </select>
             </div>
@@ -19,8 +19,8 @@
         </div>
         <p>Angehängtes Dokument: {{ data.document.name }}</p>
         <div class="pull-right">
-            <button type="text" class="btn btn-primary">Senden</button>
-            <button @click="$parent.$emit('close')" class="btn btn-default">Schliessen</button>
+            <button type="text" class="btn btn-primary">{{trans('admin.Senden')}}</button>
+            <button @click="$parent.$emit('close')" class="btn btn-default">{{trans('admin.Schliessen')}}</button>
         </div>
     </form-wrapper>
 </template>

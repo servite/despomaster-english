@@ -1,14 +1,14 @@
 <template>
     <div>
         <div v-if="client.user_id">
-            <p>Bereits ein Konto angelegt.</p>
+            <p>{{trans('admin.Bereits ein Konto angelegt.')}}</p>
             <p>
-                <strong>Email:</strong> {{ client.user.email }}
+                <strong>{{trans('admin.Email:')}}</strong> {{ client.user.email }}
             </p>
             <div class="pull-right">
-                <a v-if="client.user.active" href="#" @click.prevent="deactivate" class="btn btn-danger btn-sm">Konto deaktivieren</a>
-                <a v-else href="#" @click.prevent="activate" class="btn btn-success btn-sm">Konto aktivieren</a>
-                <a href="#" @click.prevent="resend" class="btn btn-primary btn-sm">Passwort erneuern</a>
+                <a v-if="client.user.active" href="#" @click.prevent="deactivate" class="btn btn-danger btn-sm">{{trans('admin.Konto deaktivieren')}}</a>
+                <a v-else href="#" @click.prevent="activate" class="btn btn-success btn-sm">{{trans('admin.Konto aktivieren')}}</a>
+                <a href="#" @click.prevent="resend" class="btn btn-primary btn-sm">{{trans('admin.Passwort erneuern')}}</a>
             </div>
         </div>
         <div v-else>
@@ -16,15 +16,15 @@
                 <template name="form">
                     <div class="row">
                         <div class="col-md-5 form-group">
-                            <label>Nutzername</label>
+                            <label>{{trans('admin.Nutzername')}}</label>
                             <input class="form-control input-sm" name="name">
                         </div>
                         <div class="col-md-5 col-md-offset-1 form-group">
-                            <label>E-Mail</label>
+                            <label>{{trans('admin.E-Mail')}}</label>
                             <input class="form-control input-sm" name="email">
                         </div>
                     </div>
-                    <input type="submit" value="Konto anlegen" class="btn btn-success btn-sm pull-right">
+                    <input type="submit" value={{trans('admin.Konto anlegen')}} class="btn btn-success btn-sm pull-right">
                 </template>
             </form-wrapper>
         </div>

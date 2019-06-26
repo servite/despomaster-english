@@ -20,7 +20,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('client.updated');
 
-                flash('Kunden erfolgreich bearbeitet.');
+                flash(trans('admin.Kunden erfolgreich bearbeitet.'));
 
                 this.$parent.$emit('close')
             })

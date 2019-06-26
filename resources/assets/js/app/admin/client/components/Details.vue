@@ -1,7 +1,7 @@
 <template>
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Details</h3>
+            <h3 class="box-title">{{trans('admin.Details')}}</h3>
             <div class="pull-right">
                 <div v-if="! editMode">
                     <i @click="editMode = true" class="fa fa-pencil fa-lg pointer"></i>
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="box-body">
-            <strong><i class="fa fa-map-marker margin-r-5"></i> Adresse</strong>
+            <strong><i class="fa fa-map-marker margin-r-5"></i> {{trans('admin.Adresse')}}</strong>
 
             <p v-if="! editMode" class="text-muted">
                 {{ data.street }}<br>
@@ -23,17 +23,17 @@
             <div v-else class="row">
                 <br>
                 <div class="col-md-6 form-group" :class="{'has-error': errors.street }">
-                    <label>Straße</label>
+                    <label>{{trans('admin.Straße')}}</label>
                     <i v-if="errors.street" class="fa fa-exclamation-triangle text-danger" :title="errors.street[0]"></i>
                     <input class="form-control input-sm" v-model="input.street">
                 </div>
                 <div class="col-md-6 form-group" :class="{'has-error': errors.postal_code }">
-                    <label>PLZ</label>
+                    <label>{{trans('admin.PLZ')}}</label>
                     <i v-if="errors.postal_code" class="fa fa-exclamation-triangle text-danger" :title="errors.postal_code[0]"></i>
                     <input class="form-control input-sm" v-model="input.postal_code">
                 </div>
                 <div class="col-md-6 form-group" :class="{'has-error': errors.city }">
-                    <label>Stadt</label>
+                    <label>{{trans('admin.Stadt')}}</label>
                     <i v-if="errors.city" class="fa fa-exclamation-triangle text-danger" :title="errors.city[0]"></i>
                     <input class="form-control input-sm" v-model="input.city">
                 </div>

@@ -1,4 +1,5 @@
 
+Vue.component('trans-view', require('../admin/Main.vue'));
 Vue.component('order', require('../admin/calendar/components/Order.vue'));
 
 // tables

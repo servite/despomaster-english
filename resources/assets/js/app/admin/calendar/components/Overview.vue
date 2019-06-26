@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel-title">Übersicht</div>
+                    <div class="panel-title">{{ trans('admin.Übersicht' )}}</div>
                 </div>
                 <div class="col-md-6 h5">
                     <ul class="pager list-unstyled pull-right">
@@ -11,7 +11,7 @@
                             <i @click="sub('months')" class="fa fa-angle-left fa-lg pointer margin-r-5 text-primary"></i>
                         </li>
                         <li>
-                            {{ moment(start).locale('de').format('MMMM YYYY') }}
+                            {{moment(start).locale('en').format('MMMM')}} {{ moment(start).locale('de').format('YYYY') }}
                         </li>
                         <li>
                             <i @click="add('months')" class="fa fa-angle-right fa-lg pointer margin-l-5 text-primary"></i>
@@ -25,20 +25,20 @@
                 <div class="form-inline">
                     <div>
                         <div class="form-group margin-r-10">
-                            <label class="margin-r-5">Kunde</label>
+                            <label class="margin-r-5">{{ trans('admin.Kunde' )}}</label>
                             <select class="form-control" v-model="client" @change="getOrders">
-                                <option value="">Alle</option>
-                                <option v-for="client in clients" :value="client.id">{{ client.short_name }}</option>
+                                <option value="">{{ trans('admin.Alle' )}}</option>
+                                <option v-for="client in clients" :value="client.id">{{trans('admin.'+ client.short_name) }}</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label class="margin-r-5">Status</label>
                             <select class="form-control" v-model="status" @change="getOrders">
-                                <option value="">Alle</option>
-                                <option value="time_recorded">Zeiterfasst</option>
-                                <option value="not_time_recorded">Nicht zeiterfasst</option>
-                                <option value="canceled">Storniert</option>
+                                <option value="">{{ trans('admin.Alle' )}}</option>
+                                <option value="time_recorded">{{ trans('admin.Zeiterfasst' )}}</option>
+                                <option value="not_time_recorded">{{ trans('admin.Nicht zeiterfasst' )}}</option>
+                                <option value="canceled">{{ trans('admin.Storniert' )}}</option>
                             </select>
                         </div>
                     </div>
@@ -50,8 +50,8 @@
                         <div class="form-group">
                             <label class="margin-r-5">Standort</label>
                             <select class="form-control" v-model="location" @change="getOrders">
-                                <option value="">Alle</option>
-                                <option v-for="location in locations" :value="location.name">{{ location.name }}</option>
+                                <option value="">{{ trans('admin.Alle' )}}</option>
+                                <option v-for="location in locations" :value="location.name">{{trans('admin.'+ location.name) }}</option>
                             </select>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                 <tr class="bg-black-light">
                     <td width="70px"></td>
                     <td v-for="(weekday, date) in week" class="padding-5">
-                        {{ weekday + '., ' + moment(date).format('l') }}
+                        {{ trans('admin.'+ weekday) + ', ' + moment(date).format('l') }}
                     </td>
                 </tr>
                 <tr>

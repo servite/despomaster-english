@@ -5,7 +5,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="panel-title">Auftragskalender</div>
+                            <div class="panel-title">{{ trans('admin.Auftragskalender' )}}m</div>
                         </div>
                         <div class="col-md-6 h5">
                             <ul class="pager list-unstyled pull-right">
@@ -27,17 +27,17 @@
                         <div class="form-inline">
                             <div>
                                 <div class="form-group">
-                                    <label class="margin-r-5">Mitarbeiter</label>
+                                    <label class="margin-r-5">{{ trans('admin.Mitarbeiter' )}}</label>
                                     <select class="form-control input-sm" v-model="employee" @change="getOrders">
-                                        <option value="">Alle</option>
+                                        <option value="">{{ trans('admin.Alle' )}}</option>
                                         <option v-for="employee in employees" :value="employee.id">{{ employee.last_name + ', ' + employee.first_name }}</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group margin-l-10">
-                                    <label class="margin-r-5">Kunde</label>
+                                    <label class="margin-r-5">{{ trans('admin.Kunde' )}}</label>
                                     <select class="form-control input-sm" v-model="client" @change="getOrders">
-                                        <option value="">Alle</option>
+                                        <option value="">{{ trans('admin.Alle' )}}</option>
                                         <option v-for="client in clients" :value="client.id">{{ client.short_name }}</option>
                                     </select>
                                 </div>
@@ -48,9 +48,9 @@
                         <div class="form-inline">
                             <div>
                                 <div class="form-group">
-                                    <label class="margin-r-5">Standort</label>
+                                    <label class="margin-r-5">{{ trans('admin.Standort' )}}</label>
                                     <select class="form-control input-sm" v-model="location" @change="getOrders">
-                                        <option value="">Alle</option>
+                                        <option value="">{{ trans('admin.Alle' )}}</option>
                                         <option v-for="location in locations" :value="location">{{ location }}</option>
                                     </select>
                                 </div>
@@ -66,7 +66,7 @@
                         <tr class="bg-black-light">
                             <td width="70px"></td>
                             <td v-for="(weekday, date) in week" class="padding-5">
-                                {{ weekday + ', ' + moment(date).format('l') }}
+                                {{ trans('admin.'+ weekday) + ', ' + moment(date).format('l') }}
                                 <a href="#" @click.prevent="newOrder(date)" class="pull-right">
                                     <i class="fa fa-plus"></i>
                                 </a>

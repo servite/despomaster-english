@@ -1,11 +1,11 @@
-+       +<template>
+<template>
     <div class="box box-primary" style="height: 400px;">
         <div class="box-header with-border">
             <h3 class="box-title">{{ title}}</h3>
 
             <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" :class="{'highlight': filter == 'week'}" @click="updateChart('week')">2 Monate</button>
-                <button class="btn btn-box-tool" :class="{'highlight': filter == 'month'}" @click="updateChart('month')">Jahr</button>
+                <button class="btn btn-box-tool" :class="{'highlight': filter == 'week'}" @click="updateChart('week')">2 {{trans('admin.Monate')}}</button>
+                <button class="btn btn-box-tool" :class="{'highlight': filter == 'month'}" @click="updateChart('month')">{{trans('admin.Jahr')}}</button>
                 <span class="form-inline form-group">
                 <select v-if="filter == 'month'" v-model="year" @change="updateChart('month')" class="form-control input-sm">
                     <option value="2017">2017</option>
@@ -89,8 +89,9 @@
 
                     for (let key in data.datasets) {
                         this.chart.data.datasets[key].backgroundColor = this.backgroundColor[key];
-
-                        this.chart.data.datasets[key].label = data.datasets[key].label;
+                        let lables = data.datasets[key].label;
+                        lables = lables.replace(".", "");
+                        this.chart.data.datasets[key].label = trans('admin.'+lables);
                         this.chart.data.datasets[key].data  = data.datasets[key].values;
                     };
 

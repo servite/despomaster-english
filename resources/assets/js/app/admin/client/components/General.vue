@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <h4 class="text-center clearfix">Kundennr. {{ client.id }}</h4>
+            <h4 class="text-center clearfix">{{trans('admin.Kundennr.')}} {{ client.id }}</h4>
 
             <client-logo :client="client"></client-logo>
 
@@ -25,21 +25,21 @@
             <div v-else class="row">
                 <div class="col-sm-6">
                     <div class="form-group" :class="{'has-error': errors.name}">
-                        <label>Name</label>
+                        <label>{{trans('admin.Name')}}</label>
                         <i v-if="errors.name" class="fa fa-exclamation-triangle text-danger" :title="errors.name[0]"></i>
                         <input class="form-control input-sm" v-model="input.name">
                     </div>
                 </div>
             </div>
 
-            <p class="text-center"><b>Status:</b> {{ data.active ? 'Aktiv' : 'Inaktiv' }}</p>
+            <p class="text-center"><b>{{trans('admin.Status:')}}</b> {{ data.active ? trans('admin.Aktiv') : trans('admin.Inaktiv') }}</p>
 
             <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                    <b>Vertragsart</b> <span class="pull-right">{{ data.type_of_contract ? data.type_of_contract : '-' }}</span>
+                    <b>{{trans('admin.Vertragsart')}}</b> <span class="pull-right">{{ data.type_of_contract ? data.type_of_contract : '-' }}</span>
                 </li>
                 <li v-if="data.locations" class="list-group-item">
-                    <b>Standorte</b> <span class="pull-right">{{ data.locations.replace(/["\[\]]/g, '') }}</span>
+                    <b>{{trans('admin.Standorte')}}</b> <span class="pull-right">{{ data.locations.replace(/["\[\]]/g, '') }}</span>
                 </li>
             </ul>
         </div>

@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="form-group">
-            <label>Kalenderwoche</label>
+            <label>{{ trans('admin.Kalenderwoche' )}}</label>
             <select class="form-control input-sm" name="week" @change="updateDates" v-model="startOfWeek">
-                <option value="">Auswählen...</option>
+                <option value="">{{ trans('admin.Auswählen...' )}}</option>
                 <option v-for="week in calendarweeks" :value="week.startOfWeek">{{ week.number }}</option>
             </select>
         </div>
         <div class="form-group margin-l-10">
-            <label>Von</label>
+            <label>{{ trans('admin.Von' )}}</label>
             <datepicker name="start" v-model="startDate" @click="startOfWeek = ''"></datepicker>
         </div>
         <div class="form-group margin-l-10">
-            <label>Bis</label>
+            <label>{{ trans('admin.Bis' )}}</label>
             <datepicker name="end" v-model="endDate" @click="startOfWeek = ''"></datepicker>
         </div>
         <button type="submit" class="btn btn-default btn-sm">Filtern</button>
