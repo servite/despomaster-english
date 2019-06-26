@@ -56,13 +56,13 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-gears"></i><span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li {{ set_active('admin/settings/account*') }}><a href="{{ url('admin/settings/account/credentials') }}">Konto</a></li>
+                                <li {{ set_active('admin/settings/account*') }}><a href="{{ url('admin/settings/account/credentials') }}">{{trans('admin.Konto')}}</a></li>
                                 @if (Gate::allows('settings'))
-                                    <li {{ set_active('admin/settings/textblocks*') }}><a href="{{ url('admin/settings/textblocks/element/signature') }}">Textbausteine</a></li>
-                                    <li {{ set_active('admin/settings/misc*') }}><a href="{{ url('admin/settings/misc/salaries/scope') }}">Rechtliches</a></li>
+                                    <li {{ set_active('admin/settings/textblocks*') }}><a href="{{ url('admin/settings/textblocks/element/signature') }}">{{trans('admin.Textbausteine')}}</a></li>
+                                    <li {{ set_active('admin/settings/misc*') }}><a href="{{ url('admin/settings/misc/salaries/scope') }}">{{trans('admin.Rechtliches')}}</a></li>
                                 @endif
                                 @if (Gate::allows('user'))
-                                    <li {{ set_active('admin/settings/user*') }}><a href="{{ url('admin/settings/user') }}">Nutzer</a></li>
+                                    <li {{ set_active('admin/settings/user*') }}><a href="{{ url('admin/settings/user') }}">{{trans('admin.Nutzer')}}</a></li>
                                 @endif
                             </ul>
                         </li>

@@ -251,6 +251,7 @@ return [
     'Weiblich' => 'Female',
     'Geringfügig' => 'Marginally',
     'Teilzeit' => 'Part Time',
+    'Suche' => 'Search',
 
 
     'So' => "Sun",

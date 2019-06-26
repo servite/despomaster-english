@@ -1,7 +1,7 @@
 <template>
     <div class="navbar-form navbar-left" @mouseleave="cancel">
         <div class="search-wrapper form-group">
-            <input class="form-control" id="navbar-search-input" placeholder="Suche..." v-model="term"
+            <input class="form-control" id="navbar-search-input" :placeholder="trans('admin.Suche')" v-model="term"
                    @keydown.enter='enter'
                    @keydown.down.stop='down'
                    @keydown.up.stop='up'
@@ -13,11 +13,11 @@
                     <li v-for="(result, index) in results" class="pointer" :class="{'active': isActive(index)}">
                         <div v-if="result.employee">
                             <a :href="'/admin/employee/' + result.id + '/show'">{{ result.name }}</a>
-                            <span class="pull-right small text-muted">Mitarbeiter</span>
+                            <span class="pull-right small text-muted">{{ trans('admin.Mitarbeiter') }}</span>
                         </div>
                         <div v-if="result.client">
                             <a :href="'/admin/client/' + result.id + '/show'">{{ result.name }}</a>
-                            <span class="pull-right small text-muted">Kunde</span>
+                            <span class="pull-right small text-muted">{{ trans('admin.Kunde') }}</span>
                         </div>
                     </li>
                 </ul>
@@ -35,7 +35,8 @@
                 results: {
                     employees: {},
                     clients: {}
-                }
+                },
+                searchlable: trans('admin.Suche'),
             }
         },
         methods: {
