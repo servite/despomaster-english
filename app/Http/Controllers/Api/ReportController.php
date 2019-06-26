@@ -60,15 +60,15 @@ class ReportController extends Controller
 
         if ($type == 'gender') {
             return response()->json([
-                'Männlich'  => $employeeData->male,
-                'Weiblich'  => $employeeData->female
+                trans('admin.Männlich')  => $employeeData->male,
+                trans('admin.Weiblich')  => $employeeData->female
             ]);
         }
 
         if ($type == 'occupation') {
             return response()->json([
-                'Teilzeit'    => $employeeData->part_time,
-                'Geringfügig' => $employeeData->temporary
+                trans('admin.Teilzeit')    => $employeeData->part_time,
+                trans('admin.Geringfügig') => $employeeData->temporary
             ]);
         }
     }
