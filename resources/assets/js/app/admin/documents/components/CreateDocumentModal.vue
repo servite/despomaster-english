@@ -5,26 +5,26 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Mitarbeiter</label>
+                            <label>{{trans('admin.Mitarbeiter')}}</label>
                             <div>{{ data.employee.last_name + ', ' + data.employee.first_name }}</div>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Geburtsdatum</label>
+                            <label>{{trans('admin.Geburtsdatum')}}</label>
                             <div>{{ data.employee.date_of_birth }}</div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-3 form-group">
-                            <label>Eintrittsdatum</label>
+                            <label>{{trans('admin.Eintrittsdatum')}}</label>
                             <div>{{ data.employee.entry_date }}</div>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Austrittsdatum</label>
+                            <label>{{trans('admin.Austrittsdatum')}}</label>
                             <div>{{ data.employee.exit_date ? data.employee.exit_date : '-' }}</div>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Betriebszugehörigkeit</label>
+                            <label>{{trans('admin.Betriebszugehörigkeit')}}</label>
                             <div>{{ periodOfEmployment }}</div>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
                     <div v-if="data.type == 'contract_parttime' || data.type == 'contract_temporary'">
                         <div class="row">
                             <div class="col-md-3 form-group">
-                                <label>Region</label>
+                                <label>{{trans('admin.Region')}}</label>
                                 <select class="form-control input-sm" v-model="region" @change="getSalary">
-                                    <option value="">Auswählen...</option>
+                                    <option value="">{{trans('admin.Auswählen')}}</option>
                                     <option v-for="region in regions" :value="region">{{ region }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.health_insurance }">
-                                <label>Entgeltgruppe</label>
+                                <label>{{trans('admin.Entgeltgruppe')}}</label>
                                 <select class="form-control input-sm" v-model="salaryGroup" @change="getSalary">
                                     <option v-for="salaryGroup in [1, 2, 3, 4, 5, 6, 7, 8, 9]" :value="salaryGroup">{{ salaryGroup }}</option>
                                 </select>
@@ -52,15 +52,15 @@
 
                         <div class="row">
                             <div class="col-md-3 form-group" :class="{'has-error': form.errors.wage }">
-                                <label>Tarifliches Entgelt</label>
+                                <label>{{trans('admin.Tarifliches Entgelt')}}</label>
                                 <input class="form-control input-sm" name="wage" v-model="wage" readonly>
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.bonus }">
-                                <label>Zulage</label>
+                                <label>{{trans('admin.Zulage')}}</label>
                                 <input class="form-control input-sm" name="bonus" v-model="bonus">
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.gross }">
-                                <label>Brutto-Lohn</label>
+                                <label>{{trans('admin.Brutto-Lohn')}}</label>
                                 <input class="form-control input-sm" name="gross" v-model="gross" readonly>
                             </div>
                         </div>
@@ -69,11 +69,11 @@
 
                         <div class="row">
                             <div class="col-md-3 form-group" :class="{'has-error': form.errors.entry_date }">
-                                <label>Eintrittsdatum</label>
+                                <label>{{trans('admin.Eintrittsdatum')}}</label>
                                 <datepicker name="entry_date" v-model="entryDate" @change="getSalary"></datepicker>
                             </div>
                             <div class="col-md-4 col-md-offset-1 form-group" :class="{'has-error': form.errors.contractual_working_hours }">
-                                <label>Vereinbarte Arbeitszeit</label>
+                                <label>{{trans('admin.Vereinbarte Arbeitszeit')}}</label>
                                 <input class="form-control input-sm" name="contractual_working_hours">
                             </div>
                         </div>
@@ -83,25 +83,25 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="col-md-10 form-group" :class="{'has-error': form.errors.date_of_notice }">
-                                    <label>Erfahren am</label>
+                                    <label>{{trans('admin.Erfahren am')}}</label>
                                     <datepicker name="date_of_notice"></datepicker>
                                 </div>
                                 <div class="col-md-10 form-group" :class="{'has-error': form.errors.date_of_violation }">
-                                    <label>Tag des Verstosses</label>
+                                    <label>{{trans('admin.Tag des Verstosses')}}</label>
                                     <datepicker name="date_of_violation"></datepicker>
                                 </div>
                                 <div class="col-md-10 form-group" :class="{'has-error': form.errors.amount }">
-                                    <label>Vertragsstrafe</label>
+                                    <label>{{trans('admin.Vertragsstrafe')}}</label>
                                     <input class="form-control input-sm" name="amount">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group" :class="{'has-error': form.errors.note }">
-                                    <label>Hinweis</label>
+                                    <label>{{trans('admin.Hinweis')}}</label>
                                     <textarea class="form-control input-sm" name="note"></textarea>
                                 </div>
                                 <div class="form-group" :class="{'has-error': form.errors.reason }">
-                                    <label>Grund</label>
+                                    <label>{{trans('admin.Grund')}}</label>
                                     <textarea class="form-control input-sm" name="reason"></textarea>
                                 </div>
                             </div>
@@ -111,21 +111,21 @@
                     <div v-if="data.type == 'pension'">
                         <div class="row">
                             <div class="col-md-5 form-group" :class="{'has-error': form.errors.date_of_receipt }">
-                                <label>Antragseingang</label>
+                                <label>{{trans('admin.Antragseingang')}}</label>
                                 <datepicker name="date_of_receipt"></datepicker>
                             </div>
                             <div class="col-md-5 col-md-offset-1 form-group" :class="{'has-error': form.errors.date_of_taking_effect }">
-                                <label>Antrag wirksam ab:</label>
+                                <label>{{trans('admin.Antrag wirksam ab')}}:</label>
                                 <datepicker name="date_of_taking_effect"></datepicker>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-5 form-group" :class="{'has-error': form.errors.name }">
-                                <label>Name</label>
+                                <label>{{trans('admin.Name')}}</label>
                                 <input class="form-control input-sm" name="name">
                             </div>
                             <div class="col-md-5 col-md-offset-1 form-group" :class="{'has-error': form.errors.operation_number }">
-                                <label>Betriebsnummer</label>
+                                <label>{{trans('admin.Betriebsnummer')}}</label>
                                 <input class="form-control input-sm" name="operation_number">
                             </div>
                         </div>
@@ -134,11 +134,11 @@
 
                         <div class="row">
                             <div class="col-md-5 form-group" :class="{'has-error': form.errors.place }">
-                                <label>Ort</label>
+                                <label>{{trans('admin.Ort')}}</label>
                                 <input class="form-control input-sm" name="place">
                             </div>
                             <div class="col-md-5 col-md-offset-1 form-group" :class="{'has-error': form.errors.date }">
-                                <label>Datum</label>
+                                <label>{{trans('admin.Datum')}}</label>
                                 <datepicker name="date"></datepicker>
                             </div>
                         </div>
@@ -147,31 +147,31 @@
                     <div v-if="data.type == 'withdrawal_receipt'">
                         <div class="row">
                             <div class="col-md-3 form-group" :class="{'has-error': form.errors.date_of_creation }">
-                                <label>Kündigungsdatum</label>
+                                <label>{{trans('admin.Kündigungsdatum')}}</label>
                                 <datepicker name="date_of_creation"></datepicker>
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.date_of_receipt }">
-                                <label>Kündigungseingang</label>
+                                <label>{{trans('admin.Kündigungseingang')}}</label>
                                 <datepicker name="date_of_receipt"></datepicker>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Kündigungsdatum</label>
+                                <label>{{trans('admin.Kündigungsdatum')}}</label>
                                 <datepicker name="termination_date" v-model="terminationDate"></datepicker>
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group">
-                                <label>Kündigungsfrist</label>
+                                <label>{{trans('admin.Kündigungsfrist')}}</label>
                                 <select class="form-control input-sm" v-model="noticePeriod">
                                     <option value=""></option>
-                                    <option value="2">2 Tage</option>
-                                    <option value="7">1 Woche</option>
-                                    <option value="14">2 Woche</option>
-                                    <option value="30">1 Monat</option>
+                                    <option value="2">{{trans('admin.2 Tage')}}</option>
+                                    <option value="7">{{trans('admin.1 Woche')}}</option>
+                                    <option value="14">{{trans('admin.2 Woche')}}</option>
+                                    <option value="30">{{trans('admin.1 Monat')}}</option>
                                 </select>
                             </div>
                             <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.notice_to }">
-                                <label>Kündigung zum</label>
+                                <label>{{trans('admin.Kündigung zum')}}</label>
                                 <datepicker name="notice_to" v-model="noticeTo"></datepicker>
                             </div>
                         </div>
@@ -181,33 +181,33 @@
                         <div class="row">
                             <div v-if="notInProbation" class="col-md-12 margin-b-10">
                                 <div class="alert alert-danger">
-                                    <i class="fa fa-warning margin-r-5"></i>Mitarbeiter befindet sich nicht mehr in der Probezeit.
+                                    <i class="fa fa-warning margin-r-5"></i>{{trans('admin.Mitarbeiter befindet sich nicht mehr in der Probezeit')}}
                                 </div>
                             </div>
                             <div v-if="data.type != 'termination_without_notice'">
                                 <div class="col-md-3">
-                                    <label>Kündigungsdatum</label>
+                                    <label>{{trans('admin.Kündigungsdatum')}}</label>
                                     <datepicker name="termination_date" v-model="terminationDate"></datepicker>
                                 </div>
                                 <div class="col-md-3 col-md-offset-1 form-group">
-                                    <label>Kündigungsfrist</label>
+                                    <label>{{trans('admin.Kündigungsfrist')}}</label>
                                     <select class="form-control input-sm" v-model="noticePeriod">
                                         <option value=""></option>
-                                        <option value="2">2 Tage</option>
-                                        <option value="7">1 Woche</option>
-                                        <option value="14">2 Woche</option>
-                                        <option value="30">1 Monat</option>
+                                        <option value="2">{{trans('admin.2 Tage')}}</option>
+                                        <option value="7">{{trans('admin.1 Woche')}}</option>
+                                        <option value="14">{{trans('admin.2 Woche')}}</option>
+                                        <option value="30">{{trans('admin.1 Monat')}}</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.notice_to }">
-                                    <label>Kündigung zum</label>
+                                    <label>{{trans('admin.Kündigung zum')}}</label>
                                     <datepicker name="notice_to" v-model="noticeTo"></datepicker>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 form-group" :class="{'has-error': form.errors.date_of_contract }">
-                                <label>Arbeitsverhältnis vom</label>
+                                <label>{{trans('admin.Arbeitsverhältnis vom')}}</label>
                                 <datepicker name="date_of_contract" v-model="data.employee.entry_date"></datepicker>
                             </div>
                         </div>
@@ -217,11 +217,11 @@
 
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.date}">
-                            <label>Unterschrift - Datum</label>
+                            <label>{{trans('admin.Unterschrift - Datum')}}</label>
                             <datepicker name="date" v-model="date"></datepicker>
                         </div>
                         <div class="col-md-5 col-md-offset-1 form-group" :class="{'has-error': form.errors.place }">
-                            <label>Unterschrift - Ort</label>
+                            <label>{{trans('admin.Unterschrift - Ort')}}</label>
                             <input class="form-control input-sm" name="place">
                         </div>
                     </div>

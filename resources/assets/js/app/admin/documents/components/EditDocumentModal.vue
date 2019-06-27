@@ -5,11 +5,11 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.name }">
-                            <label>Name des Dokuments</label>
+                            <label>{{trans('admin.Name des Dokuments')}}</label>
                             <input class="form-control input-sm" name="name" v-model="document.name">
                         </div>
                         <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.valid_to }">
-                            <label>Gültig bis</label>
+                            <label>{{trans('admin.Gültig bis')}}</label>
                             <datepicker v-model="validTo" name="valid_to"></datepicker>
                         </div>
                     </div>
@@ -17,7 +17,7 @@
             </div>
 
             <div class="pull-right">
-                <button type="submit" class="btn btn-success">Speichern</button>
+                <button type="submit" class="btn btn-success">{{trans('admin.Speichern')}}</button>
             </div>
         </template>
     </form-wrapper>

@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4 class="panel-title">Dokument hochladen</h4>
+            <h4 class="panel-title">{{trans('admin.Dokument hochladen')}}</h4>
         </div>
         <div class="panel-body">
             <form ref="form" enctype="multipart/form-data">
@@ -11,19 +11,19 @@
 
                 <div class="row">
                     <div class="col-md-10 form-group" :class="{'has-error': errors.name }">
-                        <label>Name des Dokuments</label>
+                        <label>{{trans('admin.Name des Dokuments')}}</label>
                         <input class="form-control input-sm" name="name">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 form-group" :class="{'has-error': errors.valid_to }">
-                        <label>Gültig bis</label>
+                        <label>{{trans('admin.Gültig bis')}}</label>
                         <datepicker name="valid_to"></datepicker>
                     </div>
                 </div>
 
-                <button v-if="! loading" @click.prevent="upload" class="btn btn-sm btn-primary pull-right">Hochladen</button>
+                <button v-if="! loading" @click.prevent="upload" class="btn btn-sm btn-primary pull-right">{{trans('admin.Hochladen')}}</button>
                 <button v-else class="btn btn-sm btn-primary pull-right"><i class='fa fa-spinner fa-spin margin-r-10 margin-l-10'></i></button>
             </form>
         </div>

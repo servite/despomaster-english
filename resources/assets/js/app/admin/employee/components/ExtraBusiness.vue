@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-7 panel-title">
-                    Zusätzliche Tätigkeiten
+                    {{trans('admin.Zusätzliche Tätigkeiten')}}
                 </div>
                 <div class=" col-md-5">
                     <div class="pull-right margin-t-5">
@@ -18,18 +18,18 @@
                 <template slot-scope="form">
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.date }">
-                            <label>Datum</label> <i v-if="form.errors.date" class="fa fa-warning text-danger" :title="form.errors.date"></i>
+                            <label>{{trans('admin.Datum')}}</label> <i v-if="form.errors.date" class="fa fa-warning text-danger" :title="form.errors.date"></i>
                             <datepicker name="date" v-model="data.date"></datepicker>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.type }">
-                            <label>Typ</label> <i v-if="form.errors.type" class="fa fa-warning text-danger" :title="form.errors.type"></i>
+                            <label>{{trans('admin.Typ')}}</label> <i v-if="form.errors.type" class="fa fa-warning text-danger" :title="form.errors.type"></i>
                             <select class="form-control input-sm" name="type" v-model="data.type">
-                                <option value="">Auswählen..</option>
+                                <option value="">{{trans('admin.Auswählen')}}</option>
                                 <option v-for="(option, name) in options" :value="name">{{ option.name }}</option>
                             </select>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.hours }">
-                            <label>Stunden</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
+                            <label>{{trans('admin.Stunden')}}</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
                             <input class="form-control input-sm" name="hours" v-model="data.hours">
                         </div>
                     </div>
@@ -42,7 +42,7 @@
 
                     <div v-if="editMode" class="pull-right">
                         <submit-button class="pull-right btn-sm btn-primary" text="Speichern" :loading="form.loading"></submit-button>
-                        <button @click="reset" class="btn btn-sm btn-danger margin-r-5">Abbrechen</button>
+                        <button @click="reset" class="btn btn-sm btn-danger margin-r-5">{{trans('admin.Abbrechen')}}</button>
                     </div>
                 </template>
             </form-wrapper>
@@ -50,9 +50,9 @@
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
-                    <th>Stunden</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Stunden')}}</th>
                     <th v-if="canDelete"></th>
                 </tr>
                 </thead>
@@ -150,7 +150,7 @@
             this.$on('form.submitted', () => {
                 this.reset();
 
-                flash('Eintrag gespeichert');
+                flash(trans('Eintrag gespeichert'));
             });
 
             this.$on('items.received', this.updateVisibleItems);

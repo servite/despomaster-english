@@ -3,17 +3,17 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Historie</th>
-                <th>Gültig bis</th>
-                <th>Erstellt am</th>
-                <th>Erstellt durch</th>
+                <th>{{trans('admin.Name')}}</th>
+                <th>{{trans('admin.Historie')}}</th>
+                <th>{{trans('admin.Gültig bis')}}</th>
+                <th>{{trans('admin.Gültig bis')}}</th>
+                <th>{{trans('admin.Erstellt durch')}}</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             <tr v-if="type == 'employee'">
-                <td><a :href="'/admin/employee/' + model.id + '/document/base_data'" target="_blank">Stammdaten</a></td>
+                <td><a :href="'/admin/employee/' + model.id + '/document/base_data'" target="_blank">{{trans('admin.Stammdaten')}}</a></td>
                 <td></td>
                 <td>-</td>
                 <td>-</td>
@@ -67,7 +67,7 @@
                     'document': document
                 };
 
-                modal('Send ' + this.type + ' Document Modal', 'Dokument senden', data);
+                modal('Send ' + this.type + ' Document Modal', trans('Dokument senden'), data);
             },
 
             edit(document) {
@@ -77,7 +77,7 @@
                     'document': document
                 };
 
-                modal('Edit Document', 'Dokument bearbeiten', data);
+                modal('Edit Document', trans('Dokument bearbeiten'), data);
             },
 
             destroy(document, index) {

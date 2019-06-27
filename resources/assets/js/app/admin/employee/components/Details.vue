@@ -1,7 +1,7 @@
 <template>
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Details</h3>
+            <h3 class="box-title">{{trans('admin.Details')}}</h3>
             <div class="pull-right">
                 <i v-if="! editMode" @click="editMode = true" class="fa fa-pencil fa-lg pointer"></i>
                 <div v-else>
@@ -12,7 +12,7 @@
         </div>
         <div class="box-body">
 
-            <strong><i class="fa fa-map-marker margin-r-5"></i> Einsatzort</strong>
+            <strong><i class="fa fa-map-marker margin-r-5"></i>{{trans('admin.Einsatzort')}}</strong>
 
             <p v-if="! editMode" class="text-muted">
                 {{ data.locations ? JSON.parse(data.locations).join(', ') : '-' }}
@@ -29,27 +29,27 @@
 
             <hr>
 
-            <strong><i class="fa fa-bank margin-r-5"></i> Beschäftiung</strong>
+            <strong><i class="fa fa-bank margin-r-5"></i>{{trans('admin.Beschäftiung')}}</strong>
 
             <div v-if="inProbation" class="pull-right">
-                <span class="label label-warning">Probezeit</span>
+                <span class="label label-warning">{{trans('admin.Probezeit')}}</span>
             </div>
 
             <div class="text-muted">
                 <div>
-                    Eintrittsdatum
+                    {{trans('admin.Eintrittsdatum')}}
                     <span class="pull-right">{{ data.entry_date }}</span>
                 </div>
                 <div v-if="data.exit_date">
-                    Austrittsdatum
+                    {{trans('admin.Austrittsdatum')}}
                     <span class="pull-right">{{ data.exit_date }}</span>
                 </div>
                 <div>
-                    Beschäftigungsart
+                    {{trans('admin.Beschäftigungsart')}}
                     <span class="pull-right">
-                        <span v-if="data.occupation_type == 'full_time'">Vollzeit</span>
-                        <span v-if="data.occupation_type == 'part_time'">Teilzeit</span>
-                        <span v-if="data.occupation_type == 'temporary'">Geringfügig</span>
+                        <span v-if="data.occupation_type == 'full_time'">{{trans('admin.Vollzeit')}}</span>
+                        <span v-if="data.occupation_type == 'part_time'">{{trans('admin.Teilzeit')}}</span>
+                        <span v-if="data.occupation_type == 'temporary'">{{trans('admin.Geringfügig')}}</span>
                     </span>
                 </div>
             </div>
@@ -57,26 +57,26 @@
             <hr>
 
             <div>
-                <strong><i class="fa fa-clock-o margin-r-5"></i> AZK</strong>
+                <strong><i class="fa fa-clock-o margin-r-5"></i> {{trans('admin.AZK')}}</strong>
             </div>
 
 
             <div class="text-muted">
                 <div>
-                    Gearbeitet im {{ moment().locale('de').format('MMMM') }}
-                    <span class="pull-right">{{ employee.current_working_time_account ? hour(employee.current_working_time_account.actual) : 0 }} Stunden</span>
+                    {{trans('admin.Gearbeitet im')}} {{ moment().locale('de').format('MMMM') }}
+                    <span class="pull-right">{{ employee.current_working_time_account ? hour(employee.current_working_time_account.actual) : 0 }} {{trans('admin.Stunden')}}</span>
                 </div>
                 <div>
-                    Vereinbarte Arbeitszeit
-                    <span class="pull-right">{{ employee.current_working_time_account ?  hour(employee.current_working_time_account.target) : 0 }} Stunden</span>
+                    {{trans('admin.Vereinbarte Arbeitszeit')}}
+                    <span class="pull-right">{{ employee.current_working_time_account ?  hour(employee.current_working_time_account.target) : 0 }} {{trans('admin.Stunden')}}</span>
                 </div>
                 <div>
-                    Arbeitszeitkonto gesamt
-                    <span class="pull-right">{{ hour(employee.working_time_account) }} Stunden</span>
+                    {{trans('admin.Arbeitszeitkonto gesamt')}}
+                    <span class="pull-right">{{ hour(employee.working_time_account) }} {{trans('admin.Stunden')}}</span>
                 </div>
 
                 <div class=" bg-grey-light margin-t-10">
-                    <strong>Einsetzbar</strong>
+                    <strong>{{trans('admin.Einsetzbar')}}</strong>
                     <div class="pull-right margin-r-5">
                         <i v-if="employee.working_time_account > employee.target" class="fa fa-ban text-danger"></i>
                         <i v-else-if="employee.working_time_account < -21" class="fa fa-check text-success"></i>
@@ -87,7 +87,7 @@
 
             <hr>
 
-            <strong><i class="fa fa-automobile margin-r-5"></i> Sonstiges</strong>
+            <strong><i class="fa fa-automobile margin-r-5"></i> {{trans('admin.Sonstiges')}}</strong>
 
             <div v-if="! editMode" class="text-muted">
                 <div>

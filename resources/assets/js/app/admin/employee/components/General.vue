@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <h4 class="text-center clearfix"><a class="text-muted pointer" @click="navigate">Personalnr. {{ employee.id }}</a></h4>
+            <h4 class="text-center clearfix"><a class="text-muted pointer" @click="navigate">{{trans('admin.Personalnr')}} {{ employee.id }}</a></h4>
 
             <employee-photo :employee="employee"></employee-photo>
 
@@ -26,65 +26,65 @@
 
             <div v-else class="row">
                 <div class="col-md-6 form-group" :class="{'has-error': errors.first_name }">
-                    <label>Vorname</label>
+                    <label>{{trans('admin.Vorname')}}</label>
                     <i v-if="errors.first_name" class="fa fa-exclamation-triangle text-danger" :title="errors.first_name[0]"></i>
                     <input class="form-control input-sm" v-model="input.first_name">
                 </div>
                 <div class="col-md-6 form-group" :class="{'has-error': errors.last_name }">
-                    <label>Nachname</label>
+                    <label>{{trans('admin.Nachname')}}</label>
                     <i v-if="errors.last_name" class="fa fa-exclamation-triangle text-danger" :title="errors.last_name[0]"></i>
                     <input class="form-control input-sm" v-model="input.last_name">
                 </div>
             </div>
 
-            <p v-if="! editMode" class="text-muted text-center">{{ data.sex == 'm' ? 'männlich' : 'weiblich' }}</p>
+            <p v-if="! editMode" class="text-muted text-center">{{ data.sex == 'm' ? trans('admin.männlich') : trans('admin.weiblich') }}</p>
 
             <div v-else class="row">
                 <div class="col-md-offset-2 form-group">
                     <label class="radio">
                         <input type="radio" name="sex" value="m" v-model="input.sex">
-                        Männlich
+                        {{trans('admin.Männlich')}}
                     </label>
                     <label class="radio">
                         <input type="radio" name="sex" value="f" v-model="input.sex">
-                        Weiblich
+                        {{trans('admin.weiblich')}}
                     </label>
                 </div>
             </div>
 
             <p class="text-center">
                 <b>Status:</b>
-                <span v-if="data.applicant">Bewerber</span>
-                <span v-else>{{ data.active ? 'Aktiv' : 'Inaktiv' }}</span>
+                <span v-if="data.applicant">{{trans('admin.Bewerber')}}</span>
+                <span v-else>{{ data.active ? trans("admin.Aktiv") : trans("admin.Inaktiv") }}</span>
             </p>
 
             <ul v-if="! editMode" class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                    <b>E-Mail</b>
+                    <b>{{trans('admin.E-Mail')}}</b>
                     <div class="pull-right">
                         {{ data.email }}
                     </div>
                 </li>
                 <li v-if="data.phone" class="list-group-item">
-                    <b>Telefon</b>
+                    <b>{{trans('admin.Telefon')}}</b>
                     <div class="pull-right">
                         {{ data.phone }}
                     </div>
                 </li>
                 <li v-if="data.mobile" class="list-group-item">
-                    <b>Mobil</b>
+                    <b>{{trans('admin.Mobil')}}</b>
                     <div class="pull-right">
                         {{ data.mobile }}
                     </div>
                 </li>
                 <li class="list-group-item">
-                    <b>Alter</b>
+                    <b>{{trans('admin.Alter')}}</b>
                     <div class="pull-right">
                         {{ moment().diff(moment(data.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} Jahre
                     </div>
                 </li>
                 <li class="list-group-item">
-                    <b>Wohnort</b>
+                    <b>{{trans('admin.Wohnort')}}</b>
                     <div class="pull-right">
                         {{ data.city || '-' }}
                     </div>
@@ -93,21 +93,21 @@
 
             <ul v-else class="list-group list-group-unbordered">
                 <li class="form-group list-group-item" :class="{'has-error': errors.email}">
-                    <label>E-Mail</label>
+                    <label>{{trans('admin.E-Mail')}}</label>
                     <i v-if="errors.email" class="fa fa-exclamation-triangle text-danger" :title="errors.email[0]"></i>
                     <div class="pull-right">
                         <input class="form-control input-sm" v-model="input.email">
                     </div>
                 </li>
                 <li class="form-group list-group-item" :class="{'has-error': errors.phone}">
-                    <label>Telefon</label>
+                    <label>{{trans('admin.Telefon')}}</label>
                     <i v-if="errors.phone" class="fa fa-exclamation-triangle text-danger" :title="errors.phone[0]"></i>
                     <div class="pull-right">
                         <input class="form-control input-sm" v-model="input.phone">
                     </div>
                 </li>
                 <li class="form-group list-group-item" :class="{'has-error': errors.mobile}">
-                    <label>Mobil</label>
+                    <label>{{trans('admin.Mobil')}}</label>
                     <i v-if="errors.mobile" class="fa fa-exclamation-triangle text-danger" :title="errors.mobile[0]"></i>
                     <div class="pull-right">
                         <input class="form-control input-sm" v-model="input.mobile">

@@ -10,10 +10,10 @@
         <table v-if="items" class="table">
             <thead>
             <tr>
-                <th>Auftrag</th>
-                <th>Kunde</th>
-                <th>Datum</th>
-                <th>Zeiterfasst</th>
+                <th>{{trans('admin.Auftrag')}}</th>
+                <th>{{trans('admin.Kunde')}}</th>
+                <th>{{trans('admin.Datum')}}</th>
+                <th>{{trans('admin.Zeiterfasst')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -24,11 +24,11 @@
                 <td>{{ order.timetrackings.length > 0 ? hour(order.timetrackings[0].total_min/60) + ' Stunden' : '-' }}</td>
             </tr>
             <tr v-if="! filteredOrders.length && items.length">
-                <td colspan="5">Keine Aufträge gefunden</td>
+                <td colspan="5">{{trans('admin.Keine Aufträge gefunden')}}</td>
             </tr>
             </tbody>
         </table>
-        <p v-else>Keine Aufträge in der Vergangenheit</p>
+        <p v-else>{{trans('admin.Keine Aufträge in der Vergangenheit')}}</p>
 
         <div v-if="! searchString" class="pull-right">
             <pagination-links

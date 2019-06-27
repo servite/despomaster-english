@@ -3,10 +3,10 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-5">
-                    <div class="panel-title">Kalender</div>
+                    <div class="panel-title">{{trans('admin.Kalender')}}</div>
                 </div>
                 <div class="col-md-3">
-                    <a href="#" @click.prevent="editTimeOffs" class="btn btn-default btn-sm">Fehlzeiten</a>
+                    <a href="#" @click.prevent="editTimeOffs" class="btn btn-default btn-sm">{{trans('admin.Fehlzeiten')}}</a>
                 </div>
                 <div class="col-md-4 h5">
                     <ul class="pager list-unstyled pull-right">
@@ -103,15 +103,15 @@
             },
 
             openOrder(order) {
-                modal('Show Order Modal', 'Auftrag bearbeiten', {'order': order});
+                modal('Show Order Modal', trans('Auftrag bearbeiten'), {'order': order});
             },
 
             assignEmployees(order) {
-                modal('Assign Employees Modal', 'Mitarbeiter einplanen', {'order': order}, '100%');
+                modal('Assign Employees Modal', trans('Mitarbeiter einplanen'), {'order': order}, '100%');
             },
 
             editTimeOffs() {
-                modal('Time Off Modal', 'Fehlzeiten', {'employee': this.employee});
+                modal('Time Off Modal', trans('Fehlzeiten'), {'employee': this.employee});
             },
 
             editTimeOff(timeoff) {
@@ -120,7 +120,7 @@
                     'employee': this.employee
                 };
 
-                modal('Edit Time Off Modal', 'Fehlzeiten', data);
+                modal('Edit Time Off Modal', trans('Fehlzeiten'), data);
             },
 
             newTimeOff(date) {
@@ -129,7 +129,7 @@
                     'employee': this.employee
                 };
 
-                modal('Time Off Modal', 'Fehlzeiten', data);
+                modal('Time Off Modal', trans('Fehlzeiten'), data);
             },
 
             getOrderStatus(order){
