@@ -257,16 +257,31 @@ return [
     'Rechtliches' => '',
     'Nutzer' => '',
     'Kontakt konnte nicht gelöscht werden' => '',
-    Kontakte bearbeiten
-    Kontakt anzeigen
-    Kontakt bearbeiten
-    Neuer Kontakt
-    Ansprechpartner
-    Zuständigkeit
-    Personalplanung
-    Finanzen
-    Sonstiges
-    Kontakte geändert
+    'Kontakte bearbeiten' => '',
+    'Kontakt anzeigen' => '',
+    'Kontakt bearbeiten' => '',
+    'Neuer Kontakt' => '',
+    'Ansprechpartner' => '',
+    'Zuständigkeit' => '',
+    'Personalplanung' => '',
+    'Finanzen' => '',
+    'Sonstiges' => '',
+    'Kontakte geändert' => '',
+    'Nachname' => '',
+    'Vorname' => '',
+    'Geschlecht' => '',
+    'Männlich' => '',
+    'Weiblich' => '',
+    'Mobil' => '',
+    'Telefon' => '',
+    'Funktion' => '',
+    'Zuständigkeit' => '',
+    'Personalplanung' => '',
+    'Finanzen/Buchhaltung' => '',
+    'Zusätzliche Informationen' => '',
+    'Neuen Kontakt angelegt!' => '',
+    'Kontakt erfolgreich geändert!' => '',
+    'Bearbeiten' => '',
 
 
     'So' => "Sun",
