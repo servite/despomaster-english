@@ -19,7 +19,7 @@ export default {
                 'clients': this.clients
             }
 
-            modal('New Order Modal', 'Neuer Auftrag', data);
+            modal('New Order Modal', trans('admin.Neuer Auftrag'), data);
         },
 
         add(unit) {

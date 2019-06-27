@@ -175,7 +175,7 @@
                     'clients' : this.clients
                 };
 
-                modal('New Order Modal', 'Neuer Auftrag', data);
+                modal('New Order Modal', trans('admin.Neuer Auftrag'), data);
             },
 
             editOrder(order) {
@@ -183,7 +183,7 @@
                     'order': order
                 };
 
-                modal('Edit Order Modal', 'Auftrag bearbeiten', data);
+                modal('Edit Order Modal', trans('admin.Auftrag bearbeiten'), data);
             }
         },
 

@@ -80,7 +80,7 @@
                     'clientId': this.client.id
                 };
 
-                modal('New Order Modal', 'Neuer Auftrag', data);
+                modal('New Order Modal', trans('admin.Neuer Auftrag'), data);
             },
 
             getOrders() {
@@ -95,11 +95,11 @@
             },
 
             openOrder(order) {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': order});
+                modal('Show Order Modal', trans('admin.Auftrag anzeigen'), {'order': order});
             },
 
             assignEmployees(order) {
-                modal('Assign Employees Modal', 'Mitarbeiter einplanen', {'order': order}, '100%');
+                modal('Assign Employees Modal', trans('admin.Mitarbeiter einplanen'), {'order': order}, '100%');
             },
 
             getOrderStatus(order){

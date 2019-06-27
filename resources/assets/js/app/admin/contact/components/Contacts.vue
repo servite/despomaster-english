@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            Ansprechpartner
+            {{trans('admin.Ansprechpartner')}}
             <div class="pull-right">
                 <i class="fa fa-pencil pointer margin-r-5" @click="editContacts"></i>
                 <i @click="newContact" class="fa fa-plus text-primary pointer"></i>
@@ -75,7 +75,7 @@
                     'type': 'create'
                 }
 
-                modal('Contact Form Modal', 'Neuer Kontakt', data);
+                modal('Contact Form Modal', trans('admin.Neuer Kontakt'), data);
             },
 
             edit(contact) {
@@ -86,7 +86,7 @@
                     'type': 'edit'
                 }
 
-                modal('Contact Form Modal', 'Kontakt bearbeiten', data);
+                modal('Contact Form Modal', trans('admin.Kontakt bearbeiten'), data);
             },
 
             show(contact) {
@@ -95,7 +95,7 @@
                     'contact': contact
                 }
 
-                modal('Contact Modal', 'Kontakt anzeigen', data);
+                modal('Contact Modal', trans('admin.Kontakt anzeigen'), data);
             },
 
             editContacts() {
@@ -104,7 +104,7 @@
                     'contacts': this.items
                 }
 
-                modal('Contact Responsibilities Modal', 'Kontakte bearbeiten', data);
+                modal('Contact Responsibilities Modal', trans('admin.Kontakte bearbeiten'), data);
             },
 
             destroy(contact) {
@@ -114,7 +114,7 @@
                         flash('Kontakt gelöscht')
                         this.getContacts()
                     }).catch(() =>
-                        flash('Kontakt konnte nicht gelöscht werden.', 'error')
+                        flash(trans('admin.Kontakt konnte nicht gelöscht werden'), 'error')
                     );
                 });
             }

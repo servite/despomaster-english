@@ -8,25 +8,25 @@
                         {{ contact.first_name + ' ' + contact.last_name }}
                     </div>
                     <div class="col-md-8">
-                        <label>Zuständigkeit</label>
+                        <label>{{trans('admin.Zuständigkeit')}}</label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="1" v-model="contact.personnel_planning">
-                            Personalplanung
+                            {{trans('admin.Personalplanung')}}
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="1" v-model="contact.accounting">
-                            Finanzen
+                            {{trans('admin.Finanzen')}}
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="1" v-model="contact.other">
-                            Sonstiges
+                            {{trans('admin.Sonstiges')}}
                         </label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <button @click="save" class="btn btn-success btn-md pull-right">Speichern</button>
+        <button @click="save" class="btn btn-success btn-md pull-right">{{trans('admin.Speichern')}}</button>
     </div>
 </template>
 
@@ -48,7 +48,7 @@
                 axios.post('/api/client/' + this.data.client.id + '/contacts/responsibilities', {contacts: this.contacts}).then(() => {
                     events.$emit('contacts.updated');
 
-                    flash('Kontakte geändert');
+                    flash(trans('admin.Kontakte geändert'));
 
                     this.$parent.$emit('close')
                 });

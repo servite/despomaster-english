@@ -256,6 +256,17 @@ return [
     'Textbausteine' => '',
     'Rechtliches' => '',
     'Nutzer' => '',
+    'Kontakt konnte nicht gelöscht werden' => '',
+    Kontakte bearbeiten
+    Kontakt anzeigen
+    Kontakt bearbeiten
+    Neuer Kontakt
+    Ansprechpartner
+    Zuständigkeit
+    Personalplanung
+    Finanzen
+    Sonstiges
+    Kontakte geändert
 
 
     'So' => "Sun",

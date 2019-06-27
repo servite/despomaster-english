@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div v-if="title" class="modal-header">
                     <button type="button" class="close" @click.self="close">&times;</button>
-                    <h3 class="modal-title">{{ trans('admin.'+ title) }}</h3>
+                    <h3 class="modal-title"> {{title}}</h3>
                 </div>
 
                 <div class="modal-body">
