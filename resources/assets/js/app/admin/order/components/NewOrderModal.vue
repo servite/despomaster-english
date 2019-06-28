@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <submit-button class="pull-right btn-md btn-success" text="Anlegen" :loading="form.loading"></submit-button>
+            <submit-button class="pull-right btn-md btn-success" :text="trans('admin.Anlegen')" :loading="form.loading"></submit-button>
         </template>
     </form-wrapper>
 </template>

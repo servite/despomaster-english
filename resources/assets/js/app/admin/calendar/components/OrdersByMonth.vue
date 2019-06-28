@@ -5,7 +5,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="panel-title">{{ trans('admin.Auftragskalender' )}}m</div>
+                            <div class="panel-title">{{ trans('admin.Auftragskalender' )}}</div>
                         </div>
                         <div class="col-md-6 h5">
                             <ul class="pager list-unstyled pull-right">

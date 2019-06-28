@@ -19,14 +19,14 @@
                         <i class="pointer fa fa-refresh text-primary" @click.prevent="reset"></i>
                     </div>
                     <div class="table-view__header-columns">
-                        <input class="form-control input-sm" v-model="query.search_input" @keyup.enter="search" placeholder="Suche...">
+                        <input class="form-control input-sm" v-model="query.search_input" @keyup.enter="search" :placeholder="trans('admin.Suche')">
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.location" @change="search">
                             <option value="">{{trans('admin. auswählen')}}Standort</option>
-                            <option value="Bonn">{{trans('admin.Bonn')}}</option>
-                            <option value="Köln">{{trans('admin.Köln')}}</option>
-                            <option value="Düsseldorf">{{trans('admin.Düsseldorf')}}</option>
+                            <option :value="trans('admin.Bonn')">{{trans('admin.Bonn')}}</option>
+                            <option :value="trans('admin.Köln')">{{trans('admin.Köln')}}</option>
+                            <option :value="trans('admin.Düsseldorf')">{{trans('admin.Düsseldorf')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
@@ -93,7 +93,7 @@
                 </div>
                 <div class="table-view__footer">
                     <div class="table-view__footer-item">
-                        <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                        <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
                     </div>
                     <div class="table-view__footer-item">
                         <div class="table-view__footer-sub">
@@ -126,7 +126,7 @@
 
         methods: {
             newClient() {
-                modal('New Client Modal', 'Neuer Kunde', {});
+                modal('New Client Modal', trans('admin.Neuer Kunde'), {});
             },
 
             editClient(client) {
@@ -134,7 +134,7 @@
                     'client': client
                 };
 
-                modal('Edit Client Modal', 'Kunden bearbeiten', data);
+                modal('Edit Client Modal', trans('admin.Kunden bearbeiten'), data);
             },
 
 
