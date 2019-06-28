@@ -1,15 +1,15 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>Netto-Bezüge / Netto-Abzüge</h4>
+            <h4>{{trans('admin.Netto-Bezüge / Netto-Abzüge')}}</h4>
         </div>
         <div class="panel-body">
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
-                    <th>Betrag</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Betrag')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@
                 </tr>
                 </tbody>
             </table>
-            <p v-else>Keine Einträge</p>
+            <p v-else>{{trans('admin.Keine Einträge')}}</p>
         </div>
     </div>
 </template>

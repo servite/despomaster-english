@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-9 panel-title">
-                    Notizen
+                    {{trans('admin.Notizen')}}
                 </div>
                 <div class=" col-md-3">
                     <div class="pull-right margin-t-5">
@@ -20,18 +20,18 @@
                     <div class="row">
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.month }">
                             <select class="form-control input-sm" name="month" v-model="month">
-                                <option value="1">Januar</option>
-                                <option value="2">Februar</option>
-                                <option value="3">März</option>
-                                <option value="4">April</option>
-                                <option value="5">Mai</option>
-                                <option value="6">Juni</option>
-                                <option value="7">Juli</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
-                                <option value="10">Oktober</option>
-                                <option value="11">November</option>
-                                <option value="12">Dezember</option>
+                                <option value="1">{{trans('admin.Januar')}}</option>
+                                <option value="2">{{trans('admin.Februar')}}</option>
+                                <option value="3">{{trans('admin.März')}}</option>
+                                <option value="4">{{trans('admin.April')}}</option>
+                                <option value="5">{{trans('admin.Mai')}}</option>
+                                <option value="6">{{trans('admin.Juni')}}</option>
+                                <option value="7">{{trans('admin.Juli')}}</option>
+                                <option value="8">{{trans('admin.August')}}</option>
+                                <option value="9">{{trans('admin.September')}}</option>
+                                <option value="10">{{trans('admin.Oktober')}}</option>
+                                <option value="11">{{trans('admin.November')}}</option>
+                                <option value="12">{{trans('admin.Dezember')}}</option>
                             </select>
                         </div>
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.year }">

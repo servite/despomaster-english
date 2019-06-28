@@ -7,31 +7,31 @@
                     <i v-else class="fa fa-circle text-danger fa-lg"></i>
                 </div>
 
-                <h4 class="text-center clearfix">Personalnr. {{ employee.id }}</h4>
+                <h4 class="text-center clearfix">{{trans('admin.Personalnr')}} {{ employee.id }}</h4>
 
                 <img v-if="employee.photo" class="profile-user-img img-responsive img-circle" :src="'/uploads/images/photos/employees/' + employee.photo" alt="Profilbild">
 
                 <h3  class="profile-username text-center">{{ employee.first_name + ' ' + employee.last_name }}</h3>
 
-                <p class="text-muted text-center">{{ employee.sex == 'm' ? 'männlich' : 'weiblich' }}</p>
+                <p class="text-muted text-center">{{ employee.sex == 'm' ? trans('männlich') : trans('weiblich') }}</p>
 
-                <p class="text-center"><b>Status:</b> {{ employee.active ? 'Aktiv' : 'Inaktiv' }}</p>
+                <p class="text-center"><b>Status:</b> {{ employee.active ? trans('Aktiv') : trans('Inaktiv') }}</p>
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                        <b>E-Mail</b>
+                        <b>{{trans('admin.E-Mail')}}</b>
                         <div class="pull-right">{{ employee.email }}</div>
                     </li>
                     <li class="list-group-item">
-                        <b>Telefon</b>
+                        <b>{{trans('admin.Telefon')}}</b>
                         <div class="pull-right">{{ employee.phone }}</div>
                     </li>
                     <li class="list-group-item">
-                        <b>Mobil</b>
+                        <b>{{trans('admin.Mobil')}}</b>
                         <div class="pull-right">{{ employee.mobile }}</div>
                     </li>
                     <li class="list-group-item">
-                        <b>Alter</b>
+                        <b>{{trans('admin.Alter')}}</b>
                         <div class="pull-right">
                             {{ moment().diff(moment(employee.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} Jahre
                         </div>
@@ -45,7 +45,7 @@
                 <h3 class="box-title">Details</h3>
             </div>
             <div class="box-body">
-                <strong><i class="fa fa-map-marker margin-r-5"></i> Adresse</strong>
+                <strong><i class="fa fa-map-marker margin-r-5"></i> {{trans('admin.Adresse')}}</strong>
 
                 <div class="text-muted">
                     <div>{{ employee.street }}</div>
@@ -54,7 +54,7 @@
 
                 <hr>
 
-                <strong><i class="fa fa-map-marker margin-r-5"></i> Einsatzort</strong>
+                <strong><i class="fa fa-map-marker margin-r-5"></i> {{trans('admin.Einsatzort')}}</strong>
 
                 <p class="text-muted">
                     {{ JSON.parse(employee.locations).join(', ') }}
@@ -62,48 +62,48 @@
 
                 <hr>
 
-                <strong><i class="fa fa-bank margin-r-5"></i> Beschäftiung</strong>
+                <strong><i class="fa fa-bank margin-r-5"></i> {{trans('admin.Beschäftiung')}}</strong>
 
                 <div class="text-muted">
                     <div>
-                        Eintrittsdatum
+                        {{trans('admin.Eintrittsdatum')}}
                         <span class="pull-right">{{ employee.entry_date }}</span>
                     </div>
                     <div v-if="employee.exit_date">
-                        Austrittsdatum
+                        {{trans('admin.Austrittsdatum')}}
                         <span class="pull-right">{{ employee.exit_date }}</span>
                     </div>
                     <div>
-                        Beschäftigungsart
-                        <span class="pull-right">{{ employee.occupation_type == 'temporary' ? 'Geringfügig' : 'Teilzeit' }}</span>
+                        {{trans('admin.Beschäftigungsart')}}
+                        <span class="pull-right">{{ employee.occupation_type == 'temporary' ? trans('Geringfügig') : trans('Teilzeit') }}</span>
                     </div>
                     <div>
-                        Vereinbarte Arbeitszeit
-                        <span class="pull-right">{{ employee.contractual_working_hours }} Stunden</span>
+                        {{trans('admin.Vereinbarte Arbeitszeit')}}
+                        <span class="pull-right">{{ employee.contractual_working_hours }} {{trans('admin.Stunden')}}</span>
                     </div>
                 </div>
 
                 <hr>
 
-                <strong><i class="fa fa-automobile margin-r-5"></i> Sonstiges</strong>
+                <strong><i class="fa fa-automobile margin-r-5"></i> {{trans('admin.Sonstiges')}}</strong>
 
                 <div class="text-muted">
                     <div>
-                        PKW
+                        {{trans('admin.PKW')}}
                         <div class="pull-right">
                             <i v-if="employee.car" class="fa fa-check text-success"></i>
                             <i v-else class="fa fa-ban text-danger"></i>
                         </div>
                     </div>
                     <div>
-                        Führerschein
+                        {{trans('admin.Führerschein')}}
                         <div class="pull-right">
                             <i v-if="employee.driving_license" class="fa fa-check text-success"></i>
                             <i v-else class="fa fa-ban text-danger"></i>
                         </div>
                     </div>
                     <div>
-                        Semesterticket
+                        {{trans('admin.Semesterticket')}}
                         <div class="pull-right">
                             <i v-if="employee.public_transportation" class="fa fa-check text-success"></i>
                             <i v-else class="fa fa-ban text-danger"></i>
