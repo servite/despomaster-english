@@ -1,8 +1,8 @@
 <template>
     <div>
-        <img v-if="photo" @click="deletePhoto" class="profile-user-img img-responsive img-circle pointer" :src="photo" alt="Profilbild" title="Profilbild löschen" style="width:50px;">
+        <img v-if="photo" @click="deletePhoto" class="profile-user-img img-responsive img-circle pointer" :src="photo" :alt="trans('admin.Profilbild')" :title="trans('admin.Profilbild löschen')" style="width:50px;">
         <div v-else>
-            <img @click="showUploadForm" class="profile-user-img img-responsive img-circle pointer" src="/assets/img/unknown.gif" alt="Profilbild" style="width:50px;">
+            <img @click="showUploadForm" class="profile-user-img img-responsive img-circle pointer" src="/assets/img/unknown.gif" :alt="trans('admin.Profilbild')" style="width:50px;">
             <form class="hidden" id="uploadUserPhoto" enctype="multipart/form-data">
                 <file-upload name="photo" accept="image/*" @loaded="onLoad"></file-upload>
             </form>
@@ -37,7 +37,7 @@
                 axios.post('/api/user/' + this.user.id + '/photo/upload', data).then(() => {
                     this.photo = photo.src;
 
-                    flash('Foto hochgeladen.')
+                    flash(trans('admin.Foto hochgeladen'))
                 }).catch((error) => {
                     this.errors = error.response.data;
 
@@ -46,9 +46,9 @@
             },
 
             deletePhoto() {
-                swal({title: 'Profilbild löschen?'}).then(() => {
+                swal({title: trans('admin.Profilbild löschen?')}).then(() => {
                     axios.post('/api/user/' + this.user.id + '/photo/delete', this.user).then(() => {
-                        flash('Profilbild gelöscht', 'success');
+                        flash(trans('admin.Profilbild gelöscht'), 'success');
 
                         this.photo = null;
                     });

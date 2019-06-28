@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2>Zeiterfassung</h2>
+            <h2>{{trans('admin.Zeiterfassung')}}</h2>
         </div>
         <div class="panel-body">
             <div class="table-view">
@@ -10,36 +10,36 @@
                         <i class="pointer fa fa-refresh text-primary" @click.prevent="reset"></i>
                     </div>
                     <div class="table-view__header-columns">
-                        <input class="form-control input-sm" v-model="query.search_input" placeholder="Suche nach..." @keyup.enter="search">
+                        <input class="form-control input-sm" v-model="query.search_input" :placeholder="trans('admin.Suche nach')" @keyup.enter="search">
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.client_id" @change="search">
-                            <option value="">Kunden auswählen...</option>
+                            <option value="">{{trans('admin.Kunden auswählen')}}</option>
                             <option v-for="client in clients" :value="client.id">{{ client.short_name }}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.time" @change="search">
-                            <option value="">Zeitraum...</option>
-                            <option value="-30">Letzter Monat</option>
-                            <option value="-7">Letzte Woche</option>
-                            <option value="w">Diese Woche</option>
-                            <option value="m">Diesen Monat</option>
-                            <option value="date">Auftrag am ..</option>
-                            <option value="range">Von .. bis ..</option>
+                            <option value="">{{trans('admin.Zeitraum')}}</option>
+                            <option value="-30">{{trans('admin.Letzter Monat')}}</option>
+                            <option value="-7">{{trans('admin.Letzte Woche')}}</option>
+                            <option value="w">{{trans('admin.Diese Woche')}}</option>
+                            <option value="m">{{trans('admin.Diesen Monat')}}</option>
+                            <option value="date">{{trans('admin.Auftrag am')}} ..</option>
+                            <option value="range">{{trans('admin.Von bis')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'date'">
-                        <datepicker name="date" v-model="query.date" placeholder="Auftrag am" @dateSelected="search"></datepicker>
+                        <datepicker name="date" v-model="query.date" :placeholder="trans('admin.Auftrag am')" @dateSelected="search"></datepicker>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'range'">
-                        <datepicker name="start" v-model="query.start" placeholder="Auftrag vom"></datepicker>
+                        <datepicker name="start" v-model="query.start" :placeholder="trans('admin.Auftrag vom')"></datepicker>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'range'">
-                        <datepicker name="end" v-model="query.end" placeholder="Auftrag bis" @dateSelected="search"></datepicker>
+                        <datepicker name="end" v-model="query.end" :placeholder="trans('admin.Auftrag bis')" @dateSelected="search"></datepicker>
                     </div>
                     <div>
-                        <button class=" btn btm-default btn-sm" @click="search">Filtern</button>
+                        <button class=" btn btm-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
                     </div>
                 </div>
                 <div class="table-view__body">
@@ -47,18 +47,18 @@
                         <thead>
                         <tr>
                             <th class="pointer" @click="toggleOrder('id')">
-                                Auftragsnr. <i v-html="getSortingIcon('id')"></i>
+                               {{trans('admin.Auftragsnr')}} . <i v-html="getSortingIcon('id')"></i>
                             </th>
-                            <th>Kunde</th>
+                            <th>{{trans('admin.Kunde')}}</th>
                             <th class="pointer" @click="toggleOrder('start_date')">
-                                Auftragsbeginn <i v-html="getSortingIcon('start_date')"></i>
+                              {{trans('admin.Auftragsbeginn')}}  <i v-html="getSortingIcon('start_date')"></i>
                             </th>
                             <th class="pointer" @click="toggleOrder('end_date')">
-                                Auftragsende <i v-html="getSortingIcon('end_date')"></i>
+                               {{trans('admin.Auftragsende')}}  <i v-html="getSortingIcon('end_date')"></i>
                             </th>
-                            <th>Erfasst</th>
-                            <th>Benötigte Mitarbeiter</th>
-                            <th>Aktion</th>
+                            <th>{{trans('admin.Erfasst')}}</th>
+                            <th>{{trans('admin.Benötigte Mitarbeiter')}}</th>
+                            <th>{{trans('admin.Aktion')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -121,11 +121,11 @@
         methods: {
             sendReminder(id) {
 
-                swal({title: 'Zeiterfassung fehlt', text: 'Erinnerung verschicken?'}).then(() => {
+                swal({title: trans('Zeiterfassung fehlt'), text:trans('Erinnerung verschicken?')}).then(() => {
                     axios.post('/api/order/' + id + '/attendance-list/reminder').then(() => {
                         flash('Erinnerung verschickt.')
                         this.fetchData()
-                    }).catch(() => flash('Erinnerung konnte nicht verschickt werden.', 'error'));
+                    }).catch(() => flash(trans('admin.Erinnerung konnte nicht verschickt werden'), 'error'));
                 });
             }
         }
