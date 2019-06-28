@@ -466,12 +466,6 @@ return [
     'Angelegt am' => '',
     'Unterauftrag anlegen' => '',
     'Auftrag kopieren' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-
 
     "Kunde" => '',
     "Status" => '',
@@ -565,6 +559,13 @@ return [
     "Steuerdaten" => '',
     "Textbausteine" => '',
     "PDF" => '',
+    'Textbaustein erfolgreich bearbeitet' => '',
+    'Erinnerung konnte nicht verschickt werden' => '',
+    'Foto hochgeladen' => '',
+    'Kunden bearbeiten' => '',
+    'Hauptauftrag' => '',
+    'Öffentlich' => '',
+
 
 
 
