@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
-                    <input class="form-control input-sm" v-model="searchString" :placeholder="trans('admin.Filtern').">
+                    <input class="form-control input-sm" v-model="searchString" :placeholder="trans('admin.Filtern')">
                 </div>
             </div>
         </div>
