@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            Ansprechpartner
+            {{trans('admin.Ansprechpartner')}}
             <div class="pull-right">
                 <i @click="newContact" class="fa fa-plus text-primary pointer"></i>
             </div>
@@ -68,7 +68,7 @@
                     'contact': {}
                 }
 
-                modal('New Contact Modal', 'Neuer Kontakt', data);
+                modal('New Contact Modal', trans('Neuer Kontakt'), data);
             },
 
             edit(contact) {
@@ -77,7 +77,7 @@
                     'contact': contact
                 }
 
-                modal('Edit Contact Modal', 'Kontakt bearbeiten', data);
+                modal('Edit Contact Modal', trans('Kontakt bearbeiten'), data);
             }
         },
         created() {

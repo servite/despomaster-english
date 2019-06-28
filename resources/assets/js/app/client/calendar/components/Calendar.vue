@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>Kalender
+            <h4>{{trans('admin.Kalender')}}
                 <div class="pull-right">
                     <ul class="pager list-unstyled">
                         <li>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                     <td height="90px" style="width:40px;vertical-align: middle;">
-                        KW <br>{{ moment(startOfWeek).isoWeek() }}
+                        {{trans('admin.KW')}} <br>{{ moment(startOfWeek).isoWeek() }}
                     </td>
                     <td v-for="(weekday, date) in week" :class="{ 'bg-blue-light' : isToday(date) }">
                         <div class="text-muted small pull-right">{{ moment(date).format('Do') }}</div>
@@ -45,7 +45,7 @@
                             <div class="margin-5">
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <strong class="pointer" @click="showOrder(order)" :title="order.title">Auftrag</strong>
+                                        <strong class="pointer" @click="showOrder(order)" :title="order.title">{{trans('admin.Auftrag')}}</strong>
                                     </div>
                                     <div class="col-md-3">
                                         <i v-if="order.status == 'active'" class="fa fa-circle text-success" title="Auftrag bestätigt"></i>
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
                                 <i class="fa fa-map-marker"></i> {{ order.work_location }} <br>
-                                <i class="fa fa-clock-o"></i> {{ order.start_time }} Uhr <br>
+                                <i class="fa fa-clock-o"></i> {{ order.start_time }} {{trans('admin.Uhr')}} <br>
                                 <div class="text-right">
-                                    <strong>MA {{ order.staff_required }}</strong>
+                                    <strong>{{trans('admin.MA')}} {{ order.staff_required }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                     'contacts': this.contacts
                 };
 
-                modal('New Order Modal', 'Neuen Auftrag erteilen', data);
+                modal('New Order Modal', trans('Neuen Auftrag erteilen'), data);
             },
 
             getOrders() {
@@ -110,7 +110,7 @@
             },
 
             showOrder(order) {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': order});
+                modal('Show Order Modal', trans('Auftrag anzeigen'), {'order': order});
             }
         },
 
