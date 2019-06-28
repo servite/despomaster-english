@@ -4,8 +4,8 @@
             <div>
                 <strong :title="order.title">{{ shorten(order.client.short_name, 15) }}</strong>
             </div>
-            <div class="margin-t-5"><u>Treffpunkt</u></div>
-            <i class="fa fa-clock-o"></i> {{ order.meeting_time }} Uhr <br>
+            <div class="margin-t-5"><u>{{trans('admin.Treffpunkt')}}</u></div>
+            <i class="fa fa-clock-o"></i> {{ order.meeting_time }} {{trans('admin.Uhr')}} <br>
             <i class="fa fa-map-marker" :title="order.meeting_point"></i> {{ shorten(order.meeting_point, 20) }}
         </div>
     </div>
@@ -17,7 +17,7 @@
 
         methods: {
             showOrder() {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': this.order});
+                modal('Show Order Modal', trans('Auftrag anzeigen'), {'order': this.order});
             },
 
             getBackground(){

@@ -5,19 +5,19 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.subject }">
-                            <label>Betreff</label>
+                            <label>{{trans('admin.Betreff')}}</label>
                             <input class="form-control input-sm" name="subject" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.topic }">
-                            <label>Bereich</label>
+                            <label>{{trans('admin.Bereich')}}</label>
                             <select name="topic" class="form-control input-sm" required>
-                                <option value="">Bitte auswählen...</option>
-                                <option value="personal">Personal</option>
-                                <option value="finance">Buchhaltung</option>
-                                <option value="orders">Einsätze</option>
-                                <option value="others">Sonstiges</option>
+                                <option value="">{{trans('admin.Bitte auswählen')}}</option>
+                                <option value="personal">{{trans('admin.Personal')}}</option>
+                                <option value="finance">{{trans('admin.Buchhaltung')}}</option>
+                                <option value="orders">{{trans('admin.Einsätze')}}</option>
+                                <option value="others">{{trans('admin.Sonstiges')}}</option>
                             </select>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
 
         created() {
             this.$on('form.submitted', () => {
-                flash('Anfrage verschickt!');
+                flash(trans('Anfrage verschickt!'));
 
                 this.$parent.$emit('close')
             })

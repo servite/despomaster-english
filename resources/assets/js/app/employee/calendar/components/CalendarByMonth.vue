@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Kalender
+                    <h4>{{trans('admin.Kalender')}}
                         <div class="pull-right">
                             <ul class="pager list-unstyled">
                                 <li>
@@ -35,7 +35,7 @@
                         </tr>
                         <tr>
                             <td height="90px" style="width:40px;vertical-align: middle;">
-                                KW <br>{{ moment(startOfWeek).isoWeek() }}
+                                {{trans('admin.KW')}} <br>{{ moment(startOfWeek).isoWeek() }}
                             </td>
                             <td v-for="(weekday, date) in week" :class="{ 'bg-blue-light' : isToday(date) }">
                                 <div class="text-muted small text-right">{{ moment(date).format('Do') }}</div>
@@ -93,7 +93,7 @@
                     'startDate': moment(date).format('L'),
                 };
 
-                modal('Time Off Modal', 'Fehlzeiten', data);
+                modal('Time Off Modal', trans('Fehlzeiten'), data);
             }
         },
 

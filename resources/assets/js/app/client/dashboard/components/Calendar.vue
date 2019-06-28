@@ -9,7 +9,7 @@
                         </a>
                     </li>
                     <li>
-                        KW {{ moment(start).week() }}
+                        {{trans('admin.KW')}} {{ moment(start).week() }}
                     </li>
                     <li>
                         <a @click="add('weeks')">
@@ -38,7 +38,7 @@
                             <div class="margin-5">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <strong class="pointer" @click="showOrder(order)" :title="order.title">Auftrag</strong>
+                                        <strong class="pointer" @click="showOrder(order)" :title="order.title">{{trans('admin.Auftrag')}}</strong>
                                     </div>
                                     <div class="col-md-4 text-right">
                                         <i v-if="order.status == 'active'" class="fa fa-circle text-success" title="Auftrag bestätigt"></i>
@@ -47,9 +47,9 @@
                                     </div>
                                 </div>
                                 <i class="fa fa-map-marker"></i> {{ order.work_location }} <br>
-                                <i class="fa fa-clock-o"></i> {{ order.start_time }} Uhr <br>
+                                <i class="fa fa-clock-o"></i> {{ order.start_time }} {{trans('admin.Uhr')}} <br>
                                 <div class="text-right">
-                                    <strong>MA {{ order.staff_required }}</strong>
+                                    <strong>{{trans('admin.MA')}} {{ order.staff_required }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
             },
 
             showOrder(order) {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': order});
+                modal('Show Order Modal', trans('Auftrag anzeigen'), {'order': order});
             }
 
         }

@@ -2,7 +2,7 @@
     <div>
         <div class="row margin-b-10">
             <div class="col-md-6">
-                <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">Storniert</div>
+                <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">{{trans('admin.Storniert')}}</div>
             </div>
         </div>
 
@@ -11,25 +11,25 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Veranstaltungsname</label>
+                            <label>{{trans('admin.Veranstaltungsname')}}</label>
                             <p>{{ order.title }}</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 form-group">
-                            <label>Beginn</label>
+                            <label>{{trans('admin.Beginn')}}</label>
                             <p>{{ moment(order.start_date).format('L') }}</p>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Ende</label>
+                            <label>{{trans('admin.Ende')}}</label>
                             <p>{{ moment(order.end_date).format('L') }}</p>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Startzeit</label>
+                            <label>{{trans('admin.Startzeit')}}</label>
                             <p>{{ order.start_time ? order.start_time + ' Uhr' : '-' }}</p>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Endzeit</label>
+                            <label>{{trans('admin.Endzeit')}}</label>
                             <p>{{ order.end_time ? order.end_time + ' Uhr' : '-' }}</p>
                         </div>
                     </div>
@@ -38,22 +38,22 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Einsatzort</label>
+                            <label>{{trans('admin.Einsatzort')}}</label>
                             <p>{{ order.work_location }}</p>
 
                             <div class="row">
                                 <div class="col-md-7 form-group">
-                                    <label>Treffpunkt: Ort</label>
+                                    <label>{{trans('admin.Treffpunkt: Ort')}}</label>
                                     <p>{{ order.meeting_point }}</p>
                                 </div>
                                 <div class="col-md-5 form-group">
-                                    <label>Zeit</label>
+                                    <label>{{trans('admin.Zeit')}}</label>
                                     <p>{{ order.meeting_time ? order.meeting_time + ' Uhr' : '-' }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Einsatzinfos</label>
+                            <label>{{trans('admin.Einsatzinfos')}}</label>
                             <p>{{ order.requirements }}</p>
                         </div>
                     </div>
@@ -63,37 +63,37 @@
                     <div v-if="data.showFeedback">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Rückmeldung an den Dispo-Manager</h4>
+                                <h4>{{trans('admin.Rückmeldung an den Dispo-Manager')}}</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-7">
-                                <p>Sind Sie bereit an diesen Termin zu arbeiten?</p>
+                                <p>{{trans('admin.Sind Sie bereit an diesen Termin zu arbeiten?')}}</p>
                             </div>
                             <div class="col-md-5">
                                 <button @click.prevent="accept" class="btn btn-success btn-sm margin-l-10">Zusagen</button>
-                                <button @click.prevent="deny" class="btn btn-danger btn-sm">Absagen</button>
+                                <button @click.prevent="deny" class="btn btn-danger btn-sm">{{trans('admin.Absagen')}}</button>
                             </div>
                         </div>
                     </div>
 
                     <div v-if="data.showTimetracking && order.timetrackings.length">
-                        <h4>Erfasste Zeit</h4>
+                        <h4>{{trans('admin.Erfasste Zeit')}}</h4>
                         <div class="row">
                             <div class="col-md-3 form-group">
-                                <label>Start</label>
+                                <label>{{trans('admin.Start')}}</label>
                                 <div>{{ hour(order.timetrackings[0].start_time) + ' Uhr' }}</div>
                             </div>
                             <div class="col-md-3 form-group">
-                                <label>Ende</label>
+                                <label>{{trans('admin.Ende')}}</label>
                                 <div>{{ hour(order.timetrackings[0].end_time) + ' Uhr' }}</div>
                             </div>
                             <div class="col-md-3 form-group">
-                                <label>Pause</label>
+                                <label>{{trans('admin.Pause')}}</label>
                                 <div>{{ order.timetrackings[0].break ? order.timetrackings[0].break + ' Minuten' : '-' }}</div>
                             </div>
                             <div class="col-md-3 form-group">
-                                <label>Erfasst</label>
+                                <label>{{trans('admin.Erfasst')}}</label>
                                 <div>{{ hour(order.timetrackings[0].total_min/60) + ' Stunden' }}</div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="pull-right">
-                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">Schliessen</a>
+                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">{{trans('admin.Schliessen')}}</a>
             </div>
         </div>
     </div>
@@ -129,7 +129,7 @@
 
             deny() {
                 axios.post('/api/e/order/' + this.order.id + '/deny').then(() => {
-                    flash('Erfolgreich gespeichert');
+                    flash(trans('Erfolgreich gespeichert'));
                     events.$emit('availability.changed');
 
                     this.$parent.$emit('close');

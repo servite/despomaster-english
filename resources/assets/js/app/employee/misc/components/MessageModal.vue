@@ -5,25 +5,25 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.subject }">
-                            <label>Betreff</label>
+                            <label>{{trans('admin.Betreff')}}</label>
                             <input class="form-control input-sm" name="subject" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.topic }">
-                            <label>Bereich</label>
+                            <label>{{trans('admin.Bereich')}}</label>
                             <select name="topic" class="form-control input-sm" v-model="email" required>
-                                <option value="">Bitte auswählen...</option>
-                                <option value="personal@servite.de">Personal</option>
-                                <option value="personal@servite.de">Lohnbuchhaltung</option>
-                                <option value="dispo@servite.de">Einsätze - Köln</option>
-                                <option value="dpergola@servite.de">Einsätze - Düsseldorf</option>
-                                <option value="pmonfared@servite.de">Feedback zur Software</option>
-                                <option value="info@servite.de">Sonstiges</option>
+                                <option value="">{{trans('admin.Bitte auswählen')}}</option>
+                                <option value="personal@servite.de">{{trans('admin.Personal')}}</option>
+                                <option value="personal@servite.de">{{trans('admin.Lohnbuchhaltung')}}</option>
+                                <option value="dispo@servite.de">{{trans('admin.Einsätze - Köln')}}</option>
+                                <option value="dpergola@servite.de">{{trans('admin.Einsätze - Düsseldorf')}}</option>
+                                <option value="pmonfared@servite.de">{{trans('admin.Feedback zur Software')}}</option>
+                                <option value="info@servite.de">{{trans('admin.Sonstiges')}}</option>
                             </select>
                         </div>
                         <div v-if="email" class="col-md-5 col-md-offset-1">
-                            <label>E-Mail</label>
+                            <label>{{trans('admin.E-Mail')}}</label>
                             <p v-text="email"></p>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
 
         created() {
             this.$on('form.submitted', () => {
-                flash('Anfrage verschickt!');
+                flash(trans('Anfrage verschickt!'));
 
                 this.$parent.$emit('close')
             })

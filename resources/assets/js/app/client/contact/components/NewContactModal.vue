@@ -45,12 +45,12 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.email }">
-                            <label>E-Mail</label>
+                            <label>{{trans('admin.E-Mail')}}</label>
                             <input class="form-control input-sm" name="email" v-model="contact.email">
                             <span v-if="form.errors.email" class="help-block">{{ form.errors.email }}</span>
                         </div>
                         <div class="col-md-4 col-md-offset-1 form-group" :class="{'has-error': form.errors.fax }">
-                            <label>Fax</label>
+                            <label>{{trans('admin.Fax')}}</label>
                             <input class="form-control input-sm" name="fax" v-model="contact.fax">
                             <span v-if="form.errors.fax" class="help-block">{{ form.errors.fax }}</span>
                         </div>
@@ -60,28 +60,28 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.function }">
-                            <label>Funktion</label>
+                            <label>{{trans('admin.Funktion')}}</label>
                             <input class="form-control input-sm" name="function" v-model="contact.function">
                             <span v-if="form.errors.function" class="help-block">{{ form.errors.function }}</span>
                         </div>
                         <div class="col-md-6 col-md-offset-1 form-group">
-                            <label>Zuständigkeit</label>
+                            <label>{{trans('admin.Zuständigkeit')}}</label>
                             <div class="checkbox" :class="{'has-error': form.errors.personnel_planning }">
                                 <label>
                                     <input type="checkbox" value="1" name="personnel_planning" v-model="contact.personnel_planning">
-                                    Personalplanung
+                                    {{trans('admin.Personalplanung')}}
                                 </label>
                             </div>
                             <div class="checkbox" :class="{'has-error': form.errors.accounting }">
                                 <label>
                                     <input type="checkbox" value="1" name="accounting" v-model="contact.accounting">
-                                    Finanzen/Buchhaltung
+                                    {{trans('admin.Finanzen/Buchhaltung')}}
                                 </label>
                             </div>
                             <div class="checkbox" :class="{'has-error': form.errors.other }">
                                 <label>
                                     <input type="checkbox" value="1" name="other" v-model="contact.other">
-                                    Sonstiges
+                                    {{trans('admin.Sonstiges')}}
                                 </label>
                             </div>
                         </div>
@@ -90,13 +90,11 @@
                     <hr>
 
                     <div class="form-group">
-                        <label>Zusätzliche Informationen</label>
+                        <label>{{trans('admin.Zusätzliche Informationen')}}</label>
                         <textarea class="form-control input-sm" name="information" cols="30" rows="3">{{ contact.information }}</textarea>
                     </div>
                 </div>
-
             </div>
-
             <input type="submit" value="Anlegen" class="btn btn-success btn-md pull-right">
         </template>
     </form-wrapper>
@@ -115,7 +113,7 @@
             this.$on('form.submitted', () => {
                 events.$emit('contacts.updated');
 
-                flash('Neuen Kontakt angelegt!');
+                flash(trans('Neuen Kontakt angelegt!'));
 
                 this.$parent.$emit('close')
             })

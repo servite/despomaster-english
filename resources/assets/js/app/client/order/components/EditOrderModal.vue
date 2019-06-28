@@ -11,26 +11,26 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Veranstaltungsname</label>
+                            <label>{{trans('admin.Veranstaltungsname')}}</label>
                             <p>{{ order.title }}</p>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.staff_required }">
-                            <label>Benötigte Mitarbeiter</label>
+                            <label>{{trans('admin.Benötigte Mitarbeiter')}}</label>
                             <input class="form-control input-sm" name="staff_required" v-model="order.staff_required">
                             <span v-if="form.errors.staff_required" class="help-block">{{ form.errors.staff_required }}</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 form-group">
-                            <label>Beginn</label>
+                            <label>{{trans('admin.Beginn')}}</label>
                             <p>{{ moment(order.start_date).format('L') }}</p>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Ende</label>
+                            <label>{{trans('admin.Ende')}}</label>
                             <p>{{ moment(order.end_date).format('L') }}</p>
                         </div>
                         <div class="col-md-3 form-group" :class="{'has-error': form.errors.start_time }">
-                            <label>Startzeit</label>
+                            <label>{{trans('admin.Startzeit')}}</label>
                             <div class="input-group">
                                 <input class="form-control input-sm" name="start_time" placeholder="hh:mm" v-model="order.start_time">
                                 <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
@@ -38,7 +38,7 @@
                             <span v-if="form.errors.start_time" class="help-block">{{ form.errors.start_time }}</span>
                         </div>
                         <div class="col-md-3 form-group" :class="{'has-error': form.errors.end_time }">
-                            <label>Endzeit</label>
+                            <label>{{trans('admin.Endzeit')}}</label>
                             <div class="input-group">
                                 <input class="form-control input-sm" name="end_time" placeholder="hh:mm" v-model="order.end_time">
                                 <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
@@ -51,11 +51,11 @@
 
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Einsatzort</label>
+                            <label>{{trans('admin.Einsatzort')}}</label>
                             <p>{{ order.work_location }}</p>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Einsatzinfos</label>
+                            <label>{{trans('admin.Einsatzinfos')}}</label>
                             <p>{{ order.requirements }}</p>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
             this.$on('form.submitted', () => {
                 events.$emit('order.updated');
 
-                flash('Auftrag bearbeitet.');
+                flash(trans('Auftrag bearbeitet'));
 
                 this.$parent.$emit('close');
             })

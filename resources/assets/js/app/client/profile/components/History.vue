@@ -10,11 +10,11 @@
         <table v-if="items" class="table">
             <thead>
             <tr>
-                <th>Auftragsnr.</th>
-                <th>Datum</th>
-                <th>Einsatzort</th>
-                <th>Zeiterfasst</th>
-                <th>Status</th>
+                <th>{{trans('admin.Auftragsnr')}}</th>
+                <th>{{trans('admin.Datum')}}</th>
+                <th>{{trans('admin.Einsatzort')}}</th>
+                <th>{{trans('admin.Zeiterfasst')}}</th>
+                <th>{{trans('admin.Status')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -24,16 +24,16 @@
                 <td>{{ order.work_location }}</td>
                 <td>{{ order.total_min ? hour(order.total_min/60) + ' Stunden' : '-' }}</td>
                 <td>
-                    <span v-if="order.status == 'canceled'">Storniert</span>
-                    <span v-if="order.time_recorded">Zeiterfasst</span>
+                    <span v-if="order.status == 'canceled'">{{trans('admin.Storniert')}}</span>
+                    <span v-if="order.time_recorded">{{trans('admin.Zeiterfasst')}}</span>
                 </td>
             </tr>
             <tr v-if="! filteredOrders.length && items.length">
-                <td colspan="5">Keine Aufträge gefunden</td>
+                <td colspan="5">{{trans('admin.Keine Aufträge gefunden')}}</td>
             </tr>
             </tbody>
         </table>
-        <p v-else>Keine Aufträge in der Vergangenheit</p>
+        <p v-else>{{trans('admin.Keine Aufträge in der Vergangenheit')}}</p>
 
         <div v-if="! searchString" class="pull-right">
             <pagination-links
@@ -72,7 +72,7 @@
             },
 
             showOrder(order) {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': order});
+                modal('Show Order Modal', trans('Auftrag anzeigen'), {'order': order});
             }
         }
     }

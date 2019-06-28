@@ -9,7 +9,7 @@
     export default {
         methods: {
             newMessage() {
-                modal('Message Modal', 'Nachricht schreiben', {});
+                modal('Message Modal', trans('Nachricht schreiben'), {});
             }
         }
     }

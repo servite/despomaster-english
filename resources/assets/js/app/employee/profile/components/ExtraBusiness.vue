@@ -1,15 +1,15 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>Zusätzliche Tätigkeiten</h4>
+            <h4>{{trans('admin.Zusätzliche Tätigkeiten')}}</h4>
         </div>
         <div class="panel-body">
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
-                    <th>Stunden</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Stunden')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@
                 </tr>
                 </tbody>
             </table>
-            <p v-else>Keine Einträge</p>
+            <p v-else>{{trans('admin.Keine Einträge')}}</p>
 
             <pagination-links class="pull-right"
                     :items="items"

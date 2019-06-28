@@ -3,52 +3,52 @@
         <div class="col-md-7">
 
             <div class="panel panel-default">
-                <div class="panel-heading">Rechnungsadresse</div>
+                <div class="panel-heading">{{trans('admin.Rechnungsadresse')}}</div>
 
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-7 form-group">
-                            <label>Name</label>
+                            <label>{{trans('admin.Name')}}</label>
                             <div>{{ invoiceData.name }}</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <label>Strasse</label>
+                            <label>{{trans('admin.Strasse')}}</label>
                             <div>{{ invoiceData.street}}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Strasse - Zusatz</label>
+                            <label>{{trans('admin.Strasse - Zusatz')}}</label>
                             <div>{{ invoiceData.address_addition ? invoiceData.address_addition : ''}}</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <label>Postleitzahl</label>
+                            <label>{{trans('admin.Postleitzahl')}}</label>
                             <div>{{ invoiceData.postal_code }}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Stadt</label>
+                            <label>{{trans('admin.Stadt')}}</label>
                             <div>{{ invoiceData.city }}</div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Land</label>
+                            <label>{{trans('admin.Land')}}</label>
                             <div>{{ invoiceData.country }}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div v-if="client.invoices" class="panel panel-default">
-                <div class="panel-heading"><h4>Rechnungen</h4></div>
+                <div class="panel-heading"><h4>{{trans('admin.Rechnungen')}}</h4></div>
 
                 <div class="panel-body">
                     <table v-if="invoices.length" class="table">
                         <thead>
                         <tr>
-                            <th>Rechnungsnr</th>
-                            <th>Rechnungsdatum</th>
-                            <th>Betrag</th>
-                            <th>Bezahlt</th>
+                            <th>{{trans('admin.Rechnungsnr')}}</th>
+                            <th>{{trans('admin.Rechnungsdatum')}}</th>
+                            <th>{{trans('admin.Betrag')}}</th>
+                            <th>{{trans('admin.Bezahlt')}}</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -65,7 +65,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <p v-else>Keine Rechnungen</p>
+                    <p v-else>{{trans('admin.Keine Rechnungen')}}</p>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Ansprechpartner für Rechnung
+                    {{trans('admin.Ansprechpartner für Rechnung')}}
                 </div>
                 <div class="panel-body">
                     <ul v-if="invoiceContacts.length" class="list-group">

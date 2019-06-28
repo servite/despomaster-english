@@ -7,7 +7,7 @@
                     <i v-else class="fa fa-circle fa-2x text-danger"></i>
                 </div>
 
-                <h4 class="text-center clearfix">Kundennr. {{ client.id }}</h4>
+                <h4 class="text-center clearfix">{{trans('admin.Kundennr')}} {{ client.id }}</h4>
 
                 <img v-if="client.logo" class="profile-user-img img-responsive" :src="client.logo" alt="Profilbild" style="border: none; !important">
 
@@ -28,10 +28,10 @@
 
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Details</h3>
+                <h3 class="box-title">{{trans('admin.Details')}}</h3>
             </div>
             <div class="box-body">
-                <strong><i class="fa fa-map-marker margin-r-5"></i> Adresse</strong>
+                <strong><i class="fa fa-map-marker margin-r-5"></i>{{trans('admin.Adresse')}}</strong>
 
                 <p class="text-muted">
                     {{ client.street }}<br>

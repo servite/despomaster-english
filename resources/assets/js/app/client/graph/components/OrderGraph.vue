@@ -1,11 +1,11 @@
 <template>
     <div class="box box-primary" style="height: 400px;">
         <div class="box-header with-border">
-            <h3 class="box-title">Aufträge</h3>
+            <h3 class="box-title">{{trans('admin.Aufträge')}}</h3>
 
             <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" :class="{'highlight': filter == 'week'}" @click="updateChart('week')">Woche</button>
-                <button class="btn btn-box-tool" :class="{'highlight': filter == 'month'}" @click="updateChart('month')">Monat</button>
+                <button class="btn btn-box-tool" :class="{'highlight': filter == 'week'}" @click="updateChart('week')">{{trans('admin.Woche')}}</button>
+                <button class="btn btn-box-tool" :class="{'highlight': filter == 'month'}" @click="updateChart('month')">{{trans('admin.Monat')}}</button>
             </div>
         </div>
         <div class="box-body">
@@ -35,12 +35,12 @@
                     data: {
                         datasets: [
                             {
-                                label: 'Zahl der Aufträge',
+                                label: trans('Zahl der Aufträge'),
                                 backgroundColor: '#1976d2',
                                 yAxisID: 'y-axis-0',
                             },
                             {
-                                label: 'Gesamtzeit (Std.)',
+                                label: trans('Gesamtzeit (Std)'),
                                 backgroundColor: '#4caf50',
                                 yAxisID: 'y-axis-1',
                             }
