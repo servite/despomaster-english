@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-10">
-                <legend>E-Mail</legend>
+                <legend>{{trans('admin.E-Mail')}}</legend>
             </div>
             <div class="col-md-2">
                 <i @click="edit('email')" class="fa fa-pencil fa-lg pointer"></i>
@@ -17,7 +17,7 @@
 
         <div class="row">
             <div class="col-md-10">
-                <legend>PDF</legend>
+                <legend>{{trans('admin.PDF')}}</legend>
             </div>
             <div class="col-md-2">
                 <i @click="edit('pdf')" class="fa fa-pencil fa-lg pointer"></i>

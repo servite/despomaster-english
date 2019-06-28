@@ -5,48 +5,48 @@
                 <i class="pointer fa fa-refresh text-primary" @click.prevent="reset"></i>
             </div>
             <div class="table-view__header-columns">
-                <input class="form-control input-sm" v-model="query.search_input" placeholder="Suche nach..." @keyup.enter="search">
+                <input class="form-control input-sm" v-model="query.search_input" :placeholder="trans('admin.Suche nach')" @keyup.enter="search">
             </div>
             <div class="table-view__header-columns">
-                <datepicker v-model="query.date" placeholder="Rechnungsdatum" @dateSelected="search"></datepicker>
+                <datepicker v-model="query.date" :placeholder="trans('admin.Rechnungsdatum')" @dateSelected="search"></datepicker>
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.client_id" @change="search">
-                    <option value="">Kunde...</option>
+                    <option value="">{{trans('admin.Kunde')}}</option>
                     <option v-for="client in clients" :value="client.id">{{ client.name }}</option>
                 </select>
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.state" @change="search">
-                    <option value="">Status...</option>
-                    <option value="paid">Bezahlt</option>
-                    <option value="open">Offen</option>
-                    <option value="due">Überfällig</option>
-                    <option value="archived">Archiviert</option>
+                    <option value="">{{trans('admin.Status')}}</option>
+                    <option value="paid">{{trans('admin.Bezahlt')}}</option>
+                    <option value="open">{{trans('admin.Offen')}}</option>
+                    <option value="due">{{trans('admin.Überfällig')}}</option>
+                    <option value="archived">{{trans('admin.Archiviert')}}</option>
                 </select>
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.time" @change="search">
-                    <option value="">Zeitraum...</option>
-                    <option value="-30">Letzter Monat</option>
-                    <option value="-7">Letzte Woche</option>
-                    <option value="w">Diese Woche</option>
-                    <option value="m">Diesen Monat</option>
-                    <option value="date">Rechnung vom ..</option>
-                    <option value="range">Von .. bis ..</option>
+                    <option value="">{{trans('admin.Zeitraum')}}</option>
+                    <option value="-30">{{trans('admin.Letzter Monat')}}</option>
+                    <option value="-7">{{trans('admin.Letzte Woche')}}</option>
+                    <option value="w">{{trans('admin.Diese Woche')}}</option>
+                    <option value="m">{{trans('admin.Diesen Monat')}}</option>
+                    <option value="date">{{trans('admin.Rechnung vom')}}</option>
+                    <option value="range">{{trans('admin.Von bis')}}</option>
                 </select>
             </div>
             <div class="table-view__header-columns" v-show="query.time == 'date'">
-                <datepicker name="date" v-model="query.date" placeholder="Rechnung vom" @dateSelected="search"></datepicker>
+                <datepicker name="date" v-model="query.date" :placeholder="trans('admin.Rechnung vom')" @dateSelected="search"></datepicker>
             </div>
             <div class="table-view__header-columns" v-show="query.time == 'range'">
-                <datepicker name="start" v-model="query.start" placeholder="Auftrag vom"></datepicker>
+                <datepicker name="start" v-model="query.start" :placeholder="trans('admin.Auftrag vom')"></datepicker>
             </div>
             <div class="table-view__header-columns" v-show="query.time == 'range'">
-                <datepicker name="end" v-model="query.end" placeholder="Auftrag bis" @dateSelected="search"></datepicker>
+                <datepicker name="end" v-model="query.end" :placeholder="trans('admin.Auftrag bis')" @dateSelected="search"></datepicker>
             </div>
             <div>
-                <button class="btn btm-default btn-sm" @click="search">Filtern</button>
+                <button class="btn btm-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
             </div>
         </div>
         <div class="table-view__body">
@@ -54,21 +54,21 @@
             <thead>
             <tr>
                 <th class="pointer" @click="toggleOrder('id')">
-                    Rechnungsnr. <i v-html="getSortingIcon('id')"></i>
+                    {{trans('admin.Rechnungsnr')}}. <i v-html="getSortingIcon('id')"></i>
                 </th>
                 <th class="pointer" @click="toggleOrder('invoice_date')">
-                    Rechnungsdatum <i v-html="getSortingIcon('invoice_date')"></i>
+                    {{trans('admin.Rechnungsdatum')}} <i v-html="getSortingIcon('invoice_date')"></i>
                 </th>
                 <th class="pointer" @click="toggleOrder('name')">
-                    Kunde <i v-html="getSortingIcon('name')"></i>
+                    {{trans('admin.Kunde')}} <i v-html="getSortingIcon('name')"></i>
                 </th>
                 <th class="pointer" @click="toggleOrder('sum')">
-                    Betrag <i v-html="getSortingIcon('sum')"></i>
+                    {{trans('admin.Betrag')}} <i v-html="getSortingIcon('sum')"></i>
                 </th>
                 <th>
-                    <span>Bezahlt</span>
+                    <span>{{trans('admin.Bezahlt')}}</span>
                 </th>
-                <th v-if="canUpdate || canDelete">Aktion</th>
+                <th v-if="canUpdate || canDelete">{{trans('admin.Aktion')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -78,10 +78,10 @@
                 <td><a :href="'client/' + row.client_id + '/show'">{{ row.client.name }}</a></td>
                 <td>{{ money(row.sum) }} €</td>
                 <td>
-                    <span v-if="row.pay_date" @click="markAsUnpaid(row.id)" class="label label-success">Bezahlt: {{ moment(row.pay_date).format('L') }}</span>
+                    <span v-if="row.pay_date" @click="markAsUnpaid(row.id)" class="label label-success">{{trans('admin.Bezahlt')}} : {{ moment(row.pay_date).format('L') }}</span>
                     <div v-else>
-                        <span v-if="moment(row.due).format() < moment().format()" @click="markAsPaid(row.id)" class="label label-warning">Überfällig seit {{ moment().diff(moment(row.due), 'days') }} Tagen</span>
-                        <span v-else @click="markAsPaid(row.id)" class="label label-danger">Offen</span>
+                        <span v-if="moment(row.due).format() < moment().format()" @click="markAsPaid(row.id)" class="label label-warning">{{trans('admin.Überfällig seit')}} {{ moment().diff(moment(row.due), 'days') }} {{trans('admin.Tagen')}}</span>
+                        <span v-else @click="markAsPaid(row.id)" class="label label-danger">{{trans('admin.Offen')}}</span>
                     </div>
                 </td>
                 <td v-if="canUpdate || canDelete">
@@ -117,7 +117,7 @@
             </tbody>
             <tfoot v-if="model.data && model.data.length > 0">
             <tr>
-                <td colspan="3">Summe</td>
+                <td colspan="3">{{trans('admin.Summe')}}</td>
                 <td>{{ money(sum) }} €</td>
                 <td colspan="3"></td>
             </tr>
@@ -126,7 +126,7 @@
         </div>
         <div class="table-view__footer">
             <div class="table-view__footer-item">
-                <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
             </div>
             <div class="table-view__footer-item">
                 <div class="table-view__footer-sub">
@@ -173,14 +173,14 @@
             markAsPaid(id) {
 
                 swal({
-                    title: 'Als bezahlt markieren?',
-                    text: 'Rechnung wurde bezahlt am',
+                    title: trans('admin.Als bezahlt markieren?'),
+                    text: trans('admin.Rechnung wurde bezahlt am'),
                     input: 'text',
                     preConfirm: (date) => {
                         return new Promise((resolve) => {
                             setTimeout(() => {
                                 if (date === '' || date.match(/^\d{2}[.]\d{2}[.]\d{4}$/) == null) {
-                                    swal.showValidationError('Bitte  ein Datum eingeben!')
+                                    swal.showValidationError(trans('admin.Bitte  ein Datum eingeben!'))
                                 } else {
                                     resolve();
                                 }
@@ -200,28 +200,28 @@
             },
             markAsUnpaid(id) {
 
-                swal({title: 'Als unbezahlt markieren?'}).then(() => {
+                swal({title: trans('admin.Als unbezahlt markieren?')}).then(() => {
                     axios.post('/api/invoice/' + id + '/mark-as-unpaid').then(() => this.fetchData());
                 });
             },
             archive(id) {
 
-                swal({title: 'Rechnung archivieren?'}).then(() => {
+                swal({title: trans('admin.Rechnung archivieren?')}).then(() => {
                     axios.post('/api/invoice/' + id + '/archive').then(() => this.fetchData());
                 });
             },
             unarchive(id) {
 
-                swal({title: "Rechnung verschieben?"}).then(() => {
+                swal({title: trans('admin.Rechnung verschieben?')}).then(() => {
                     axios.post('/api/invoice/' + id + '/unarchive').then(() => this.fetchData());
                 });
             },
 
             abort(id) {
 
-                swal({title: "Rechnung verwerfen?"}).then(() => {
+                swal({title: trans('admin.Rechnung verwerfen?')}).then(() => {
                     axios.post('/api/invoice/' + id + '/delete').then(() => {
-                        flash('Rechnung verworfen und zurückgesetzt', 'success');
+                        flash(trans('admin.Rechnung verworfen und zurückgesetzt'), 'success');
 
                         this.fetchData();
                     });

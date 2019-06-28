@@ -6,7 +6,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Name</label>
+                            <label>{{trans('admin.Name')}}</label>
                             <input name="name" class="form-control input-sm" v-model="invoiceData.name">
                         </div>
                     </div>
@@ -15,25 +15,25 @@
 
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Strasse</label>
+                            <label>{{trans('admin.Strasse')}}</label>
                             <input name="street" class="form-control input-sm" v-model="invoiceData.street" required>
                         </div>
 
                         <div class="col-md-6 form-group">
-                            <label>Adresse - Zusatz</label>
+                            <label>{{trans('admin.Adresse - Zusatz')}}</label>
                             <input name="address_addition" class="form-control input-sm" v-model="invoiceData.address_addition">
                         </div>
 
                         <div class="col-md-4 form-group">
-                            <label>Postleitzahl</label>
+                            <label>{{trans('admin.Postleitzahl')}}</label>
                             <input name="postal_code" class="form-control input-sm" v-model="invoiceData.postal_code" required>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Stadt</label>
+                            <label>{{trans('admin.Stadt')}}</label>
                             <input name="city" class="form-control input-sm" v-model="invoiceData.city" required>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Land</label>
+                            <label>{{trans('admin.Land')}}</label>
                             <input name="country" class="form-control input-sm" v-model="invoiceData.country" required>
                         </div>
                     </div>
@@ -44,15 +44,15 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-10 form-group">
-                            <label>Einleitungstext</label>
+                            <label>{{trans('admin.Einleitungstext')}}</label>
                             <html-editor name="intro" :model="invoiceData.intro" @change="value => { invoiceData.intro = value }"></html-editor>
                         </div>
                         <div class="col-md-10 form-group">
-                            <label>Schlusstext</label>
+                            <label>{{trans('admin.Schlusstext')}}</label>
                             <html-editor name="outro" :model="invoiceData.outro" @change="value => { invoiceData.outro = value }"></html-editor>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Zahlungsfrist</label>
+                            <label>{{trans('admin.Zahlungsfrist')}}</label>
                             <input name="payment_period" class="form-control input-sm" v-model="invoiceData.payment_period" required>
                         </div>
                     </div>
@@ -61,9 +61,9 @@
 
             <div class="pull-right">
                 <div class="checkbox-inline margin-r-10">
-                    <input type="checkbox" value="1" v-model="asDefault">Als Standard festlegen
+                    <input type="checkbox" value="1" v-model="asDefault">{{trans('admin.Als Standard festlegen')}}
                 </div>
-                <button @click="save" class="btn btn-success btn-md">Speichern</button>
+                <button @click="save" class="btn btn-success btn-md">{{trans('admin.Speichern')}}</button>
             </div>
 
         </div>
@@ -87,7 +87,7 @@
                 }
 
                 events.$emit('invoiceData.saved', this.invoiceData);
-                flash('Daten erfolgreich bearbeitet.');
+                flash(trans('admin.Daten erfolgreich bearbeitet'));
 
                 this.$parent.$emit('close')
 

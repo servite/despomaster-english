@@ -7,7 +7,7 @@
                 <input type="hidden" name="parent_id" :value="order.id">
             </div>
             <div v-if="order.status == 'requested'">
-                <p>{{trans('admin.Auftrag wurde am')}} {{ moment(order.created_at).format('LLL') }} {{trans('admin.Uhr durch den Kunden')}} {{ order.client.name }} {{trans('admin.angefragt.')}}</p>
+                <p>{{trans('admin.Auftrag wurde am')}} {{ moment(order.created_at).format('LLL') }} {{trans('admin.Uhr durch den Kunden')}} {{ order.client.name }} {{trans('admin.angefragt')}}</p>
             </div>
             <div class="panel panel-default">
                 <div class="panel-body">

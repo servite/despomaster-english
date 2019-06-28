@@ -3,7 +3,7 @@
         <div class="form-group">
             <label>{{ trans('admin.Kalenderwoche' )}}</label>
             <select class="form-control input-sm" name="week" @change="updateDates" v-model="startOfWeek">
-                <option value="">{{ trans('admin.Auswählen...' )}}</option>
+                <option value="">{{ trans('admin.Auswählen' )}}</option>
                 <option v-for="week in calendarweeks" :value="week.startOfWeek">{{ week.number }}</option>
             </select>
         </div>

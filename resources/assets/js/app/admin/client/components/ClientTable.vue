@@ -23,7 +23,7 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.location" @change="search">
-                            <option value="">{{trans('admin. auswählen...')}}Standort</option>
+                            <option value="">{{trans('admin. auswählen')}}Standort</option>
                             <option value="Bonn">{{trans('admin.Bonn')}}</option>
                             <option value="Köln">{{trans('admin.Köln')}}</option>
                             <option value="Düsseldorf">{{trans('admin.Düsseldorf')}}</option>
@@ -31,13 +31,13 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.id" @change="search">
-                            <option value="">{{trans('admin.Kunde...')}}</option>
+                            <option value="">{{trans('admin.Kunde')}}</option>
                             <option v-for="client in clients" :value="client.id">{{ client.name }}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.state" @change="search">
-                            <option value="">{{trans('admin.Status...')}}</option>
+                            <option value="">{{trans('admin.Status')}}</option>
                             <option value="1">{{trans('admin.Aktiv')}}</option>
                             <option value="0">{{trans('admin.Inaktiv')}}</option>
                         </select>
@@ -51,7 +51,7 @@
                         <thead>
                         <tr>
                             <th class="pointer" @click="toggleOrder('id')">
-                                {{trans('admin.Kundennr.')}} <i v-html="getSortingIcon('id')"></i>
+                                {{trans('admin.Kundennr')}} <i v-html="getSortingIcon('id')"></i>
                             </th>
                             <th class="pointer" @click="toggleOrder('name')">
                                 {{trans('admin.Kunde')}} <i v-html="getSortingIcon('name')"></i>

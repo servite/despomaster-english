@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-9 form-group">
                     <select class="form-control input-sm" v-model="employeeId">
-                        <option value="">{{trans('admin.Bitte auswählen...')}}</option>
+                        <option value="">{{trans('admin.Bitte auswählen')}}</option>
                         <option v-for="employee in employees" :value="employee.id">{{ employee.last_name + ', ' + employee.first_name }}</option>
                     </select>
                 </div>

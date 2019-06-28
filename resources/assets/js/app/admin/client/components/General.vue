@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <h4 class="text-center clearfix">{{trans('admin.Kundennr.')}} {{ client.id }}</h4>
+            <h4 class="text-center clearfix">{{trans('admin.Kundennr')}} {{ client.id }}</h4>
 
             <client-logo :client="client"></client-logo>
 
