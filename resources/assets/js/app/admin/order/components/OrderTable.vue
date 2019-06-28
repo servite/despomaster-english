@@ -50,7 +50,7 @@
                             <option value="14">{{trans('admin.Nächste 2 Wochen')}}</option>
                             <option value="30">{{trans('admin.Nächsten Monat')}}</option>
                             <option value="date">{{trans('admin.Auftrag am')}}</option>
-                            <option value="range">{{trans('admin.Von  bis ')}}</option>
+                            <option value="range">{{trans('admin.Von  bis')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'date'">
