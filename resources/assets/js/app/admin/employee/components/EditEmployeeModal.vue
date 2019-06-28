@@ -243,7 +243,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('employee.updated');
 
-                flash('Mitarbeiter bearbeitet.');
+                flash(trans('Mitarbeiter bearbeitet'));
 
                 this.$parent.$emit('close')
             })

@@ -2,13 +2,13 @@
     <div>
         <div class="row">
             <div class="col-md-4 form-group form-inline">
-                <label class="margin-r-5">Region</label>
+                <label class="margin-r-5">{{trans('admin.Region')}}</label>
                 <select class="form-control input-sm" v-model="region" @change="getSalaryTableDate">
                     <option v-for="region in regions" :value="region">{{ region }}</option>
                 </select>
             </div>
             <div class="col-md-4 form-group form-inline">
-                <label class="margin-r-5">Gültig ab</label>
+                <label class="margin-r-5">{{trans('admin.Gültig ab')}}</label>
                 <select class="form-control input-sm" v-model="validFrom" @change="getSalaryTableDate">
                     <option v-for="date in dates" :value="date">{{ moment(date).format('L') }}</option>
                 </select>
@@ -22,10 +22,10 @@
         <table class="table" v-if="this.salaries.length">
             <thead>
             <tr>
-                <th>Entgeltgruppe</th>
-                <th>Eingangsstufe</th>
-                <th>Zulage (0,20 €)</th>
-                <th>Zulage (0,35 €)</th>
+                <th>{{trans('admin.Entgeltgruppe')}}</th>
+                <th>{{trans('admin.Entgeltgruppe')}}</th>
+                <th>{{trans('admin.Zulage')}} (0,20 €)</th>
+                <th>{{trans('admin.Zulage')}} (0,35 €)</th>
             </tr>
             </thead>
             <tbody>
@@ -38,7 +38,7 @@
             </tbody>
         </table>
         <p v-else>
-            Keine Entgelttabelle gefunden.
+            {{trans('admin.Keine Entgelttabelle gefunden')}}
         </p>
     </div>
 </template>

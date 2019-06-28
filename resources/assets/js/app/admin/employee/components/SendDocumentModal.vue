@@ -3,7 +3,7 @@
         <div v-if="textblock.subject && textblock.mail_body" class="row">
             <input type="hidden" name="email" :value="data.employee.email">
             <div class="col-md-4 form-group">
-                <label>Betreff</label>
+                <label>{{trans('admin.Betreff')}}</label>
                 <input class="form-control input-sm" name="subject" :value="textblock.subject.value">
             </div>
             <div class="col-md-12 form-group">
@@ -12,8 +12,8 @@
         </div>
         <p>Angehängtes Dokument: {{ data.document.name }}</p>
         <div class="pull-right">
-            <button type="submit" class="btn btn-primary">Senden</button>
-            <button @click.prevent="$parent.$emit('close')" class="btn btn-default">Schliessen</button>
+            <button type="submit" class="btn btn-primary">{{trans('admin.Senden')}}</button>
+            <button @click.prevent="$parent.$emit('close')" class="btn btn-default">{{trans('admin.Schliessen')}}</button>
         </div>
     </form-wrapper>
 </template>
@@ -34,7 +34,7 @@
             });
 
             this.$on('form.submitted', () => {
-                flash('Mail verschickt');
+                flash(trans('Mail verschickt'));
 
                 this.$parent.$emit('close');
             })

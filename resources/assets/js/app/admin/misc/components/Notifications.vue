@@ -39,7 +39,7 @@
                         order: response.data
                     };
 
-                    modal('Approve Order Modal', 'Angefrager Auftrag', data);
+                    modal('Approve Order Modal', trans('Angefrager Auftrag'), data);
                 });
 
             }

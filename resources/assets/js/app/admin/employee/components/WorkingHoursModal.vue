@@ -5,16 +5,16 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 form-group" :class="{'has-error': form.errors.valid_from }">
-                            <label>Gültig ab</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
+                            <label>{{trans('admin.Gültig ab')}}</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
                             <datepicker name="valid_from" v-model="valid_from"></datepicker>
                         </div>
                         <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.valid_to }">
-                            <label>Gültig bis</label> <i v-if="form.errors.valid_to" class="fa fa-warning text-danger" :title="form.errors.valid_to"></i>
+                            <label>{{trans('admin.Gültig bis')}}</label> <i v-if="form.errors.valid_to" class="fa fa-warning text-danger" :title="form.errors.valid_to"></i>
                             <datepicker v-if="workingHours.valid_to" name="valid_to" v-model="valid_to"></datepicker>
                             <input v-else class="form-control input-sm" disabled="disabled">
                         </div>
                         <div class="col-md-3 col-md-offset-1 form-group" :class="{'has-error': form.errors.hours }">
-                            <label>Stunden</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
+                            <label>{{trans('admin.Stunden')}}</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
                             <input name="hours" class="form-control input-sm" v-model="hours">
                         </div>
                     </div>
@@ -43,7 +43,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('workingHours.updated');
 
-                flash('Daten erfolgreich bearbeitet.');
+                flash(trans('Daten erfolgreich bearbeitet'));
 
                 this.$parent.$emit('close')
             })

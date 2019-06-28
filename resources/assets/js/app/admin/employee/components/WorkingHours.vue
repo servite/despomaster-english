@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-9 panel-title">
-                    Vertragl. vereinbarte Arbeitszeit
+                    {{trans('admin.Vertragl vereinbarte Arbeitszeit')}}
                 </div>
                 <div class=" col-md-3">
                     <div class="pull-right margin-t-5">
@@ -21,11 +21,11 @@
                 <template slot-scope="form">
                     <div class="row">
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.valid_from }">
-                            <label>Gültig ab</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
+                            <label>{{trans('admin.Gültig ab')}}</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
                             <datepicker name="valid_from"></datepicker>
                         </div>
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.hours }">
-                            <label>Stunden</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
+                            <label>{{trans('admin.Stunden')}}</label> <i v-if="form.errors.hours" class="fa fa-warning text-danger" :title="form.errors.hours"></i>
                             <input class="form-control input-sm" name="hours">
                         </div>
                     </div>
@@ -36,9 +36,9 @@
             <table v-if="items.length && showForm" class="table">
                 <thead>
                 <tr>
-                    <th>Gültig von</th>
-                    <th>Gültig bis</th>
-                    <th>Stunden</th>
+                    <th>{{trans('admin.Gültig von')}}</th>
+                    <th>{{trans('admin.Gültig bis')}}</th>
+                    <th>{{trans('admin.Stunden')}}</th>
                     <th v-if="canDelete"></th>
                 </tr>
                 </thead>
@@ -85,7 +85,7 @@
                     'employee': this.model
                 };
 
-                modal('Working Hours Modal', 'Arbeitstunden bearbeiten', data);
+                modal('Working Hours Modal', trans('Arbeitstunden bearbeiten'), data);
             }
 
         },

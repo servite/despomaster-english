@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-7 panel-title">
-                    Lohn
+                    {{trans('admin.Lohn')}}
                 </div>
                 <div class=" col-md-5">
                     <div class="pull-right margin-t-5">
@@ -38,9 +38,9 @@
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Gültig von</th>
-                    <th>Gültig bis</th>
-                    <th>Betrag</th>
+                    <th>{{trans('admin.Gültig von')}}</th>
+                    <th>{{trans('admin.Betrag')}}</th>
+                    <th>{{trans('admin.Gültig bis')}}</th>
                     <th v-if="canDelete"></th>
                 </tr>
                 </thead>
@@ -87,7 +87,7 @@
                     'employee': this.model
                 };
 
-                modal('Wage Modal', 'Lohn bearbeiten', data);
+                modal('Wage Modal', trans('Lohn bearbeiten'), data);
             }
 
         },

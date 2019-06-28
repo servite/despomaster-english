@@ -10,31 +10,31 @@
                 <div class="panel-body">
                     <div class="col-md-3 form-group">
                         <p>
-                            <strong>Auftragsnr.:</strong> <a :href="'/admin/order/' + order.id + '/show'">{{ order.id }}</a>
+                            <strong>{{trans('admin.Auftragsnr')}} :</strong> <a :href="'/admin/order/' + order.id + '/show'">{{ order.id }}</a>
                         </p>
                         <p>
-                            <strong>Datum:</strong>
+                            <strong>{{trans('admin.Datum')}} :</strong>
                             {{ order.start == order.end ? order.start : order.start + ' bis ' + order.end }}
                         </p>
                     </div>
                     <div class="col-md-3 form-group">
                         <p>
-                            <strong>Kunde:</strong> <a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a>
+                            <strong>{{trans('admin.Kunde')}} :</strong> <a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a>
                         </p>
                         <p>
-                            <strong>Startzeit:</strong> {{ order.start_time }} Uhr
+                            <strong>{{trans('admin.Startzeit')}} :</strong> {{ order.start_time }} Uhr
                         </p>
                     </div>
                     <div class="col-md-3 form-group">
                         <p>
-                            <strong>Einsatzort:</strong> {{ order.work_location }}
+                            <strong>{{trans('admin.Einsatzort')}} :</strong> {{ order.work_location }}
                         </p>
                         <p>
-                            <strong>Treffpunkt</strong> {{ order.meeting_time + ' Uhr - ' + order.meeting_point }}
+                            <strong>{{trans('admin.Treffpunkt')}}</strong> {{ order.meeting_time + ' Uhr - ' + order.meeting_point }}
                         </p>
                     </div>
                     <div class="col-md-3 form-group">
-                        <label>Einsatzinfos:</label>
+                        <label>{{trans('admin.Einsatzinfos')}} :</label>
                         <div>{{ order.requirements }}</div>
                     </div>
                 </div>

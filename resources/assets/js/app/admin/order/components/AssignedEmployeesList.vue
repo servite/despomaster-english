@@ -3,10 +3,10 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel-title">Eingeplante Mitarbeiter</div>
+                    <div class="panel-title">{{trans('admin.Eingeplante Mitarbeiter')}}</div>
                 </div>
                 <div class="col-md-6 text-right">
-                    <button @click="assignEmployees" class="btn btn-primary btn-sm">Zur Disposition</button>
+                    <button @click="assignEmployees" class="btn btn-primary btn-sm">{{trans('admin.Zur Disposition')}}</button>
                 </div>
             </div>
         </div>
@@ -14,11 +14,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Mitarbeiter</th>
-                    <th>Status</th>
-                    <th>Treffpunkt</th>
-                    <th>Rolle</th>
-                    <th>Gesendet</th>
+                    <th>{{trans('admin.Mitarbeiter')}}</th>
+                    <th>{{trans('admin.Status')}}</th>
+                    <th>{{trans('admin.Treffpunkt')}}</th>
+                    <th>{{trans('admin.Rolle')}}</th>
+                    <th>{{trans('admin.Gesendet')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr v-if="! order.employees.length" class="text-center">
                     <td colspan="5">
-                        Noch keine Mitarbeiter eingeplant.
+                        {{trans('admin.Noch keine Mitarbeiter eingeplant')}}
                     </td>
                 </tr>
                 </tbody>
@@ -56,7 +56,7 @@
         methods: {
 
             assignEmployees() {
-                modal('Assign Employees Modal', 'Mitarbeiter einplanen', {'order': this.order}, '100%');
+                modal('Assign Employees Modal', trans('Mitarbeiter einplanen'), {'order': this.order}, '100%');
             },
 
             reloadOrder() {

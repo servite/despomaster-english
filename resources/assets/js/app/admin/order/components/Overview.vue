@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel-title">{{ order.title }}</div>
-                    <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">Storniert</div>
+                    <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">{{trans('admin.Storniert')}}</div>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a v-if="order.status != 'canceled'" @click="cancelOrder" class="btn btn-sm btn-danger">Stornieren</a>
-                    <a v-else @click="activateOrder" class="btn btn-sm btn-success">Aktivieren</a>
+                    <a v-if="order.status != 'canceled'" @click="cancelOrder" class="btn btn-sm btn-danger">{{trans('admin.Stornieren')}}</a>
+                    <a v-else @click="activateOrder" class="btn btn-sm btn-success">{{trans('admin.Aktivieren')}}</a>
 
-                    <a v-if="! order.parent_id" @click="duplicateOrder" class="btn btn-sm btn-success">Duplizieren</a>
-                    <a @click="copyOrder" class="btn btn-sm btn-primary">Kopieren</a>
+                    <a v-if="! order.parent_id" @click="duplicateOrder" class="btn btn-sm btn-success">{{trans('admin.Duplizieren')}}</a>
+                    <a @click="copyOrder" class="btn btn-sm btn-primary">{{trans('admin.Kopieren')}}</a>
                 </div>
             </div>
         </div>
@@ -19,29 +19,29 @@
             <div class="row">
                 <div class="col-md-2">
                     <p>
-                        <strong>Auftragsnr.:</strong> {{ order.id }}
+                        <strong>{{trans('admin.Auftragsnr')}} :</strong> {{ order.id }}
                     </p>
                     <p>
-                        <strong>Datum:</strong> {{ order.start == order.end ? order.start : order.start + ' bis ' + order.end }}
+                        <strong>{{trans('admin.Datum')}} :</strong> {{ order.start == order.end ? order.start : order.start + ' bis ' + order.end }}
                     </p>
                     <p>
-                        <strong>Treffpunkt:</strong> {{ order.meeting_time + ' Uhr - ' + order.meeting_point }}
+                        <strong>{{trans('admin.Treffpunkt')}}:</strong> {{ order.meeting_time + ' Uhr - ' + order.meeting_point }}
                     </p>
                 </div>
                 <div class="col-md-2">
                     <p>
-                        <strong>Kunde:</strong> <a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a>
+                        <strong>{{trans('admin.Kunde')}}:</strong> <a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a>
                     </p>
                     <p>
-                        <strong>Startzeit:</strong> {{ order.start_time }} Uhr
+                        <strong>{{trans('admin.Startzeit')}}:</strong> {{ order.start_time }} Uhr
                     </p>
                     <p>
-                        <strong>Einsatzort:</strong> {{ order.work_location }}
+                        <strong>{{trans('admin.Einsatzort')}}:</strong> {{ order.work_location }}
                     </p>
                 </div>
                 <div class="col-md-3">
                     <p>
-                        <strong>Einsatzinfos:</strong> <br>
+                        <strong>{{trans('admin.Einsatzinfos')}}:</strong> <br>
                         {{ order.requirements }}
                     </p>
                 </div>
@@ -71,11 +71,11 @@
                         <i @click="editOrder" class="fa fa-pencil pointer"></i>
                     </div>
                     <p>
-                        <strong>Angelegt von:</strong><br>
+                        <strong>{{trans('admin.Angelegt von')}}:</strong><br>
                          {{ order.user.name }}
                     </p>
                     <p>
-                        <strong>Angelegt am:</strong><br>
+                        <strong>{{trans('admin.Angelegt am')}}:</strong><br>
                         {{ moment(order.created_at).format('lll') }} Uhr
                     </p>
                 </div>
@@ -96,15 +96,15 @@
         methods: {
 
             editOrder() {
-                modal('Edit Order Modal', 'Auftrag bearbeiten', {'order': this.order});
+                modal('Edit Order Modal', trans('Auftrag bearbeiten'), {'order': this.order});
             },
 
             copyOrder() {
-                modal('Copy Order Modal', 'Auftrag kopieren', {'order': this.order});
+                modal('Copy Order Modal', trans('Auftrag kopieren'), {'order': this.order});
             },
 
             duplicateOrder() {
-                modal('Duplicate Order Modal', 'Unterauftrag anlegen', {'order': this.order});
+                modal('Duplicate Order Modal', trans('Unterauftrag anlegen'), {'order': this.order});
             },
 
             cancelOrder() {
@@ -116,7 +116,7 @@
                     axios.post('/api/order/' + this.order.id + '/cancel').then(() => {
                         flash('Auftrag storniert.', 'success')
                         this.reloadOrder()
-                    }).catch(() => flash('Auftrag konnte nicht storniert werden.', 'error'));
+                    }).catch(() => flash(trans('Auftrag konnte nicht storniert werden'), 'error'));
                 });
             },
 
@@ -129,7 +129,7 @@
                     axios.post('/api/order/' + this.order.id + '/activate').then(() => {
                         flash('Auftrag aktiviert.', 'success')
                         this.reloadOrder()
-                    }).catch(() => flash('Auftrag konnte nicht aktiviert werden.', 'error'));
+                    }).catch(() => flash(trans('Auftrag konnte nicht aktiviert werden'), 'error'));
                 });
             },
 

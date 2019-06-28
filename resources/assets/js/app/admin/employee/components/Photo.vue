@@ -47,7 +47,7 @@
             deletePhoto() {
                 swal({title: 'Profilbild löschen?'}).then(() => {
                     axios.post('/api/employee/' + this.employee.id + '/photo/delete', this.employee).then(() => {
-                        flash('Profilbild gelöscht');
+                        flash(trans('Profilbild gelöscht'));
 
                         this.photo = null;
                     });

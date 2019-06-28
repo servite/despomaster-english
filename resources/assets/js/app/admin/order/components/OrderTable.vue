@@ -3,8 +3,8 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>
-                Auftragsliste
-                <button v-if="canCreate" href="#" @click="newOrder" class="btn btn-primary pull-right">Neuer Auftrag</button>
+                {{trans('admin.Auftragsliste')}}
+                <button v-if="canCreate" href="#" @click="newOrder" class="btn btn-primary pull-right">{{trans('admin.Neuer Auftrag')}}</button>
             </h2>
         </div>
         <div class="panel-body">
@@ -18,10 +18,10 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.client_location" @change="search">
-                            <option value="">Standort auswählen...</option>
-                            <option value="Bonn">Bonn</option>
-                            <option value="Köln">Köln</option>
-                            <option value="Düsseldorf">Düsseldorf</option>
+                            <option value="">{{trans('admin.Standort auswählen')}}</option>
+                            <option value="Bonn">{{trans('admin.Bonn')}}</option>
+                            <option value="Köln">{{trans('admin.Köln')}}</option>
+                            <option value="Düsseldorf">{{trans('admin.Düsseldorf')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
@@ -32,25 +32,25 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.status" @change="search">
-                            <option value="">Status...</option>
-                            <option value="canceled">Storno</option>
-                            <option value="requested">Angefragt</option>
-                            <option value="time_recorded">Zeiterfasst</option>
-                            <option value="not_recorded">Nicht zeiterfasst</option>
+                            <option value="">{{trans('admin.Status')}}</option>
+                            <option value="canceled">{{trans('admin.Storno')}}</option>
+                            <option value="requested">{{trans('admin.Angefragt')}}</option>
+                            <option value="time_recorded">{{trans('admin.Zeiterfasst')}}</option>
+                            <option value="not_recorded">{{trans('admin.Nicht zeiterfasst')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.time" @change="search">
-                            <option value="">Zeitraum...</option>
-                            <option value="-30">Letzter Monat</option>
-                            <option value="-7">Letzte Woche</option>
-                            <option value="w">Diese Woche</option>
-                            <option value="m">Diesen Monat</option>
-                            <option value="7">Nächste Woche</option>
-                            <option value="14">Nächste 2 Wochen</option>
-                            <option value="30">Nächsten Monat</option>
-                            <option value="date">Auftrag am ..</option>
-                            <option value="range">Von .. bis ..</option>
+                            <option value="">{{trans('admin.Zeitraum')}}</option>
+                            <option value="-30">{{trans('admin.Letzter Monat')}}</option>
+                            <option value="-7">{{trans('admin.Letzte Woche')}}</option>
+                            <option value="w">{{trans('admin.Diese Woche')}}</option>
+                            <option value="m">{{trans('admin.Diesen Monat')}}</option>
+                            <option value="7">{{trans('admin.Nächste Woche')}}</option>
+                            <option value="14">{{trans('admin.Nächste 2 Wochen')}}</option>
+                            <option value="30">{{trans('admin.Nächsten Monat')}}</option>
+                            <option value="date">{{trans('admin.Auftrag am')}}</option>
+                            <option value="range">{{trans('admin.Von  bis ')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'date'">
@@ -63,7 +63,7 @@
                         <datepicker name="end" v-model="query.end" placeholder="Auftrag bis" @keyup.enter="search"></datepicker>
                     </div>
                     <div>
-                        <button class="btn btn-default btn-sm" @click="search">Filtern</button>
+                        <button class="btn btn-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
                     </div>
                 </div>
                 <div class="table-view__body">
@@ -72,23 +72,23 @@
                     <tr>
                         <th></th>
                         <th class="sortable" @click="toggleOrder('id')">
-                            Auftragsnr. <i v-html="getSortingIcon('id')"></i>
+                            {{trans('admin.Auftragsnr')}} <i v-html="getSortingIcon('id')"></i>
                         </th>
-                        <th>Mitarbeiter</th>
-                        <th>Kunde</th>
+                        <th>{{trans('admin.Mitarbeiter')}}</th>
+                        <th>{{trans('admin.Kunde')}}</th>
                         <th class="sortable" @click="toggleOrder('client_location')">
-                            Standort <i v-html="getSortingIcon('client_location')"></i>
+                            {{trans('admin.Standort')}} <i v-html="getSortingIcon('client_location')"></i>
                         </th>
                         <th class="sortable" @click="toggleOrder('start_date')">
-                            Beginn <i v-html="getSortingIcon('start_date')"></i>
+                            {{trans('admin.Beginn')}} <i v-html="getSortingIcon('start_date')"></i>
                         </th>
                         <th class="sortable" @click="toggleOrder('end_date')">
-                            Ende <i v-html="getSortingIcon('end_date')"></i>
+                            {{trans('admin.Ende')}} <i v-html="getSortingIcon('end_date')"></i>
                         </th>
-                        <th>Erfasst</th>
-                        <th>Status</th>
+                        <th>{{trans('admin.Erfasst')}}</th>
+                        <th>{{trans('admin.Status')}}</th>
                         <th>
-                            <span class="dv-table-column">Aktion</span>
+                            <span class="dv-table-column">{{trans('admin.Aktion')}}</span>
                         </th>
                     </tr>
                     </thead>

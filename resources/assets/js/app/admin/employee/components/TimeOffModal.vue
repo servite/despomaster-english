@@ -7,20 +7,20 @@
                         <template slot-scope="form">
                             <div class="row">
                                 <div class="col-md-6 form-group" :class="{'has-error': form.errors.start_date }">
-                                    <label>Startdatum</label>
+                                    <label>{{trans('admin.Startdatum')}}</label>
                                     <datepicker name="start_date" v-model="startDate"></datepicker>
                                 </div>
                                 <div class="col-md-6 form-group" :class="{'has-error': form.errors.end_date }">
-                                    <label>Enddatum</label>
+                                    <label>{{trans('admin.Enddatum')}}</label>
                                     <datepicker name="end_date"></datepicker>
                                 </div>
                             </div>
                             <div class="form-group" :class="{'has-error': form.errors.type }">
                                 <select class="form-control input-sm" name="type">
-                                    <option value="">Ausfallgrund wählen...</option>
-                                    <option value="Krankheit">Krankheit</option>
-                                    <option value="Fehltag">Fehltag</option>
-                                    <option value="Urlaub">Urlaub</option>
+                                    <option value="">{{trans('admin.Ausfallgrund wählen')}}</option>
+                                    <option value="Krankheit">{{trans('admin.Krankheit')}}</option>
+                                    <option value="Fehltag">{{trans('admin.Fehltag')}}</option>
+                                    <option value="Urlaub">{{trans('admin.Urlaub')}}</option>
                                 </select>
                             </div>
                             <div class="form-group" :class="{'has-error': form.errors.information }">
@@ -38,8 +38,8 @@
             <table v-if="items" class="table table-condensed">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
                     <th></th>
                 </tr>
                 </thead>

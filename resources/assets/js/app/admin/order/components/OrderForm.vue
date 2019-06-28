@@ -2,7 +2,7 @@
     <form-wrapper :action="action" method="POST">
         <template slot-scope="form">
             <div v-if="type == 'duplicate'">
-                <p>Auftrag wird als Unterauftrag von Auftrag {{ order.id + ' (Auftragsstart am ' + order.start + ')' }} angelegt.</p>
+                <p>{{trans('admin.Auftrag wird als Unterauftrag von Auftrag')}} {{ order.id + ' (Auftragsstart am ' + order.start + ')' }} {{trans('admin.angelegt')}}</p>
 
                 <input type="hidden" name="parent_id" :value="order.id">
             </div>
