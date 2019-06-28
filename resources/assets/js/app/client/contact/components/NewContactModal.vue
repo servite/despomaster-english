@@ -5,26 +5,26 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.first_name }">
-                            <label>Vorname</label>
+                            <label>{{trans('admin.Vorname')}}</label>
                             <input class="form-control input-sm" name="first_name" v-model="contact.first_name">
                             <span v-if="form.errors.first_name" class="help-block">{{ form.errors.first_name }}</span>
                         </div>
                         <div class="col-md-4 col-md-offset-1 form-group" :class="{'has-error': form.errors.last_name }">
-                            <label>Nachname</label>
+                            <label>{{trans('admin.Nachname')}}</label>
                             <input class="form-control input-sm" name="last_name" v-model="contact.last_name">
                             <span v-if="form.errors.last_name" class="help-block">{{ form.errors.last_name }}</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.sex }">
-                            <label>Geschlecht</label><br>
+                            <label>{{trans('admin.Geschlecht')}}</label><br>
                             <label class="radio-inline">
                                 <input type="radio" name="sex" value="m" checked>
-                                Männlich
+                                {{trans('admin.Männlich')}}
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="sex" value="f" >
-                                Weiblich
+                                {{trans('admin.Weiblich')}}
                             </label>
                         </div>
                     </div>
@@ -33,12 +33,12 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.mobile }">
-                            <label>Mobil</label>
+                            <label>{{trans('admin.Mobil')}}</label>
                             <input class="form-control input-sm" name="mobile" v-model="contact.mobile">
                             <span v-if="form.errors.mobile" class="help-block">{{ form.errors.mobile }}</span>
                         </div>
                         <div class="col-md-4 col-md-offset-1 form-group" :class="{'has-error': form.errors.phone }">
-                            <label>Telefon</label>
+                            <label>{{trans('admin.Telefon')}}</label>
                             <input class="form-control input-sm" name="phone" v-model="contact.phone">
                             <span v-if="form.errors.phone" class="help-block">{{ form.errors.phone }}</span>
                         </div>
