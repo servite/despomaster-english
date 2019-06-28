@@ -1,13 +1,13 @@
 <template>
     <div>
         <div v-if="employee.user_id">
-            <p>Bereits ein Konto angelegt.</p>
+            <p>{{trans('admin.Bereits ein Konto angelegt')}}</p>
             <p>
-                <strong>Email:</strong> {{ employee.user.email }}
+                <strong>{{trans('admin.Email')}}:</strong> {{ employee.user.email }}
             </p>
             <div class="pull-right">
-                <a v-if="employee.user.active" href="#" @click.prevent="deactivate" class="btn btn-danger btn-sm">Konto deaktivieren</a>
-                <a v-else href="#" @click.prevent="activate" class="btn btn-success btn-sm">Konto aktivieren</a>
+                <a v-if="employee.user.active" href="#" @click.prevent="deactivate" class="btn btn-danger btn-sm">{{trans('admin.Konto deaktivieren')}}</a>
+                <a v-else href="#" @click.prevent="activate" class="btn btn-success btn-sm">{{trans('admin.Konto aktivieren')}}</a>
                 <form-wrapper class="pull-right margin-l-5" :action="'/api/account/' + employee.user.id + '/credentials/resend'">
                     <template slot-scope="form">
                         <submit-button class="btn btn-primary btn-sm" text="Passwort erneuern" :loading="form.loading"></submit-button>
@@ -20,7 +20,7 @@
                 <input type="hidden" name="name" :value="employee.last_name + '' + employee.first_name">
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label>Nutzer</label>
+                        <label>{{trans('admin.Nutzer')}}</label>
                         <input class="form-control input-sm" name="email" :value="employee.email" readonly>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
             this.$on('form.submitted', () => {
                 this.reloadEmployee();
 
-                flash('Kontodaten verschickt');
+                flash(trans('Kontodaten verschickt'));
             });
         }
     }

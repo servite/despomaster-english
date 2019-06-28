@@ -16,8 +16,8 @@
                 </div>
             </div>
             <div class="pull-right">
-                <button @click="destroy" class="btn btn-danger btn-md">Eintrag löschen</button>
-                <button @click="$parent.$emit('close')" class="btn btn-default btn-md">Schliessen</button>
+                <button @click="destroy" class="btn btn-danger btn-md">{{trans('admin.Eintrag löschen')}}</button>
+                <button @click="$parent.$emit('close')" class="btn btn-default btn-md">{{trans('admin.Schliessen')}}</button>
             </div>
         </div>
         <form-wrapper v-else :action="'/api/employee/' + data.employee.id + '/timeoff'">
@@ -25,24 +25,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.start_date }">
-                            <label>Startdatum</label>
+                            <label>{{trans('admin.Startdatum')}}</label>
                             <datepicker name="start_date" v-model="startDate"></datepicker>
                         </div>
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.end_date }">
-                            <label>Enddatum</label>
+                            <label>{{trans('admin.Enddatum')}}</label>
                             <datepicker name="end_date" v-model="endDate"></datepicker>
                         </div>
                         <div class="col-md-12 form-group" :class="{'has-error': form.errors.type }">
                             <select class="form-control input-sm" name="type" v-model="timeoff.type">
-                                <option value="">Ausfallgrund wählen...</option>
-                                <option value="Krankheit">Krankheit</option>
-                                <option value="Fehltag">Fehltag</option>
-                                <option value="Urlaub">Urlaub</option>
+                                <option value="">{{trans('admin.Ausfallgrund wählen')}}</option>
+                                <option value="Krankheit">{{trans('admin.Krankheit')}}</option>
+                                <option value="Fehltag">{{trans('admin.Fehltag')}}</option>
+                                <option value="Urlaub">{{trans('admin.Urlaub')}}</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <label>Zusätzliche Informationen</label>
+                        <label>{{trans('admin.Zusätzliche Informationen')}}</label>
                         <div class="form-group" :class="{'has-error': form.errors.information }">
                             <textarea class="form-control input-sm" name="information" cols="30" rows="3" v-model="timeoff.information"></textarea>
                         </div>
@@ -54,7 +54,7 @@
 
                 <div class="pull-right">
                     <submit-button text="Änderungen speichern" class="btn-sm btn-success" :loading="form.loading"></submit-button>
-                    <button @click="$parent.$emit('close')" class="btn btn-sm btn-default">Schliessen</button>
+                    <button @click="$parent.$emit('close')" class="btn btn-sm btn-default">{{trans('admin.Schliessen')}}</button>
                 </div>
             </template>
         </form-wrapper>

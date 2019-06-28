@@ -1,7 +1,7 @@
 <template>
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Rollen</h3>
+            <h3 class="box-title">{{trans('admin.Rollen')}}</h3>
             <div class="pull-right">
                 <i v-if="! editMode" @click="editMode = true" class="fa fa-pencil fa-lg pointer"></i>
                 <i v-if="editMode" @click="save" class="fa fa-save fa-lg pointer"></i>

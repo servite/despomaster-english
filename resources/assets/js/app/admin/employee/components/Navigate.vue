@@ -1,24 +1,24 @@
 <template>
     <div class="row">
         <div class="col-md-4 form-group">
-            <label>Zu Mitarbeiter wechseln</label>
+            <label>{{trans('admin.Zu Mitarbeiter wechseln')}}</label>
             <br>
             <select class="form-control input-sm" @change="select" v-model="employeeSelected">
-                <option value="">Auswählen..</option>
+                <option value="">{{trans('admin.Auswählen')}}</option>
                 <option v-for="employee in filteredEmployees" :value="employee.id">{{ employee.id + ' - ' + employee.last_name + ', ' + employee.first_name}}</option>
             </select>
         </div>
         <div class="col-md-8">
-            <label>Status</label>
+            <label>{{trans('admin.Status')}}</label>
             <br>
             <label class="radio-inline">
-                <input type="radio" name="state" value="active" v-model="state"> Aktiv
+                <input type="radio" name="state" value="active" v-model="state"> {{trans('admin.Aktiv')}}
             </label>
             <label class="radio-inline">
-                <input type="radio" name="state" value="inactive" v-model="state"> Inaktiv
+                <input type="radio" name="state" value="inactive" v-model="state"> {{trans('admin.Inaktiv')}}
             </label>
             <label class="radio-inline">
-                <input type="radio" name="state" value="applicant" v-model="state"> Bewerber
+                <input type="radio" name="state" value="applicant" v-model="state"> {{trans('admin.Bewerber')}}
             </label>
         </div>
     </div>

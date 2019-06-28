@@ -4,7 +4,7 @@
             <img style="height: 150px; width: auto;" :src="'/uploads/images/signature/' + signature" alt="Signatur">
 
             <div class="pull-right">
-                <button @click="destroy" class="btn btn-danger">Löschen</button>
+                <button @click="destroy" class="btn btn-danger">{{trans('admin.Löschen')}}</button>
             </div>
         </div>
 
@@ -13,8 +13,8 @@
                 <canvas style="border:1px solid gray;" id="signature-pad" width="700" height="300"></canvas>
             </div>
             <div class="pull-right">
-                <button @click="save" class="btn btn-primary">Speichern</button>
-                <button @click="clear" class="btn btn-danger">Abbrechen</button>
+                <button @click="save" class="btn btn-primary">{{trans('admin.Speichern')}}</button>
+                <button @click="clear" class="btn btn-danger">{{trans('admin.Abbrechen')}}</button>
             </div>
         </div>
     </div>

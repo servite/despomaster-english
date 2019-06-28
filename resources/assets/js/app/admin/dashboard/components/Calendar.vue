@@ -85,7 +85,7 @@
                     'type' : 'show'
                 };
 
-                modal('Show Order Modal', 'Auftrag anzeigen', data);
+                modal('Show Order Modal', trans('Auftrag anzeigen'), data);
             }
 
         }

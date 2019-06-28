@@ -1,18 +1,18 @@
 <template>
     <div>
-        <p><strong>Benötigte Mitarbeiter:</strong> {{ staffPlanned + ' von ' + order.staff_required }}</p>
+        <p><strong>{{trans('admin.Benötigte Mitarbeiter')}} :</strong> {{ staffPlanned + ' von ' + order.staff_required }}</p>
 
         <table class="table assigned-employee-list">
             <thead>
             <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Rolle</th>
-                <th>Bereich</th>
-                <th class="text-center">Treffpunkt</th>
-                <th class="text-center">Versand</th>
-                <th class="text-center" style="width:80px;">Status</th>
-                <th>Bearbeiter</th>
+                <th>{{trans('admin.Name')}}</th>
+                <th>{{trans('admin.Rolle')}}</th>
+                <th>{{trans('admin.Bereich')}}</th>
+                <th class="text-center">{{trans('admin.Treffpunkt')}}</th>
+                <th class="text-center">{{trans('admin.Versand')}}</th>
+                <th class="text-center" style="width:80px;">{{trans('admin.Status')}}</th>
+                <th>{{trans('admin.Bearbeiter')}}</th>
                 <th width="50px"></th>
             </tr>
             </thead>
@@ -39,11 +39,11 @@
                     <div v-if="employee.editMode">
                         <select class="form-control input-sm" @blur="update(employee)" v-model="employee.pivot.working_area">
                             <option value="-">-</option>
-                            <option value="BAR">BAR</option>
-                            <option value="THK">THK</option>
-                            <option value="RST">RST</option>
-                            <option value="BGA">BGA</option>
-                            <option value="BKT">BKT</option>
+                            <option value="BAR">{{trans('admin.BAR')}}</option>
+                            <option value="THK">{{trans('admin.THK')}}</option>
+                            <option value="RST">{{trans('admin.RST')}}</option>
+                            <option value="BGA">{{trans('admin.BGA')}}</option>
+                            <option value="BKT">{{trans('admin.BKT')}}</option>
                         </select>
                     </div>
                     <div v-else>
@@ -89,8 +89,8 @@
         </table>
 
         <div class="pull-right margin-t-10">
-            <button class="btn btn-success btn-sm" @click="save">Speichern</button>
-            <button class="btn btn-danger btn-sm" @click="exit">Schließen</button>
+            <button class="btn btn-success btn-sm" @click="save">{{trans('admin.Speichern')}}</button>
+            <button class="btn btn-danger btn-sm" @click="exit">{{trans('admin.Schließen')}}</button>
         </div>
     </div>
 </template>

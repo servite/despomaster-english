@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-md-7 panel-title">
-                    Netto-Bezüge / Netto-Abzüge
+                    {{trans('admin.Netto-Bezüge / Netto-Abzüge')}}
                 </div>
                 <div class=" col-md-5">
                     <div class="pull-right margin-t-5">
@@ -21,18 +21,18 @@
                             <label>Abrechnungsmonat</label> <i v-if="form.errors.date" class="fa fa-warning text-danger" :title="form.errors.date"></i>
                             <div class="form-inline">
                                 <select class="form-control input-sm" name="month" v-model="data.month" :class="{'has-error': form.errors.month }">
-                                    <option value="1">Jan</option>
-                                    <option value="2">Feb</option>
-                                    <option value="3">März</option>
-                                    <option value="4">Apr</option>
-                                    <option value="5">Mai</option>
-                                    <option value="6">Jun</option>
-                                    <option value="7">Jul</option>
-                                    <option value="8">Aug</option>
-                                    <option value="9">Sep</option>
-                                    <option value="10">Okt</option>
-                                    <option value="11">Nov</option>
-                                    <option value="12">Dez</option>
+                                    <option value="1">{{trans('admin.Jan')}}</option>
+                                    <option value="2">{{trans('admin.Feb')}}</option>
+                                    <option value="3">{{trans('admin.März')}}</option>
+                                    <option value="4">{{trans('admin.Apr')}}</option>
+                                    <option value="5">{{trans('admin.Mai')}}</option>
+                                    <option value="6">{{trans('admin.Jun')}}</option>
+                                    <option value="7">{{trans('admin.Jul')}}</option>
+                                    <option value="8">{{trans('admin.Aug')}}</option>
+                                    <option value="9">{{trans('admin.Sep')}}</option>
+                                    <option value="10">{{trans('admin.Okt')}}</option>
+                                    <option value="11">{{trans('admin.Nov')}}</option>
+                                    <option value="12">{{trans('admin.Dez')}}</option>
                                 </select>
 
                                 <select class="form-control input-sm" name="year" v-model="data.year" :class="{'has-error': form.errors.year }">
@@ -43,14 +43,14 @@
                             </div>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.type }">
-                            <label>Typ</label> <i v-if="form.errors.type" class="fa fa-warning text-danger" :title="form.errors.type"></i>
+                            <label>{{trans('admin.Typ')}}</label> <i v-if="form.errors.type" class="fa fa-warning text-danger" :title="form.errors.type"></i>
                             <select class="form-control input-sm" name="type" v-model="data.type">
-                                <option value="">Auswählen..</option>
+                                <option value="">{{trans('admin.Auswählen')}}</option>
                                 <option v-for="(option, name) in options" :value="name">{{ option.name }}</option>
                             </select>
                         </div>
                         <div class="col-md-3 form-group" :class="{'has-error': form.errors.amount }">
-                            <label>Betrag</label> <i v-if="form.errors.amount" class="fa fa-warning text-danger" :title="form.errors.amount"></i>
+                            <label>{{trans('admin.Betrag')}}</label> <i v-if="form.errors.amount" class="fa fa-warning text-danger" :title="form.errors.amount"></i>
                             <input class="form-control input-sm" name="amount" v-model="data.amount">
                         </div>
                     </div>
@@ -65,16 +65,16 @@
 
                     <div v-if="editMode" class="pull-right">
                         <submit-button class="pull-right btn-sm btn-primary" text="Speichern" :loading="form.loading"></submit-button>
-                        <button @click="reset" class="btn btn-sm btn-danger margin-r-5">Abbrechen</button>
+                        <button @click="reset" class="btn btn-sm btn-danger margin-r-5">{{trans('admin.Abbrechen')}}</button>
                     </div>
                 </template>
             </form-wrapper>
             <table v-if="items.length" class="table">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
-                    <th>Betrag</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Betrag')}}</th>
                     <th v-if="canDelete"></th>
                 </tr>
                 </thead>

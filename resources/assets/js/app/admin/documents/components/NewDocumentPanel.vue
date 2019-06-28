@@ -1,18 +1,18 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4 class="panel-title">Neues Dokument</h4>
+            <h4 class="panel-title">{{trans('admin.Neues Dokument')}}</h4>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 <select class="form-control input-sm" v-model="type">
-                    <option value="">Dokumententyp auswählen...</option>
+                    <option value="">{{trans('admin.Dokumententyp auswählen')}}</option>
                     <option v-for="(document, key) in documentTypes" :value="key">{{ document }}</option>
                 </select>
             </div>
 
             <div class="clearfix">
-                <button @click="create" class="btn btn-sm btn-primary pull-right">Auswählen</button>
+                <button @click="create" class="btn btn-sm btn-primary pull-right">{{trans('admin.Auswählen')}}</button>
             </div>
 
             <hr>
@@ -21,7 +21,7 @@
                 <img class="col-md-12" :src="'/uploads/images/signature/' + signature" alt="Signatur">
             </div>
 
-            <button @click="editSignature" class="btn btn-sm btn-primary btn-block">Signatur bearbeiten</button>
+            <button @click="editSignature" class="btn btn-sm btn-primary btn-block">{{trans('admin.Signatur bearbeiten')}}</button>
 
         </div>
     </div>
@@ -35,14 +35,14 @@
                 type: '',
                 signature: this.employee.signature,
                 documentTypes: {
-                    'warning': 'Abmahnung',
-                    'pension': 'Befreiung Rentenversicherungspflicht',
-                    'withdrawal_receipt': 'Kündigungsbestätigung',
-                    'contract_parttime': 'Arbeitsvertrag - Teilzeit',
-                    'contract_temporary': 'Arbeitsvertrag - Geringfügig',
-                    'termination': 'Ordentliche Kündigung',
-                    'termination_without_notice': 'Fristlose Kündigung',
-                    'termination_within_probation': 'Kündigung in der Probezeit'
+                    'warning': trans('Abmahnung'),
+                    'pension': trans('Befreiung Rentenversicherungspflicht'),
+                    'withdrawal_receipt': trans('Kündigungsbestätigung'),
+                    'contract_parttime': trans('Arbeitsvertrag - Teilzeit'),
+                    'contract_temporary': trans('Arbeitsvertrag - Geringfügig'),
+                    'termination': trans('Ordentliche Kündigung'),
+                    'termination_without_notice': trans('Fristlose Kündigung'),
+                    'termination_within_probation': trans('Kündigung in der Probezeit')
                 }
             }
         },
@@ -69,7 +69,7 @@
                     'signature': this.signature
                 }
 
-                modal('Create Signature Modal', 'Mitarbeiter - Unterschrift', data);
+                modal('Create Signature Modal', trans('Mitarbeiter - Unterschrift'), data);
             }
         },
 

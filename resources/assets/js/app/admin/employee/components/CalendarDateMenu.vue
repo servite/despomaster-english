@@ -4,18 +4,18 @@
             <input type="hidden" name="employees" :value="employee.id">
 
             <div class="form-group margin-r-10">
-                <label>Kalenderwoche</label>
+                <label>{{trans('admin.Kalenderwoche')}}</label>
                 <select class="form-control input-sm" name="week" @change="updateDates" v-model="weekSelected">
-                    <option value="">Auswählen...</option>
+                    <option value="">{{trans('admin.Auswählen')}}</option>
                     <option v-for="week in calendarweeks" :value="week.dates">{{ week.number }}</option>
                 </select>
             </div>
             <div class="form-group margin-r-10">
-                <label>Von</label>
+                <label>{{trans('admin.Von')}}</label>
                 <datepicker name="start" v-model="startDate" @blur="weekSelected = ''" required></datepicker>
             </div>
             <div class="form-group margin-r-10">
-                <label>Bis</label>
+                <label>{{trans('admin.Bis')}}</label>
                 <datepicker name="end" v-model="endDate" @blur="weekSelected = ''" required></datepicker>
             </div>
 
@@ -67,7 +67,7 @@
             this.getCalendarWeeks();
 
             this.$on('form.submitted', () => {
-                flash('Mail versendet.');
+                flash(trans('Mail versendet'));
             })
         },
     }

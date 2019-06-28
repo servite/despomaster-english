@@ -1,51 +1,51 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>Verfügbare Mitarbeiter
+            <h4>{{trans('admin.Verfügbare Mitarbeiter')}}
                 <span class="pull-right"><i @click="reset" class="fa fa-refresh text-primary pointer"></i></span>
             </h4>
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6 form-group">
-                    <label>Name</label>
+                    <label>{{trans('admin.Name')}}</label>
                     <input class="form-control input-sm" v-model="query.name">
                 </div>
                 <div class="col-md-6 form-group">
-                    <label>Mitarbeiterpool</label>
+                    <label>{{trans('admin.Mitarbeiterpool')}}</label>
                     <select class="form-control input-sm" v-model="query.typeOfPool">
-                        <option value="free">Verfügbar</option>
-                        <option value="planned">Doppelschicht</option>
-                        <option value="blocked">Sperrliste</option>
-                        <option value="absent">Krankheit/Urlaub</option>
+                        <option value="free">{{trans('admin.Verfügbar')}}</option>
+                        <option value="planned">{{trans('admin.Doppelschicht')}}</option>
+                        <option value="blocked">{{trans('admin.Sperrliste')}}</option>
+                        <option value="absent">{{trans('admin.Krankheit/Urlaub')}}</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <select class="form-control input-sm" v-model="query.occupation_type">
-                        <option value="">Beschäftigungsart...</option>
-                        <option value="part_time">Teilzeit</option>
-                        <option value="temporary">Geringfügig</option>
+                        <option value="">{{trans('admin.Beschäftigungsart')}}</option>
+                        <option value="part_time">{{trans('admin.Teilzeit')}}</option>
+                        <option value="temporary">{{trans('admin.Geringfügig')}}</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 form-group">
                     <select class="form-control input-sm" v-model="query.role">
-                        <option value="">Rolle...</option>
+                        <option value="">{{trans('admin.Rolle')}}</option>
                         <option v-for="role in roles" :value="role.shortcut">{{ role.name }}</option>
                     </select>
                 </div>
             </div>
             <div v-show="! showMoreFilters" class="small">
                 <i  @click="showMoreFilters = true" class="fa fa-chevron-down pointer"></i>
-                Weitere Filter
+                {{trans('admin.Weitere Filter')}}
             </div>
             <div v-show="showMoreFilters">
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <select class="form-control input-sm" v-model="query.location">
-                            <option value="">Einsatzort...</option>
+                            <option value="">{{trans('admin.Einsatzort')}}</option>
                             <option v-for="location in locations" :value="location">{{ location }}</option>
                         </select>
                     </div>
@@ -57,28 +57,28 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <select class="form-control input-sm" v-model="query.sex">
-                            <option value="">Geschlecht...</option>
-                            <option value="m">Männlich</option>
-                            <option value="f">Weiblich</option>
+                            <option value="">{{trans('admin.Geschlecht')}}</option>
+                            <option value="m">{{trans('admin.Männlich')}}</option>
+                            <option value="f">{{trans('admin.Weiblich')}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label class="checkbox-inline">
-                            <input type="checkbox" v-model="query.car"> PKW
+                            <input type="checkbox" v-model="query.car"> {{trans('admin.PKW')}}
                         </label>
                     </div>
                     <div class="col-md-6 form-group">
                         <label class="checkbox-inline">
-                            <input type="checkbox" v-model="query.driving_license"> Führerschein
+                            <input type="checkbox" v-model="query.driving_license"> {{trans('admin.Führerschein')}}
                         </label>
                     </div>
                 </div>
             </div>
             <div class="small" v-show="showMoreFilters" >
                 <i @click="showMoreFilters = false" class="fa fa-chevron-up pointer margin-r-5"></i>
-                Filter ausblenden
+                {{trans('admin.Filter ausblenden')}}
             </div>
 
             <br>
@@ -89,12 +89,12 @@
                 </div>
                 <div class="small">
                     <div class="col-md-5">
-                        <span v-if="employee.occupation_type == 'part_time'">Teilzeit</span>
-                        <span v-if="employee.occupation_type == 'temporary'">Geringfügig</span>
+                        <span v-if="employee.occupation_type == 'part_time'">{{trans('admin.Teilzeit')}}</span>
+                        <span v-if="employee.occupation_type == 'temporary'">{{trans('admin.Geringfügig')}}</span>
                         <span v-if="employee.occupation_type == ''">-</span>
                     </div>
                     <div class="col-md-7">
-                        <span>{{ employee.current_working_time_account ? hour(employee.current_working_time_account.actual) : 0 }} von {{ employee.current_working_time_account ? hour(employee.current_working_time_account.target) : 0 }} Std. gearbeitet</span>
+                        <span>{{ employee.current_working_time_account ? hour(employee.current_working_time_account.actual) : 0 }} {{trans('admin.von')}} {{ employee.current_working_time_account ? hour(employee.current_working_time_account.target) : 0 }} {{trans('admin.Std gearbeitet')}}</span>
                     </div>
                     <div class="col-md-12 margin-t-5">
                         <i class="fa fa-map-marker"></i>
@@ -106,21 +106,21 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th class="sortable" @click="toggleOrder('last_name')">Name
+                    <th class="sortable" @click="toggleOrder('last_name')">{{trans('admin.Name')}}
                         <span v-if="orderBy.column == 'last_name'">
                             <span v-if="orderBy.direction === 'desc'">&darr;</span>
                             <span v-else>&uarr;</span>
                         </span>
                         <span v-else>&uarr;&darr;</span>
                     </th>
-                    <th class="sortable" @click="toggleOrder('working_time_account')">AZK
+                    <th class="sortable" @click="toggleOrder('working_time_account')">{{trans('admin.AZK')}}
                         <span v-if="orderBy.column == 'working_time_account'">
                             <span v-if="orderBy.direction === 'desc'">&darr;</span>
                             <span v-else>&uarr;</span>
                         </span>
                         <span v-else>&uarr;&darr;</span>
                     </th>
-                    <th>Vertrag</th>
+                    <th>{{trans('admin.Vertrag')}}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -134,9 +134,9 @@
                         <span :class="checkLimit(employee)" class="padding-r-5 padding-l-5">{{ employee.working_time_account ? hour(employee.working_time_account) + ' Std.' : '0' }}</span>
                     </td>
                     <td>
-                        {{ employee.occupation_type == 'full_time' ? 'VZ' : '' }}
-                        {{ employee.occupation_type == 'part_time' ? 'TZ' : '' }}
-                        {{ employee.occupation_type == 'temporary' ? 'AU' : '' }}
+                        {{ employee.occupation_type == 'full_time' ? trans('VZ') : '' }}
+                        {{ employee.occupation_type == 'part_time' ? trans('TZ') : '' }}
+                        {{ employee.occupation_type == 'temporary' ? trans('AU') : '' }}
                     </td>
                     <td>
                         <a @click="checkAvailability(employee)" class="btn btn-sm btn-default">

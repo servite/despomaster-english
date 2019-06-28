@@ -19,7 +19,7 @@
             this.$on('form.submitted', () => {
                 events.$emit('order.updated');
 
-                flash('Auftrag angenommen.');
+                flash(trans('Auftrag angenommen'));
 
                 this.$parent.$emit('close')
             })

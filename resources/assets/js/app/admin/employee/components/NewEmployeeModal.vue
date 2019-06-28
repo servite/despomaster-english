@@ -10,7 +10,7 @@
                             </label>
                         </div>
                         <div class="col-md-5 col-md-offset-1 margin-t-10">
-                            <i class="fa fa-info text-primary margin-r-5"></i> Mitarbeiter wird als Bewerber angelegt.
+                            <i class="fa fa-info text-primary margin-r-5"></i> {{trans('admin.Mitarbeiter wird als Bewerber angelegt')}}
                         </div>
                     </div>
 
@@ -18,19 +18,19 @@
 
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.first_name }">
-                            <label>Vorname</label>
+                            <label>{{trans('admin.Vorname')}}</label>
                             <input class="form-control input-sm" name="first_name">
                             <span v-if="form.errors.first_name " class="help-block">{{ form.errors.first_name }}</span>
                         </div>
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.last_name }">
-                            <label>Nachname</label>
+                            <label>{{trans('admin.Nachname')}}</label>
                             <input class="form-control input-sm" name="last_name">
                             <span v-if="form.errors.last_name " class="help-block">{{ form.errors.last_name }}</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.email }">
-                            <label>E-Mail</label>
+                            <label>{{trans('admin.E-Mail')}}</label>
                             <input class="form-control input-sm" name="email">
                             <span v-if="form.errors.email " class="help-block">{{ form.errors.email }}</span>
                         </div>
@@ -40,38 +40,38 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Geburtsdatum</label>
+                            <label>{{trans('admin.Geburtsdatum')}}</label>
                             <div class="form-inline">
                                 <div class="form-group" :class="{'has-error': form.errors.day }">
                                     <select name="day" class="form-control input-sm">
-                                        <option value="">Tag..</option>
+                                        <option value="">{{trans('admin.Tag')}}</option>
                                         <option v-for="day in days" :value="day">{{ day }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" :class="{'has-error': form.errors.month }">
                                     <select name="month" class="form-control input-sm">
-                                        <option value="">Monat..</option>
+                                        <option value="">{{trans('admin.Monat')}}</option>
                                         <option v-for="month in months" :value="month.id">{{ month.name }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" :class="{'has-error': form.errors.year }">
                                     <select name="year" class="form-control input-sm">
-                                        <option value="">Jahr..</option>
+                                        <option value="">{{trans('admin.Jahr')}}</option>
                                         <option v-for="year in years" :value="year">{{ year }}</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Geschlecht</label>
+                            <label>{{trans('admin.Geschlecht')}}</label>
                             <div>
                                 <label class="radio-inline">
                                     <input type="radio" name="sex" value="m" checked>
-                                    Männlich
+                                    {{trans('admin.Männlich')}}
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="sex" value="f">
-                                    Weiblich
+                                    {{trans('admin.Weiblich')}}
                                 </label>
                             </div>
                         </div>
@@ -81,17 +81,17 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.occupation_type }">
-                            <label>Beschäftigungsart</label>
+                            <label>{{trans('admin.Beschäftigungsart')}}</label>
                             <select class="form-control input-sm" name="occupation_type">
-                                <option value="">Auswählen..</option>
-                                <option value="full_time">Vollzeit</option>
-                                <option value="part_time">Teilzeit</option>
-                                <option value="temporary">Geringfügig</option>
+                                <option value="">{{trans('admin.Auswählen')}}</option>
+                                <option value="full_time">{{trans('admin.Vollzeit')}}</option>
+                                <option value="part_time">{{trans('admin.Teilzeit')}}</option>
+                                <option value="temporary">{{trans('admin.Geringfügig')}}</option>
                             </select>
                             <span v-if="form.errors.occupation_type " class="help-block">{{ form.errors.occupation_type }}</span>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.contractual_working_hours }">
-                            <label>Vereinbarte Arbeitszeit</label>
+                            <label>{{trans('admin.Vereinbarte Arbeitszeit')}}</label>
                             <input class="form-control input-sm" name="contractual_working_hours">
                             <span v-if="form.errors.contractual_working_hours" class="help-block">{{ form.errors.contractual_working_hours }}</span>
                         </div>
@@ -99,12 +99,12 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.entry_date }">
-                            <label>Eintrittsdatum</label>
+                            <label>{{trans('admin.Eintrittsdatum')}}</label>
                             <datepicker name="entry_date" model=""></datepicker>
                             <span v-if="form.errors.entry_date" class="help-block">{{ form.errors.entry_date }}</span>
                         </div>
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.wage }">
-                            <label>Stundenlohn</label>
+                            <label>{{trans('admin.Stundenlohn')}}</label>
                             <input class="form-control input-sm" name="wage">
                             <span v-if="form.errors.wage" class="help-block">{{ form.errors.wage }}</span>
                         </div>
@@ -114,7 +114,7 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group" :class="{'has-error': form.errors.entry_date }">
-                            <label>Einsatzorte</label>
+                            <label>{{trans('admin.Einsatzorte')}}</label>
                             <div v-for="location in locations" class="checkbox">
                                 <label>
                                     <input type="checkbox" name="locations[]" :value="location.name">{{ location.name }}
@@ -176,7 +176,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('employee.created');
 
-                flash('Neuen Mitarbeiter angelegt.');
+                flash(trans('Neuen Mitarbeiter angelegt'));
 
                 this.$parent.$emit('close')
             })

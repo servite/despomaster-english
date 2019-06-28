@@ -21,7 +21,7 @@
             this.$on('form.submitted', () => {
                 events.$emit('order.created');
 
-                flash('Neuen Auftrag angelegt.');
+                flash(trans('Neuen Auftrag angelegt'));
 
                 this.$parent.$emit('close')
             })

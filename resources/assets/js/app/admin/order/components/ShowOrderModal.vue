@@ -4,20 +4,20 @@
             <div class="panel-body">
                 <div v-if="data.type != 'show'" class="row margin-b-10">
                     <div class="col-md-6">
-                        <div v-if="order.status == 'canceled'" class="label label-warning">Storniert</div>
+                        <div v-if="order.status == 'canceled'" class="label label-warning">{{trans('admin.Storniert')}}</div>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a v-if="! order.parent_id" @click="duplicateOrder" class="btn btn-sm btn-success">Duplizieren</a>
-                        <a @click="copyOrder" class="btn btn-sm btn-primary">Kopieren</a>
+                        <a v-if="! order.parent_id" @click="duplicateOrder" class="btn btn-sm btn-success">{{trans('admin.Duplizieren')}}</a>
+                        <a @click="copyOrder" class="btn btn-sm btn-primary">{{trans('admin.Kopieren')}}</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label>Kunde</label>
+                        <label>{{trans('admin.Kunde')}}</label>
                         <p><a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a></p>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>Ansprechpartner</label>
+                        <label>{{trans('admin.Ansprechpartner')}}</label>
                         <ul>
                             <li v-for="contact in order.contacts">{{ contact.last_name + ', ' + contact.first_name }}</li>
                         </ul>
@@ -28,29 +28,29 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label>Veranstaltungsname</label>
+                        <label>{{trans('admin.Veranstaltungsname')}}</label>
                         <p>{{ order.title }}</p>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label>Benötigte Mitarbeiter</label>
+                        <label>{{trans('admin.Benötigte Mitarbeiter')}}</label>
                         <p>{{ order.staff_required }}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3 form-group">
-                        <label>Beginn</label>
+                        <label>{{trans('admin.Beginn')}}</label>
                         <p>{{ moment(order.start_date).format('L') }}</p>
                     </div>
                     <div class="col-md-3 form-group">
-                        <label>Ende</label>
+                        <label>{{trans('admin.Ende')}}</label>
                         <p>{{ moment(order.end_date).format('L') }}</p>
                     </div>
                     <div class="col-md-3 form-group">
-                        <label>Startzeit</label>
+                        <label>{{trans('admin.Startzeit')}}</label>
                         <p>{{ order.start_time ? order.start_time + ' Uhr' : '-' }}</p>
                     </div>
                     <div class="col-md-3 form-group">
-                        <label>Endzeit</label>
+                        <label>{{trans('admin.Endzeit')}}</label>
                         <p>{{ order.end_time ? order.end_time + ' Uhr' : '-' }}</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label>Einsatzort</label>
+                        <label>{{trans('admin.Einsatzort')}}</label>
                         <p>{{ order.work_location }}</p>
                         <div class="row">
                             <div class="col-md-7 form-group">
@@ -67,13 +67,13 @@
                                 <p>{{ order.meeting_point }}</p>
                             </div>
                             <div class="col-md-5 form-group">
-                                <label>Zeit</label>
+                                <label>{{trans('admin.Zeit')}}</label>
                                 <p>{{ order.meeting_time ? order.meeting_time + ' Uhr' : '-' }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>Einsatzinfos</label>
+                        <label>{{trans('admin.Einsatzinfos')}}</label>
                         <p>{{ order.requirements }}</p>
                     </div>
                 </div>
@@ -98,11 +98,11 @@
 
         methods: {
             copyOrder() {
-                modal('Copy Order Modal', 'Auftrag kopieren', {'order': this.order});
+                modal('Copy Order Modal', trans('Auftrag kopieren'), {'order': this.order});
             },
 
             duplicateOrder() {
-                modal('Duplicate Order Modal', 'Unterauftrag anlegen', {'order': this.order});
+                modal('Duplicate Order Modal', trans('Unterauftrag anlegen'), {'order': this.order});
             }
         }
     }

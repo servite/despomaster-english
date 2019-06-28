@@ -2,17 +2,17 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>
-                Mitarbeiterliste
-                <a v-if="canCreate" @click="newEmployee" class="btn btn-primary pull-right">Neuer Mitarbeiter</a>
+                {{trans('admin.Mitarbeiterliste')}}
+                <a v-if="canCreate" @click="newEmployee" class="btn btn-primary pull-right">{{trans('admin.Neuer Mitarbeiter')}}</a>
             </h2>
         </div>
         <div class="panel-body">
 
             <ul class="nav nav-tabs margin-b-10">
-                <li role="presentation" :class="{ 'active' : query.state == 'active' }"><a href="#" @click.prevent="setState('active')">Aktiv</a></li>
-                <li role="presentation" :class="{ 'active' : query.state == 'inactive' }"><a href="#" @click.prevent="setState('inactive')">Inaktiv</a></li>
-                <li role="presentation" :class="{ 'active' : query.state == 'terminated' }"><a href="#" @click.prevent="setState('terminated')">Ausgeschieden</a></li>
-                <li role="presentation" :class="{ 'active' : query.state == 'applied' }"><a href="#" @click.prevent="setState('applied')">Bewerber</a></li>
+                <li role="presentation" :class="{ 'active' : query.state == 'active' }"><a href="#" @click.prevent="setState('active')">{{trans('admin.Aktiv')}}</a></li>
+                <li role="presentation" :class="{ 'active' : query.state == 'inactive' }"><a href="#" @click.prevent="setState('inactive')">{{trans('admin.Inaktiv')}}</a></li>
+                <li role="presentation" :class="{ 'active' : query.state == 'terminated' }"><a href="#" @click.prevent="setState('terminated')">{{trans('admin.Ausgeschieden')}}</a></li>
+                <li role="presentation" :class="{ 'active' : query.state == 'applied' }"><a href="#" @click.prevent="setState('applied')">{{trans('admin.Bewerber')}}</a></li>
             </ul>
 
             <div class="table-view">
@@ -25,33 +25,33 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.location" @change="search">
-                            <option value="">Einsatzort auswählen...</option>
-                            <option value="Bonn">Bonn</option>
-                            <option value="Köln">Köln</option>
-                            <option value="Düsseldorf">Düsseldorf</option>
+                            <option value="">{{trans('admin.Einsatzort auswählen')}}</option>
+                            <option value="Bonn">{{trans('admin.Bonn')}}</option>
+                            <option value="Köln">{{trans('admin.Köln')}}</option>
+                            <option value="Düsseldorf">{{trans('admin.Düsseldorf')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.occupation_type" @change="search">
-                            <option value="">Vertragsart...</option>
-                            <option value="part_time">Teilzeit</option>
-                            <option value="temporary">Geringfügig</option>
+                            <option value="">{{trans('admin.Vertragsart')}}</option>
+                            <option value="part_time">{{trans('admin.Teilzeit')}}</option>
+                            <option value="temporary">{{trans('admin.Geringfügig')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.sex" @change="search">
-                            <option value="">Geschlecht...</option>
-                            <option value="m">Männlich</option>
-                            <option value="f">Weiblich</option>
+                            <option value="">{{trans('admin.Geschlecht')}}</option>
+                            <option value="m">{{trans('admin.Männlich')}}</option>
+                            <option value="f">{{trans('admin.Weiblich')}}</option>
                         </select>
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.state" @change="search">
-                            <option value="">Status...</option>
-                            <option value="active">Aktiv</option>
-                            <option value="inactive">Inaktiv</option>
-                            <option value="terminated">Ausgeschieden</option>
-                            <option value="applied">Bewerber</option>
+                            <option value="">{{trans('admin.Status')}}</option>
+                            <option value="active">{{trans('admin.Aktiv')}}</option>
+                            <option value="inactive">{{trans('admin.Inaktiv')}}</option>
+                            <option value="terminated">{{trans('admin.Ausgeschieden')}}</option>
+                            <option value="applied">{{trans('admin.Bewerber')}}</option>
                         </select>
                     </div>
                     <div>
@@ -63,23 +63,23 @@
                         <thead>
                         <tr>
                             <th class="pointer" @click="toggleOrder('id')">
-                                Personalnr. <i v-html="getSortingIcon('id')"></i>
+                                {{trans('admin.Personalnr')}} <i v-html="getSortingIcon('id')"></i>
                             </th>
                             <th class="pointer" @click="toggleOrder('last_name')">
-                                Name <i v-html="getSortingIcon('last_name')"></i>
+                                {{trans('admin.Name')}} <i v-html="getSortingIcon('last_name')"></i>
                             </th>
                             <th class="pointer" @click="toggleOrder('working_time_account')">
-                                AZK <i v-html="getSortingIcon('working_time_account')"></i>
+                                {{trans('admin.AZK')}} <i v-html="getSortingIcon('working_time_account')"></i>
                             </th>
                             <th class="pointer" @click="toggleOrder('city')">
-                                Stadt <i v-html="getSortingIcon('city')"></i>
+                                {{trans('admin.Stadt')}} <i v-html="getSortingIcon('city')"></i>
                             </th>
-                            <th>Einsatzort</th>
-                            <th>Mobil</th>
-                            <th>E-Mail</th>
-                            <th>Status</th>
+                            <th>{{trans('admin.Einsatzort')}}</th>
+                            <th>{{trans('admin.Mobil')}}</th>
+                            <th>{{trans('admin.E-Mail')}}</th>
+                            <th>{{trans('admin.Status')}}</th>
                             <th v-if="canUpdate || canDelete">
-                                <span>Aktion</span>
+                                <span>{{trans('admin.Aktion')}}</span>
                             </th>
                         </tr>
                         </thead>
@@ -105,11 +105,11 @@
                             <td>{{ row.email }}</td>
                             <td>
                                 <div v-if="row.applicant">
-                                    <span class="label label-warning">Bewerber</span>
+                                    <span class="label label-warning">{{trans('admin.Bewerber')}}</span>
                                 </div>
                                 <div v-else>
-                                    <span v-if="row.active" class="label label-success">Aktiv</span>
-                                    <span v-else class="label label-danger">Inaktiv</span>
+                                    <span v-if="row.active" class="label label-success">{{trans('admin.Aktiv')}}</span>
+                                    <span v-else class="label label-danger">{{trans('admin.Inaktiv')}}</span>
                                 </div>
                             </td>
                             <td v-if="canUpdate || canDelete">
@@ -164,7 +164,7 @@
             },
 
             newEmployee() {
-                modal('New Employee Modal', 'Neuer Mitarbeiter', {});
+                modal('New Employee Modal', trans('Neuer Mitarbeiter'), {});
             }
         },
 
