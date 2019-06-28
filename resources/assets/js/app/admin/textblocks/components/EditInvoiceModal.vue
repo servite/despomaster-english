@@ -3,7 +3,7 @@
         <template slot-scope="form">
 
             <div v-if="data.type == 'email'">
-                <legend>E-Mail</legend>
+                <legend>{{trans('admin.E-Mail')}}</legend>
                 <div class="form-group" :class="{'has-error': form.errors.mail_body }">
                     <label v-text="textblocks.mail_body.label"></label>
                     <html-editor name="mail_body" :model="textblocks.mail_body.value"></html-editor>
@@ -17,7 +17,7 @@
             </div>
 
             <div v-if="data.type == 'invoice'">
-                <legend>PDF</legend>
+                <legend>{{trans('admin.PDF')}}</legend>
                 <div class="form-group" :class="{'has-error': form.errors.intro }">
                     <label v-text="textblocks.intro.label"></label>
                     <html-editor name="intro" :model="textblocks.intro.value" height="150"></html-editor>

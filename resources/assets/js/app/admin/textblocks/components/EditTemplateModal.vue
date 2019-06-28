@@ -28,7 +28,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('template.updated');
 
-                flash('Textbaustein erfolgreich bearbeitet.');
+                flash(trans('admin.Textbaustein erfolgreich bearbeitet'));
 
                 this.$parent.$emit('close')
             })
