@@ -3,7 +3,7 @@
         <template slot-scope="form">
 
             <div v-if="data.type == 'address'">
-                <legend>Anschrift</legend>
+                <legend>{{trans('admin.Anschrift')}}</legend>
                 <div class="row">
                     <div class="col-md-4 form-group" :class="{'has-error': form.errors.company_name }">
                         <label v-text="textblocks.company_name.label"></label>
@@ -31,7 +31,7 @@
             </div>
 
             <div v-if="data.type == 'contacts'">
-                <legend>Kontaktdaten</legend>
+                <legend>{{trans('admin.Kontaktdaten')}}</legend>
                 <div class="row">
                     <div class="col-md-4 form-group" :class="{'has-error': form.errors.phone }">
                         <label v-text="textblocks.phone.label"></label>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div v-if="data.type == 'bankAccount'">
-                <legend>Bankdaten</legend>
+                <legend>{{trans('admin.Bankdaten')}}</legend>
                 <div class="row">
                     <div class="col-md-4 form-group" :class="{'has-error': form.errors.iban }">
                         <label v-text="textblocks.iban.label"></label>
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div v-if="data.type == 'controlData'">
-                <legend>Steuerdaten</legend>
+                <legend>{{trans('admin.Steuerdaten')}}</legend>
                 <div class="row">
                     <div class="col-md-4 form-group" :class="{'has-error': form.errors.tax_number }">
                         <label v-text="textblocks.tax_number.label"></label>

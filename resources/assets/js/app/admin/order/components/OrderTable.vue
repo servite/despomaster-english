@@ -14,7 +14,7 @@
                         <i class="pointer fa fa-refresh text-primary" @click="reset"></i>
                     </div>
                     <div class="table-view__header-columns">
-                        <input class="form-control input-sm" v-model="query.search_input" placeholder="Suche nach..." @keyup.enter="search">
+                        <input class="form-control input-sm" v-model="query.search_input" :placeholder="trans('admin.Suche nach')" @keyup.enter="search">
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.client_location" @change="search">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="table-view__header-columns">
                         <select class="form-control input-sm" v-model="query.client_id" @change="search">
-                            <option value="">Kunden auswählen...</option>
+                            <option value="">{{trans('admin.Kunden auswählen')}}...</option>
                             <option v-for="client in clients" :value="client.id">{{ client.name }}</option>
                         </select>
                     </div>
@@ -54,13 +54,13 @@
                         </select>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'date'">
-                        <datepicker name="date" v-model="query.date" placeholder="Auftrag am" @dateSelected="search"></datepicker>
+                        <datepicker name="date" v-model="query.date" :placeholder="trans('admin.Auftrag am')" @dateSelected="search"></datepicker>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'range'">
-                        <datepicker name="start" v-model="query.start" placeholder="Auftrag vom" @keyup.enter="search"></datepicker>
+                        <datepicker name="start" v-model="query.start" :placeholder="trans('admin.Auftrag vom')" @keyup.enter="search"></datepicker>
                     </div>
                     <div class="table-view__header-columns" v-show="query.time == 'range'">
-                        <datepicker name="end" v-model="query.end" placeholder="Auftrag bis" @keyup.enter="search"></datepicker>
+                        <datepicker name="end" v-model="query.end" :placeholder="trans('admin.Auftrag bis')" @keyup.enter="search"></datepicker>
                     </div>
                     <div>
                         <button class="btn btn-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
@@ -95,20 +95,20 @@
                     <tbody>
                     <tr v-for="row in model.data">
                         <td width="45px">
-                            <span v-if="row.parent_id" :title="'Unterauftrag von Auftrag ' + row.parent_id" class="pull-left"><i class="fa fa-child"></i></span>
-                            <span v-if="row.is_parent" class="pull-left" title="Hauptauftrag"><i class="fa fa-universal-access"></i></span></td>
+                            <span v-if="row.parent_id" :title=" trans('admin.Unterauftrag von Auftrag') + row.parent_id" class="pull-left"><i class="fa fa-child"></i></span>
+                            <span v-if="row.is_parent" class="pull-left" :title="trans('admin.Hauptauftrag')"><i class="fa fa-universal-access"></i></span></td>
                         <td><a :href="source + '/' + row.id + '/show'">{{ row.id }}</a></td>
-                        <td>{{ row.staff_planned }} von {{ row.staff_required }}</td>
+                        <td>{{ row.staff_planned }} {{trans('admin.von')}} {{ row.staff_required }}</td>
                         <td><a :href="'client/' + row.client_id + '/show'">{{ row.client.short_name }}</a></td>
                         <td>{{ row.client_location }}</td>
                         <td>{{ row.start }}</td>
                         <td>{{ row.end }}</td>
-                        <td><span v-if="row.time_recorded">{{ hour(row.total_min/60) }} Std.</span><span v-else>-</span></td>
+                        <td><span v-if="row.time_recorded">{{ hour(row.total_min/60) }} {{trans('admin.Std')}}.</span><span v-else>-</span></td>
                         <td>
-                            <i title="Angefragt" v-if="row.status == 'requested'" class="fa fa-question fa-lg text-warning"></i>
-                            <i title="Zeiterfasst" v-if="row.time_recorded" class="fa fa-clock-o fa-lg text-success"></i>
-                            <i title="Storniert" v-if="row.status == 'canceled'" class="fa fa-ban fa-lg text-danger"></i>
-                            <i title="Öffentlich" v-if="row.status == 'public'" class="fa fa-eye fa-lg text-info"></i>
+                            <i :title="trans('admin.Angefragt')" v-if="row.status == 'requested'" class="fa fa-question fa-lg text-warning"></i>
+                            <i :title="trans('admin.Zeiterfasst')" v-if="row.time_recorded" class="fa fa-clock-o fa-lg text-success"></i>
+                            <i :title="trans('admin.Storniert')" v-if="row.status == 'canceled'" class="fa fa-ban fa-lg text-danger"></i>
+                            <i :title="trans('admin.Öffentlich')" v-if="row.status == 'public'" class="fa fa-eye fa-lg text-info"></i>
                         </td>
                         <td>
                             <a v-if="canUpdate" @click="editOrder(row)" class="btn btn-sm btn-primary">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="table-view__footer">
                     <div class="table-view__footer-item">
-                        <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                        <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
                     </div>
                     <div class="table-view__footer-item">
                         <div class="table-view__footer-sub">

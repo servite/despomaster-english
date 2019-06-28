@@ -20,7 +20,7 @@
                                 </li>
                             </ul>
                             <a class="pull-right margin-r-10" :href="'/admin/calendar/orders/by/month?start=' + moment(start).startOf('month').format('YYYY-MM-DD')">
-                                {{ moment(start).locale('de').format('MMMM') }}
+                                {{ trans('admin.'+ moment(start).locale('de').format('MMMM') )}}
                             </a>
                         </div>
                     </div>

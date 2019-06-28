@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="margin-r-5">Status</label>
+                            <label class="margin-r-5">{{trans('admin.Status')}}</label>
                             <select class="form-control" v-model="status" @change="getOrders">
                                 <option value="">{{ trans('admin.Alle' )}}</option>
                                 <option value="time_recorded">{{ trans('admin.Zeiterfasst' )}}</option>
@@ -48,7 +48,7 @@
                 <div class="form-inline">
                     <div>
                         <div class="form-group">
-                            <label class="margin-r-5">Standort</label>
+                            <label class="margin-r-5">{{trans('admin.Standort')}}</label>
                             <select class="form-control" v-model="location" @change="getOrders">
                                 <option value="">{{ trans('admin.Alle' )}}</option>
                                 <option v-for="location in locations" :value="location.name">{{trans('admin.'+ location.name) }}</option>
@@ -124,7 +124,7 @@
             },
 
             openOrder(order) {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': order});
+                modal('Show Order Modal', trans('admin.Auftrag anzeigen'), {'order': order});
             },
 
             getBackground(order)

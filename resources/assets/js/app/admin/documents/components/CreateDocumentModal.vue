@@ -230,7 +230,7 @@
 
             <div class="pull-right">
                 <button id="submit-button" type="submit" class="hidden"></button>
-                <submit-button class="btn-success" @click.prevent="submitForm"  text="Anlegen" :loading="loading"></submit-button>
+                <submit-button class="btn-success" @click.prevent="submitForm"  :text="trans('admin.Anlegen')" :loading="loading"></submit-button>
             </div>
         </template>
     </form-wrapper>

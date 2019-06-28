@@ -72,7 +72,7 @@
                         <div class="col-md-6 form-group">
                             <label>{{trans('admin.Betrag')}}Standort</label>
                             <select name="location" class="form-control input-sm" v-model="client.location">
-                                <option value="">Auswählen...</option>
+                                <option value="">{{trans('admin.Auswählen')}}</option>
                                 <option v-for="location in locations" :value="location.name">{{ location.name }}</option>
                             </select>
                         </div>

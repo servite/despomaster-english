@@ -27,7 +27,7 @@
         methods: {
 
             edit() {
-                modal('Edit Template Modal', 'Dokument bearbeiten', {template: this.template})
+                modal('Edit Template Modal', trans('admin.Dokument bearbeiten'), {template: this.template})
             },
 
             reloadTemplate() {

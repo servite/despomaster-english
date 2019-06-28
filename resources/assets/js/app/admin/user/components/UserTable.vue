@@ -9,30 +9,30 @@
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.usertype" @change="search">
-                    <option value="">Typ...</option>
-                    <option value="internal">Intern</option>
-                    <option value="client">Kunde</option>
-                    <option value="employee">Mitarbeiter</option>
+                    <option value="">{{trans('admin.Typ')}}</option>
+                    <option value="internal">{{trans('admin.Intern')}}</option>
+                    <option value="client">{{trans('admin.Kunde')}}</option>
+                    <option value="employee">{{trans('admin.Mitarbeiter')}}</option>
                 </select>
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.role" @change="search">
-                    <option value="">Rolle...</option>
-                    <option value="master_admin">Master Admin</option>
-                    <option value="manager">Manager</option>
-                    <option value="local_manager">Filialleiter</option>
-                    <option value="accountant">Lohnbuchhalter</option>
+                    <option value="">{{trans('admin.Rolle')}}</option>
+                    <option value="master_admin">{{trans('admin.Master Admin')}}</option>
+                    <option value="manager">{{trans('admin.Manager')}}</option>
+                    <option value="local_manager">{{trans('admin.Filialleiter')}}</option>
+                    <option value="accountant">{{trans('admin.Lohnbuchhalter')}}</option>
                 </select>
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.state" @change="search">
-                    <option value="">Status...</option>
-                    <option value="1">Aktiv</option>
-                    <option value="0">Inaktiv</option>
+                    <option value="">{{trans('admin.Status')}}</option>
+                    <option value="1">{{trans('admin.Aktiv')}}</option>
+                    <option value="0">{{trans('admin.Inaktiv')}}</option>
                 </select>
             </div>
             <div>
-                <button class="btn btm-default btn-sm" @click="search">Filtern</button>
+                <button class="btn btm-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
             </div>
         </div>
         <div class="table-view__body">
@@ -40,8 +40,8 @@
                 <thead>
                 <tr>
                     <th>
-                        <span class="sortable" @click="toggleOrder('id')">ID</span>
-                        <span class="sortable" @click="toggleOrder('id')">Kundennr.</span>
+                        <span class="sortable" @click="toggleOrder('id')">{{trans('admin.ID')}}</span>
+                        <span class="sortable" @click="toggleOrder('id')">{{trans('admin.Kundennr')}}</span>
                         <i v-if="query.column != 'invoice_date'">&uarr;&darr;</i>
                         <span v-else>
                             <i v-if="query.direction === 'desc'">&darr;</i>
@@ -49,8 +49,8 @@
                         </span>
                     </th>
                     <th>
-                        <span class="sortable" @click="toggleOrder('invoice_date')">Name</span>
-                        <span class="sortable" @click="toggleOrder('invoice_date')">Kundennr.</span>
+                        <span class="sortable" @click="toggleOrder('invoice_date')">{{trans('admin.Name')}}</span>
+                        <span class="sortable" @click="toggleOrder('invoice_date')">{{trans('admin.Kundennr')}}</span>
                         <i v-if="query.column != 'invoice_date'">&uarr;&darr;</i>
                         <span v-else>
                             <i v-if="query.direction === 'desc'">&darr;</i>
@@ -61,7 +61,7 @@
                     <th>Typ</th>
                     <th>Rolle</th>
                     <th>Status</th>
-                    <th v-if="canUpdate || canDelete">Aktion</th>
+                    <th v-if="canUpdate || canDelete">{{trans('admin.Aktion')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@
                     <td>{{ row.roleName }}</td>
                     <td>
                         <span v-if="row.active == 1" class="label label-success">Aktiv</span>
-                        <span v-else class="label label-warning">Inaktiv</span>
+                        <span v-else class="label label-warning">{{trans('admin.Inaktiv')}}</span>
                     </td>
                     <td v-if="canUpdate || canDelete">
                         <a :href="'/admin/settings/' + source + '/' + row.id + '/show'" v-if="canUpdate" class="btn btn-sm btn-primary">

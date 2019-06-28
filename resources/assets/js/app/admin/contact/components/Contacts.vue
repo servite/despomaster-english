@@ -71,7 +71,7 @@
                 let data = {
                     'client': this.client,
                     'contact': {},
-                    'buttonText': 'Anlegen',
+                    'buttonText': trans('admin.Anlegen'),
                     'type': 'create'
                 }
 

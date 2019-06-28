@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-10">
-                <legend>Anschrift</legend>
+                <legend>{{trans('admin.Anschrift')}}</legend>
             </div>
             <div class="col-md-2"><i @click="edit('address')" class="fa fa-pencil fa-lg pointer"></i></div>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <legend>Kontaktdaten</legend>
+                <legend>{{trans('admin.Kontaktdaten')}}</legend>
             </div>
             <div class="col-md-2"><i @click="edit('contacts')" class="fa fa-pencil fa-lg pointer"></i></div>
         </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <legend>Bankdaten</legend>
+                <legend>{{trans('admin.Bankdaten')}}</legend>
             </div>
             <div class="col-md-2"><i @click="edit('bankAccount')" class="fa fa-pencil fa-lg pointer"></i></div>
         </div>
@@ -70,7 +70,7 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <legend>Steuerdaten</legend>
+                <legend>{{trans('admin.Steuerdaten')}}</legend>
             </div>
             <div class="col-md-2"><i @click="edit('controlData')" class="fa fa-pencil fa-lg pointer"></i></div>
         </div>

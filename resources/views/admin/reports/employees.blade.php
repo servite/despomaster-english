@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <pie-chart
-                                    title="Mitarbeiter nach Standort"
+                                    title="{{trans('admin.Mitarbeiter nach Standort')}}"
                                     url="/api/report/chart/employees-by-location"
                                     width="300" height="300"
                             >

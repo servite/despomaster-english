@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2>Mitarbeiter Kalender</h2>
+            <h2>{{trans('admin.Mitarbeiter Kalender')}}</h2>
         </div>
         <div class="panel-body">
             <form class="form-inline" action="{{ url('admin/calendar/employees/') }}" method="GET">
@@ -25,10 +25,10 @@
                         <th>
                             <input id="activateAll" type="checkbox">
                         </th>
-                        <th style="width: 150px;">Name</th>
+                        <th style="width: 150px;">{{trans('admin.Name')}}</th>
                         @foreach($dates as $date => $weekday)
                             <th colspan="12">
-                                {{ $weekday . ', ' . Date::format($date, 'date') }}
+                                {{ trans('admin.'.$weekday) . ', ' . Date::format($date, 'date') }}
                             </th>
                         @endforeach
                     </tr>
@@ -78,7 +78,7 @@
                     </tbody>
                 </table>
 
-                <input type="submit" value="Einsatzpläne senden" class="btn btn-primary btn-md pull-right">
+                <input type="submit" value="{{trans('admin.Einsatzpläne senden')}}" class="btn btn-primary btn-md pull-right">
             </form>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <form-wrapper :action="'/api/textblocks/element/' + this.data.element">
         <template slot-scope="form">
-            <legend>Textbausteine</legend>
+            <legend>{{trans('admin.Textbausteine')}}</legend>
 
             <div v-if="data.type == 'disclaimer'">
                 <div class="form-group" :class="{'has-error': form.errors.disclaimer }">

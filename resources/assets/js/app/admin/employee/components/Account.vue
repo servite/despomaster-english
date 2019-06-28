@@ -24,7 +24,7 @@
                         <input class="form-control input-sm" name="email" :value="employee.email" readonly>
                     </div>
                 </div>
-                <submit-button class="btn-sm btn-success pull-right" text="Konto anlegen" :loading="form.loading"></submit-button>
+                <submit-button class="btn-sm btn-success pull-right" :text="trans('admin.Konto anlegen')" :loading="form.loading"></submit-button>
             </template>
         </form-wrapper>
     </div>
