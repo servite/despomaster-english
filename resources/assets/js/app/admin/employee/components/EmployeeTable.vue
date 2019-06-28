@@ -55,7 +55,7 @@
                         </select>
                     </div>
                     <div>
-                        <button class="btn btm-default btn-sm" @click="search">Filtern</button>
+                        <button class="btn btm-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
                     </div>
                 </div>
                 <div class="table-view__body">
