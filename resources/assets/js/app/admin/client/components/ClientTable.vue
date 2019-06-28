@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <h2>
                 {{trans('admin.Kundenliste')}}
-                <a @click="newClient" class="btn btn-primary pull-right">Neuer Kunde</a>
+                <a @click="newClient" class="btn btn-primary pull-right">{{trans('admin.Neuer Kunde')}}</a>
             </h2>
         </div>
         <div class="panel-body">
@@ -43,7 +43,7 @@
                         </select>
                     </div>
                     <div>
-                        <button class="btn btm-default btn-sm" @click="search">Filtern</button>
+                        <button class="btn btm-default btn-sm" @click="search">{{trans('admin.Filtern')}}</button>
                     </div>
                 </div>
                 <div class="table-view__body">

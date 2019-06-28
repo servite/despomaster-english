@@ -83,7 +83,7 @@
                 </div>
                 <div class="table-view__footer">
                     <div class="table-view__footer-item">
-                        <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                        <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
                     </div>
                     <div class="table-view__footer-item">
                         <div class="table-view__footer-sub">
