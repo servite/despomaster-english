@@ -15,7 +15,7 @@
             <label>{{ trans('admin.Bis' )}}</label>
             <datepicker name="end" v-model="endDate" @click="startOfWeek = ''"></datepicker>
         </div>
-        <button type="submit" class="btn btn-default btn-sm">Filtern</button>
+        <button type="submit" class="btn btn-default btn-sm">{{trans('admin.Filtern')}}</button>
     </div>
 </template>
 
