@@ -22,7 +22,7 @@ class AccountController extends Controller
         $data['user'] = auth()->user();
 
         return view('admin.settings.account.credentials', $data)
-                ->with('title', 'Kontodaten bearbeiten');
+                ->with('title', trans('admin.Kontodaten bearbeiten'));
     }
 
     /**
@@ -56,7 +56,7 @@ class AccountController extends Controller
         $data['address'] = Textblocks::whereIn('name', ['street', 'postal_code', 'city'])->pluck('value', 'name');
 
         return view('admin.settings.account.address', $data)
-            ->with('title', 'Adresse bearbeiten');
+            ->with('title', trans('admin.Adresse bearbeiten'));
     }
 
     /**
@@ -83,7 +83,7 @@ class AccountController extends Controller
         $data['signature'] = Textblocks::where('name', 'signature')->first();
 
         return view('admin.settings.account.signature', $data)
-            ->with('title', 'Signatur bearbeiten');
+            ->with('title', trans('admin.Signatur bearbeiten'));
     }
 
     /**

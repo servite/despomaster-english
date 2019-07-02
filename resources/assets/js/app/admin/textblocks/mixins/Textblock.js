@@ -16,7 +16,7 @@ export default {
                 element: this.element
             }
 
-            modal(this.modalName, 'Textbausteine bearbeiten', data);
+            modal(this.modalName, trans('admin.Textbausteine bearbeiten'), data);
         },
 
         reloadTextblocks() {

@@ -34,7 +34,7 @@
                             <div>
                                 <div>
                                     <span v-if="invoiceData.name" v-text="invoiceData.name"></span>
-                                    <span v-else class="text-muted">{{trans('admin.Firmenname')}}..</span>
+                                    <span v-else class="text-muted">{{trans('admin.Firmenname')}}</span>
                                     <i v-if="errors['invoiceData.name']" class="fa fa-exclamation-triangle text-danger" :title="errors['invoiceData.name'][0]"></i>
                                 </div>
                                 <div>

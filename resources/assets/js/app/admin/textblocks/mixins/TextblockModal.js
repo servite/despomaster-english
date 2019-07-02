@@ -11,7 +11,7 @@ export default {
         this.$on('form.submitted', function () {
             events.$emit('textblocks.updated');
 
-            flash('Textbausteine erfolgreich bearbeitet.');
+            flash(trans('admin.Textbausteine erfolgreich bearbeitet'));
 
             this.$parent.$emit('close')
         })

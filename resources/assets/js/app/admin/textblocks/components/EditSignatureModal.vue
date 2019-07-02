@@ -6,7 +6,7 @@
                 <legend>{{trans('admin.Anschrift')}}</legend>
                 <div class="row">
                     <div class="col-md-4 form-group" :class="{'has-error': form.errors.company_name }">
-                        <label v-text="textblocks.company_name.label"></label>
+                        <label v-text="trans('admin.'+textblocks.company_name.label)"></label>
                         <input name="company_name" class="form-control input-sm" v-model="textblocks.company_name.value">
                         <span v-if="form.errors.company_name" class="help-block">{{ form.errors.company_name }}</span>
                     </div>

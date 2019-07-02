@@ -8,21 +8,21 @@
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.company_name.label"></label>
+                <label v-text="trans('admin.'+textblocks.company_name.label)"></label>
                 <p v-text="textblocks.company_name.value"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.street.label"></label>
+                <label v-text="trans('admin.'+textblocks.street.label)"></label>
                 <p v-text="textblocks.street.value"></p>
             </div>
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.postal_code.label"></label>
+                <label v-text="trans('admin.'+textblocks.postal_code.label)"></label>
                 <p v-text="textblocks.postal_code.value"></p>
             </div>
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.city.label"></label>
+                <label v-text="trans('admin.'+textblocks.city.label)"></label>
                 <p v-text="textblocks.city.value"></p>
             </div>
         </div>
@@ -34,21 +34,21 @@
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.phone.label"></label>
+                <label v-text="trans('admin.'+textblocks.phone.label)"></label>
                 <p v-text="textblocks.phone.value"></p>
             </div>
             <div class="col-md-4 col-md-offset-1 form-group">
-                <label v-text="textblocks.fax.label"></label>
+                <label v-text="trans('admin.'+textblocks.fax.label)"></label>
                 <p v-text="textblocks.fax.value"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.email.label"></label>
+                <label v-text="trans('admin.'+textblocks.email.label)"></label>
                 <p v-text="textblocks.email.value"></p>
             </div>
             <div class="col-md-4 col-md-offset-1 form-group">
-                <label v-text="textblocks.website.label"></label>
+                <label v-text="trans('admin.'+textblocks.website.label)"></label>
                 <p v-text="textblocks.website.value"></p>
             </div>
         </div>
@@ -60,11 +60,11 @@
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.iban.label"></label>
+                <label v-text="trans('admin.'+textblocks.iban.label)"></label>
                 <p v-text="textblocks.iban.value"></p>
             </div>
             <div class="col-md-4 col-md-offset-1 form-group">
-                <label v-text="textblocks.bic.label"></label>
+                <label v-text="trans('admin.'+textblocks.bic.label)"></label>
                 <p v-text="textblocks.bic.value"></p>
             </div>
         </div>
@@ -76,11 +76,11 @@
         </div>
         <div class="row">
             <div class="col-md-4 form-group">
-                <label v-text="textblocks.tax_number.label"></label>
+                <label v-text="trans('admin.'+textblocks.tax_number.label)"></label>
                 <p v-text="textblocks.tax_number.value"></p>
             </div>
             <div class="col-md-4 col-md-offset-1 form-group">
-                <label v-text="textblocks.tax_id.label"></label>
+                <label v-text="trans('admin.'+textblocks.tax_id.label)"></label>
                 <p v-text="textblocks.tax_id.value"></p>
             </div>
         </div>
