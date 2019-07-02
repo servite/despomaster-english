@@ -7,7 +7,7 @@
             <div class="form-group">
                 <select class="form-control input-sm" v-model="type">
                     <option value="">{{trans('admin.Dokumententyp auswählen')}}</option>
-                    <option v-for="(document, key) in documentTypes" :value="key">{{ document }}</option>
+                    <option v-for="(document, key) in documentTypes" :value="key">{{ trans('admin.'+key) }}</option>
                 </select>
             </div>
 

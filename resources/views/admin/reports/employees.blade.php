@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <pie-chart
-                                    title="Mitarbeiter nach Geschlecht"
+                                    title="{{trans('admin.Mitarbeiter nach Geschlecht')}}"
                                     url="/api/report/chart/employee-pool/gender"
                                     width="300" height="300"
                             >
@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-5 col-md-offset-1">
                             <pie-chart
-                                    title="Mitarbeiter nach Beschäftigungsart"
+                                    title="{{trans('admin.Mitarbeiter nach Beschäftigungsart')}}"
                                     url="/api/report/chart/employee-pool/occupation"
                                     width="300" height="300"
                             >

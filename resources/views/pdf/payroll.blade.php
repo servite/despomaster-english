@@ -59,19 +59,19 @@
     <div id="content">
 
         @if($timetrackings->count())
-            <h3>Aufträge</h3>
+            <h3>{{trans('admin.Aufträge')}}</h3>
             <table class="table print-friendly">
                 <thead>
                 <tr>
-                    <th>Auftrag</th>
-                    <th>Kunde</th>
-                    <th>Datum</th>
-                    <th width="70px">Start</th>
-                    <th width="70px">Ende</th>
-                    <th width="60px">Pause</th>
-                    <th width="60px">Gesamt</th>
-                    <th>Stundenlohn</th>
-                    <th width="70px">Lohn</th>
+                    <th>{{trans('admin.Auftrag')}}</th>
+                    <th>{{trans('admin.Kunde')}}</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th width="70px">{{trans('admin.Start')}}</th>
+                    <th width="70px">{{trans('admin.Ende')}}</th>
+                    <th width="60px">{{trans('admin.Pause')}}</th>
+                    <th width="60px">{{trans('admin.Gesamt')}}</th>
+                    <th>{{trans('admin.Stundenlohn')}}</th>
+                    <th width="70px">{{trans('admin.Lohn')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -118,19 +118,19 @@
                 </tfoot>
             </table>
         @else
-            <p>Keine zeiterfassten Aufträge in diesem Monat.</p>
+            <p>{{trans('admin.Keine zeiterfassten Aufträge in diesem Monat')}}</p>
         @endif
 
         <br>
 
         @if(count($payroll_modifications))
-            <h3>Lohn- und Gehaltsabrechnung</h3>
+            <h3>{{trans('admin.Lohn- und Gehaltsabrechnung')}}</h3>
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Art</th>
-                    <th>Kosten</th>
-                    <th>Informationen</th>
+                    <th>{{trans('admin.Art')}}</th>
+                    <th>{{trans('admin.Kosten')}}</th>
+                    <th>{{trans('admin.Informationen')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -144,7 +144,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td><strong>Summe</strong></td>
+                    <td><strong>{{trans('admin.Summe')}}</strong></td>
                     <td class="text-right"><strong>{{ money($payroll_modifications->sum('amount'))  }}</strong></td>
                     <td></td>
                 </tr>
@@ -156,13 +156,13 @@
 
 
         @if(count($extra_business))
-            <h3>Zusätzliche Tätigkeiten</h3>
+            <h3>{{trans('admin.Zusätzliche Tätigkeiten')}}</h3>
             <table class="table print-friendly">
                 <thead>
                 <tr>
-                    <th>Typ</th>
-                    <th>Stundenzahl</th>
-                    <th>Information</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Stundenzahl')}}</th>
+                    <th>{{trans('admin.Information')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -184,9 +184,9 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Typ</th>
-                    <th>Information</th>
+                    <th>{{trans('admin.Datum')}}</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Information')}}</th>
                 </tr>
                 </thead>
                 <tbody>

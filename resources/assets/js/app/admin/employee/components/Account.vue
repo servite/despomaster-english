@@ -10,7 +10,7 @@
                 <a v-else href="#" @click.prevent="activate" class="btn btn-success btn-sm">{{trans('admin.Konto aktivieren')}}</a>
                 <form-wrapper class="pull-right margin-l-5" :action="'/api/account/' + employee.user.id + '/credentials/resend'">
                     <template slot-scope="form">
-                        <submit-button class="btn btn-primary btn-sm" text="Passwort erneuern" :loading="form.loading"></submit-button>
+                        <submit-button class="btn btn-primary btn-sm" :text="trans('admin.Passwort erneuern')" :loading="form.loading"></submit-button>
                     </template>
                 </form-wrapper>
             </div>
@@ -51,7 +51,7 @@
                 axios.post('/api/account/' + this.employee.user.id + '/activate').then(() => {
                     this.reloadEmployee();
 
-                    flash('Konto aktiviert');
+                    flash(trans('admin.Konto aktiviert'));
                 })
             },
 
@@ -59,7 +59,7 @@
                 axios.post('/api/account/' + this.employee.user.id + '/deactivate').then(() => {
                     this.reloadEmployee();
 
-                    flash('Konto deaktiviert');
+                    flash(trans('admin.Konto deaktiviert'));
                 })
             }
         },
@@ -68,7 +68,7 @@
             this.$on('form.submitted', () => {
                 this.reloadEmployee();
 
-                flash(trans('Kontodaten verschickt'));
+                flash(trans('admin.Kontodaten verschickt'));
             });
         }
     }

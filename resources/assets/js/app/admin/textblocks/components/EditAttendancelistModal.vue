@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <submit-button class="pull-right btn-md btn-success" text="Speichern" :loading="form.loading"></submit-button>
+            <submit-button class="pull-right btn-md btn-success" :text="trans('admin.Speichern')" :loading="form.loading"></submit-button>
 
         </template>
     </form-wrapper>

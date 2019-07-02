@@ -21,7 +21,7 @@ class Employee extends Model
     {
         parent::boot();
 
-        static::addGlobalScope(new LocationScope());
+        //static::addGlobalScope(new LocationScope());
     }
 
     /*

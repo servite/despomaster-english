@@ -40,7 +40,7 @@
                             </tbody>
                         </table>
                     @else
-                        <p>Keine zeiterfassten Aufträge</p>
+                        <p>{{trans('admin.Keine_zeiterfassten_Aufträg')}}</p>
                     @endif
                 </div>
             </div>

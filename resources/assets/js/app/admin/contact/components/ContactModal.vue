@@ -84,7 +84,7 @@
                 let data = {
                     'client': this.data.client,
                     'contact': this.data.contact,
-                    'buttonText': 'Speichern',
+                    'buttonText': trans('admin.Speichern'),
                     'type': 'edit'
                 };
 

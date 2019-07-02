@@ -37,7 +37,7 @@
                                 @endfor
                             </select>
                         </div>
-                        <input type="submit" value="Lohnabrechnung anzeigen" class="btn btn-default btn-sm">
+                        <input type="submit" value="{{trans('admin.Lohnabrechnung anzeigen')}}" class="btn btn-default btn-sm">
                     </form>
                 </div>
             </div>

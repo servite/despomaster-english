@@ -39,7 +39,7 @@
 
             </div>
 
-            <input type="submit" value="Speichern" class="btn btn-success btn-md pull-right">
+            <input type="submit" :value="trans('admin.Speichern')" class="btn btn-success btn-md pull-right">
         </template>
     </form-wrapper>
 </template>

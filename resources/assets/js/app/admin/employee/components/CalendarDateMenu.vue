@@ -19,7 +19,7 @@
                 <datepicker name="end" v-model="endDate" @blur="weekSelected = ''" required></datepicker>
             </div>
 
-            <submit-button text="Einsatzplan senden" class="btn-sm btn-primary" :loading="form.loading"></submit-button>
+            <submit-button :text="trans('admin.Einsatzplan senden')" class="btn-sm btn-primary" :loading="form.loading"></submit-button>
         </template>
     </form-wrapper>
 </template>
@@ -67,7 +67,7 @@
             this.getCalendarWeeks();
 
             this.$on('form.submitted', () => {
-                flash(trans('Mail versendet'));
+                flash(trans('admin.Mail versendet'));
             })
         },
     }

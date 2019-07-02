@@ -48,7 +48,7 @@
                 <div class="col-md-3">
                     <div v-if="order.parent || order.children.length">
                         <p>
-                            <strong>{{ order.is_parent ? 'Zugehörige Unteraufträge' : 'Zugehöriger Hauptauftrag' }}</strong>
+                            <strong>{{ order.is_parent ? trans('admin.Zugehörige Unteraufträge') : trans('admin.Zugehöriger Hauptauftrag') }}</strong>
                         </p>
                         <ul class="list-group" style="max-width:280px;">
                             <li v-if="order.children" v-for="child in order.children" class="list-group-item">

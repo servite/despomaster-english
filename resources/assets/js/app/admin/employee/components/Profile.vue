@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <label>{{trans('admin.Familienstand')}}</label>
-                            <div>{{ employee.married ? 'Verheiratet' : ' Ledig' }}</div>
+                            <div>{{ employee.married ? trans('admin.Verheiratet') : trans('Ledig') }}</div>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-md-4 form-group">
                             <label>{{trans('admin.Status')}}</label>
-                            <div>{{ employee.active ? 'Aktiv' : 'Inaktiv' }}</div>
+                            <div>{{ employee.active ? trans('admin.Aktiv') : trans('admin.Inaktiv') }}</div>
                         </div>
                         <div v-if="employee.applicant" class="col-md-4 form-group">
                             <label>{{trans('admin.Bewerber')}}</label>
@@ -192,7 +192,7 @@
                     'type': type
                 };
 
-                modal('Edit Employee Modal', trans('Mitarbeiter bearbeiten'), data);
+                modal('Edit Employee Modal', trans('admin.Mitarbeiter bearbeiten'), data);
             },
 
             reloadEmployee() {

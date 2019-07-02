@@ -18,7 +18,7 @@
                 <template slot-scope="form">
                     <div class="row">
                         <div class="col-md-5 form-group" :class="{'has-error': form.errors.date }">
-                            <label>Abrechnungsmonat</label> <i v-if="form.errors.date" class="fa fa-warning text-danger" :title="form.errors.date"></i>
+                            <label>{{trans('admin.Abrechnungsmonat')}}</label> <i v-if="form.errors.date" class="fa fa-warning text-danger" :title="form.errors.date"></i>
                             <div class="form-inline">
                                 <select class="form-control input-sm" name="month" v-model="data.month" :class="{'has-error': form.errors.month }">
                                     <option value="1">{{trans('admin.Jan')}}</option>
@@ -61,10 +61,10 @@
 
 
 
-                    <submit-button v-if="! editMode" class="pull-right btn-sm btn-primary" text="Neu" :loading="form.loading"></submit-button>
+                    <submit-button v-if="! editMode" class="pull-right btn-sm btn-primary" :text="trans('admin.Neu')" :loading="form.loading"></submit-button>
 
                     <div v-if="editMode" class="pull-right">
-                        <submit-button class="pull-right btn-sm btn-primary" text="Speichern" :loading="form.loading"></submit-button>
+                        <submit-button class="pull-right btn-sm btn-primary" :text="trans('admin.Speichern')" :loading="form.loading"></submit-button>
                         <button @click="reset" class="btn btn-sm btn-danger margin-r-5">{{trans('admin.Abbrechen')}}</button>
                     </div>
                 </template>

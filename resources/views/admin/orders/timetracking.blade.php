@@ -117,11 +117,11 @@
                 </table>
 
                 @if($order->status == 'canceled')
-                    <input type="submit" value="Speichern" class="btn btn-success pull-right" disabled title="Auftrag ist storniert">
+                    <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success pull-right" disabled title="Auftrag ist storniert">
                 @elseif($order->end_date > now()->format('Y-m-d'))
-                    <input type="submit" value="Speichern" class="btn btn-success pull-right" disabled title="Auftrag liegt in der Zukunft">
+                    <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success pull-right" disabled title="Auftrag liegt in der Zukunft">
                 @else
-                    <input type="submit" value="Speichern" class="btn btn-success pull-right">
+                    <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success pull-right">
                 @endif
             </form>
         </div>

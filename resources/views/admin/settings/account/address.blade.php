@@ -29,6 +29,6 @@
             </div>
         </div>
 
-        <input type="submit" value="Speichern" class="btn btn-success btn-sm pull-right">
+        <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success btn-sm pull-right">
     </form>
 @endsection

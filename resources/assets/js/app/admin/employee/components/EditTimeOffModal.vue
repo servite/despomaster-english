@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="pull-right">
-                    <submit-button text="Änderungen speichern" class="btn-sm btn-success" :loading="form.loading"></submit-button>
+                    <submit-button :text="trans('admin.Änderungen speichern')" class="btn-sm btn-success" :loading="form.loading"></submit-button>
                     <button @click="$parent.$emit('close')" class="btn btn-sm btn-default">{{trans('admin.Schliessen')}}</button>
                 </div>
             </template>

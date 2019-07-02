@@ -70,10 +70,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>{{trans('admin.Betrag')}}Standort</label>
+                            <label>{{trans('admin.Standort')}}</label>
                             <select name="location" class="form-control input-sm" v-model="client.location">
                                 <option value="">{{trans('admin.Auswählen')}}</option>
-                                <option v-for="location in locations" :value="location.name">{{ location.name }}</option>
+                                <option v-for="location in locations" :value="location.name">{{trans('admin.'+ location.name) }}</option>
                             </select>
                         </div>
                     </div>

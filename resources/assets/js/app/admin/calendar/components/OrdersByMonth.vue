@@ -51,7 +51,7 @@
                                     <label class="margin-r-5">{{ trans('admin.Standort' )}}</label>
                                     <select class="form-control input-sm" v-model="location" @change="getOrders">
                                         <option value="">{{ trans('admin.Alle' )}}</option>
-                                        <option v-for="location in locations" :value="location">{{ location }}</option>
+                                        <option v-for="location in locations" :value="location">{{trans('admin.'+ location) }}</option>
                                     </select>
                                 </div>
                             </div>

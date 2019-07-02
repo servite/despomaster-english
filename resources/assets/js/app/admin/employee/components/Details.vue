@@ -63,7 +63,7 @@
 
             <div class="text-muted">
                 <div>
-                    {{trans('admin.Gearbeitet im')}} {{ moment().locale('de').format('MMMM') }}
+                    {{trans('admin.Gearbeitet im')}} {{ trans(moment().locale('de').format('MMMM')) }}
                     <span class="pull-right">{{ employee.current_working_time_account ? hour(employee.current_working_time_account.actual) : 0 }} {{trans('admin.Stunden')}}</span>
                 </div>
                 <div>
@@ -91,21 +91,21 @@
 
             <div v-if="! editMode" class="text-muted">
                 <div>
-                    PKW
+                    {{trans('admin.PKW')}}
                     <div class="pull-right">
                         <i v-if="data.car" class="fa fa-check text-success"></i>
                         <i v-else class="fa fa-ban text-danger"></i>
                     </div>
                 </div>
                 <div>
-                    Führerschein
+                    {{trans('admin.Führerschein')}}
                     <div class="pull-right">
                         <i v-if="data.driving_license" class="fa fa-check text-success"></i>
                         <i v-else class="fa fa-ban text-danger"></i>
                     </div>
                 </div>
                 <div>
-                    Semesterticket
+                    {{trans('admin.Semesterticket')}}
                     <div class="pull-right">
                         <i v-if="data.public_transportation" class="fa fa-check text-success"></i>
                         <i v-else class="fa fa-ban text-danger"></i>
@@ -115,21 +115,21 @@
 
             <div v-if="editMode" class="text-muted">
                 <div class="checkbox">
-                    PKW
+                    {{trans('admin.PKW')}}
                     <div class="pull-right">
                         <input type="hidden" name="car" value="0">
                         <input name="car" type="checkbox" v-model="input.car">
                     </div>
                 </div>
                 <div class="checkbox">
-                    Führerschein
+                    {{trans('admin.Führerschein')}}
                     <div class="pull-right">
                         <input type="hidden" name="driving_license" value="0">
                         <input name="driving_license" type="checkbox" v-model="input.driving_license">
                     </div>
                 </div>
                 <div class="checkbox">
-                    Semesterticket
+                    {{trans('admin.Semesterticket')}}
                     <div class="pull-right">
                         <input type="hidden" name="public_transportation" value="0">
                         <input name="public_transportation" type="checkbox" v-model="input.public_transportation">

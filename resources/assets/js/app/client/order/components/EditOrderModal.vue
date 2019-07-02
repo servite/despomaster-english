@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="pull-right">
-                <input type="submit" value="Speichern" class="btn btn-success btn-md">
+                <input type="submit" :value="trans('admin.Speichern')" class="btn btn-success btn-md">
                 <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">Schliessen</a>
             </div>
         </template>

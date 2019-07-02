@@ -38,10 +38,10 @@
                         <textarea class="form-control input-sm" name="information" rows="2" placeholder="Information...." v-model="data.information"></textarea>
                     </div>
 
-                    <submit-button v-if="! editMode" class="pull-right btn-sm btn-primary" text="Neu" :loading="form.loading"></submit-button>
+                    <submit-button v-if="! editMode" class="pull-right btn-sm btn-primary" :text="trans('admin.Neu')" :loading="form.loading"></submit-button>
 
                     <div v-if="editMode" class="pull-right">
-                        <submit-button class="pull-right btn-sm btn-primary" text="Speichern" :loading="form.loading"></submit-button>
+                        <submit-button class="pull-right btn-sm btn-primary" :text="trans('admin.Speichern')" :loading="form.loading"></submit-button>
                         <button @click="reset" class="btn btn-sm btn-danger margin-r-5">{{trans('admin.Abbrechen')}}</button>
                     </div>
                 </template>

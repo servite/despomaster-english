@@ -14,7 +14,7 @@
                             <i @click="sub('months')" class="fa fa-angle-left fa-lg pointer margin-r-5 text-primary"></i>
                         </li>
                         <li>
-                            {{ moment(start).locale('de').format('MMMM YYYY') }}
+                            {{ trans('admin.'+moment(start).locale('de').format('MMMM')) }} {{ moment(start).locale('de').format('YYYY') }}
                         </li>
                         <li>
                             <i @click="add('months')" class="fa fa-angle-right fa-lg  pointer margin-l-5 text-primary"></i>
@@ -31,7 +31,7 @@
                 <tr class="bg-black-light">
                     <td style="width:40px;"></td>
                     <td v-for="(weekday, date) in week" class="padding-5">
-                        {{ weekday }}
+                        {{ trans('admin.'+weekday) }}
                         <a href="#" @click.prevent="newTimeOff(date)" class="pull-right small">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td height="90px" style="width:40px;vertical-align: middle;">
-                        KW <br>{{ moment(startOfWeek).isoWeek() }}
+                        {{ trans('admin.KW') }} <br>{{ moment(startOfWeek).isoWeek() }}
                     </td>
                     <td v-for="(weekday, date) in week" :class="{ 'bg-blue-light' : isToday(date) }">
                         <div class="text-muted small text-right">{{ moment(date).format('Do') }}</div>
@@ -103,15 +103,15 @@
             },
 
             openOrder(order) {
-                modal('Show Order Modal', trans('Auftrag bearbeiten'), {'order': order});
+                modal('Show Order Modal', trans('admin.Auftrag bearbeiten'), {'order': order});
             },
 
             assignEmployees(order) {
-                modal('Assign Employees Modal', trans('Mitarbeiter einplanen'), {'order': order}, '100%');
+                modal('Assign Employees Modal', trans('admin.Mitarbeiter einplanen'), {'order': order}, '100%');
             },
 
             editTimeOffs() {
-                modal('Time Off Modal', trans('Fehlzeiten'), {'employee': this.employee});
+                modal('Time Off Modal', trans('admin.Fehlzeiten'), {'employee': this.employee});
             },
 
             editTimeOff(timeoff) {
@@ -120,7 +120,7 @@
                     'employee': this.employee
                 };
 
-                modal('Edit Time Off Modal', trans('Fehlzeiten'), data);
+                modal('Edit Time Off Modal', trans('admin.Fehlzeiten'), data);
             },
 
             newTimeOff(date) {
@@ -129,7 +129,7 @@
                     'employee': this.employee
                 };
 
-                modal('Time Off Modal', trans('Fehlzeiten'), data);
+                modal('Time Off Modal', trans('admin.Fehlzeiten'), data);
             },
 
             getOrderStatus(order){

@@ -15,7 +15,7 @@
 
                 <p class="text-muted text-center">{{ employee.sex == 'm' ? trans('männlich') : trans('weiblich') }}</p>
 
-                <p class="text-center"><b>Status:</b> {{ employee.active ? trans('Aktiv') : trans('Inaktiv') }}</p>
+                <p class="text-center"><b>{{trans('admin.Status')}}:</b> {{ employee.active ? trans('Aktiv') : trans('Inaktiv') }}</p>
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
@@ -33,7 +33,7 @@
                     <li class="list-group-item">
                         <b>{{trans('admin.Alter')}}</b>
                         <div class="pull-right">
-                            {{ moment().diff(moment(employee.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} Jahre
+                            {{ moment().diff(moment(employee.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} {{trans('admin.Jahre')}}
                         </div>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@
 
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Details</h3>
+                <h3 class="box-title">{{trans('admin.Details')}}</h3>
             </div>
             <div class="box-body">
                 <strong><i class="fa fa-map-marker margin-r-5"></i> {{trans('admin.Adresse')}}</strong>

@@ -61,7 +61,7 @@
                                 <div class="form-group" :class="{'has-error': form.errors.user_role }">
                                     <label>{{trans('admin.Rolle')}}</label>
                                     <select name="role" class="form-control input-sm">
-                                        <option value="">{{trans('admin.Auswählen...')}}</option>
+                                        <option value="">{{trans('admin.Auswählen')}}</option>
                                         @foreach($roles as $role)
                                             <option value="{{ $role->id }}" {{ $user->hasRole($role->name) ? 'selected="selected"' : '' }}>{{ $role->display_name}}</option>
                                         @endforeach
@@ -81,7 +81,7 @@
                                 </label>
                             </div>
                         @endforeach
-                        <input type="submit" value="Speichern" class="btn btn-success btn-sm pull-right">
+                        <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success btn-sm pull-right">
                     </template>
                 </form-wrapper>
             </div>

@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <submit-button class="pull-right btn-sm btn-primary" text="Neu" :loading="form.loading"></submit-button>
+                    <submit-button class="pull-right btn-sm btn-primary" :text="trans('admin.Neu')" :loading="form.loading"></submit-button>
                 </template>
             </form-wrapper>
             <table v-if="items.length" class="table">

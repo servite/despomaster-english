@@ -52,7 +52,7 @@
                 <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Berichte (letztes Jahr)</h3>
+                            <h3 class="box-title">{{trans('admin.Berichte (letztes Jahr)')}}</h3>
                         </div>
                         <div class="box-body no-padding">
                             <div class="pad">
@@ -99,10 +99,10 @@
         @endif
         <div class="row">
             <div class="col-md-6">
-                <bar-chart url="/api/report/chart/orders" title="Aufträge" group-by="week"></bar-chart>
+                <bar-chart url="/api/report/chart/orders" title="{{trans('admin.Aufträge')}}" group-by="week"></bar-chart>
             </div>
             <div class="col-md-6">
-                <bar-chart url="/api/report/chart/invoices" title="Rechnungen" group-by="week"></bar-chart>
+                <bar-chart url="/api/report/chart/invoices" title="{{trans('admin.Rechnungen')}}" group-by="week"></bar-chart>
             </div>
         </div>
     </div>

@@ -80,7 +80,7 @@
                 <li class="list-group-item">
                     <b>{{trans('admin.Alter')}}</b>
                     <div class="pull-right">
-                        {{ moment().diff(moment(data.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} Jahre
+                        {{ moment().diff(moment(data.date_of_birth, 'DD.MM.YYYY').format(), 'years') }} {{trans('admin.Jahre')}}
                     </div>
                 </li>
                 <li class="list-group-item">

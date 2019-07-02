@@ -35,12 +35,12 @@
                     data: {
                         datasets: [
                             {
-                                label: trans('Zahl der Aufträge'),
+                                label: trans('admin.Zahl der Aufträge'),
                                 backgroundColor: '#1976d2',
                                 yAxisID: 'y-axis-0',
                             },
                             {
-                                label: trans('Gesamtzeit (Std)'),
+                                label: trans('admin.Gesamtzeit (Std)'),
                                 backgroundColor: '#4caf50',
                                 yAxisID: 'y-axis-1',
                             }

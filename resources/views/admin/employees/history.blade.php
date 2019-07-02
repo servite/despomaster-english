@@ -6,7 +6,7 @@
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>{{trans('admin.Letzte Aufträge')}}</h4>
+                    <h4>{{trans('admin.Letzte Aufträge')}}123</h4>
                 </div>
                 <div class="panel-body">
                     <employee-history :items="{{ $orders }}"></employee-history>
@@ -44,7 +44,7 @@
                             </tbody>
                         </table>
                     @else
-                        <p>{{trans('admin.Keine zeiterfassten Aufträg')}}e</p>
+                        <p>{{trans('admin.Keine_zeiterfassten_Aufträg')}}</p>
                     @endif
                 </div>
             </div>

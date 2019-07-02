@@ -15,7 +15,7 @@
         </div>
         <div class="panel-body" v-show="showForm || items.length">
             <div v-if="items.length">
-                <b>Aktueller Lohn</b> <span class="pull-right">{{ money(items[0].amount) }} € (Gültig ab {{ moment(items[0].valid_from).format('ll') }})</span>
+                <b>{{trans('admin.Aktueller Lohn')}}</b> <span class="pull-right">{{ money(items[0].amount) }} € (Gültig ab {{ moment(items[0].valid_from).format('ll') }})</span>
 
                 <hr>
             </div>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
 
-                    <submit-button class="pull-right btn-sm btn-primary" text="Neu" :loading="form.loading"></submit-button>
+                    <submit-button class="pull-right btn-sm btn-primary" :text="trans('admin.Neu')" :loading="form.loading"></submit-button>
                 </template>
             </form-wrapper>
             <table v-if="items.length" class="table">

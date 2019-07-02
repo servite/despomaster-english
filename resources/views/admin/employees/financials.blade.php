@@ -11,7 +11,7 @@
                     <form class="form-inline" action="{{ url('admin/employee/' . $employee->id . '/payroll/pdf') }}" method="GET" target="_blank">
                         <div class="form-group">
                             <select name="month" id="month" class="form-control input-sm" required>
-                                <option value="">{{trans('admin.Monat..')}}</option>
+                                <option value="">{{trans('admin.Monat')}}</option>
                                 @foreach(config('settings.months') as $key => $month)
                                     <option value="{{ $key }}">{{ $month }}</option>
                                 @endforeach
@@ -19,13 +19,13 @@
                         </div>
                         <div class="form-group">
                             <select name="year" id="year" class="form-control input-sm" required>
-                                <option value="">{{trans('admin.Jahr..')}}</option>
+                                <option value="">{{trans('admin.Jahr')}}</option>
                                 @for($i = 2017; $i <= date('Y'); $i++)
                                     <option value="{{ $i }}">{{ $i}}</option>
                                 @endfor
                             </select>
                         </div>
-                        <input type="submit" value="Lohnabrechnung anzeigen" class="btn btn-default btn-sm">
+                        <input type="submit" value="{{trans('admin.Lohnabrechnung anzeigen')}}" class="btn btn-default btn-sm">
                     </form>
                 </div>
             </div>

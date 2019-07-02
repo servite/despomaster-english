@@ -242,7 +242,7 @@
                                         <a href="{{ url('admin/invoice/' . $invoice->id . '/new-item') }}" class="btn btn-success btn-sm pull-left">
                                             <i class="fa fa-plus"></i> {{trans('admin.Neu')}}
                                         </a>
-                                        <input type="submit" value="Speichern" class="btn btn-success btn-md pull-right">
+                                        <input type="submit" value="{{trans('admin.Speichern')}}" class="btn btn-success btn-md pull-right">
                                     </div>
                                 </form>
                             </div>
