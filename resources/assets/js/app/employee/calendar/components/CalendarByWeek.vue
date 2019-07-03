@@ -8,7 +8,7 @@
                     </a>
                 </li>
                 <li>
-                    KW {{ moment(start).week() }}
+                    {{trans('admin.KW')}} {{ moment(start).week() }}
                 </li>
                 <li>
                     <a @click="add('weeks')">
@@ -25,7 +25,7 @@
             <thead>
             <tr class="bg-grey-light">
                 <th v-for="(weekday, date) in week">
-                    {{ weekday + ', ' + moment(date).format('l') }}
+                    {{ trans('admin.'+weekday) + ', ' + moment(date).format('l') }}
                 </th>
             </tr>
             </thead>

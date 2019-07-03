@@ -187,7 +187,7 @@
                     'type': type
                 };
 
-                modal('Edit Employee Modal', 'Mitarbeiter bearbeiten', data);
+                modal('Edit Employee Modal', trans('admin.Mitarbeiter bearbeiten'), data);
             },
 
             reloadEmployee() {

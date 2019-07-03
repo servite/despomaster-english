@@ -117,7 +117,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3" style="border-bottom:2px solid black;">Status: {{ $employee->active ? 'Aktiv' : 'Inaktiv' }}</td>
+                            <td colspan="3" style="border-bottom:2px solid black;">Status: {{ $employee->active ? trans('admin.Aktiv') : trans('admin.Inaktiv') }}</td>
                             <td colspan="2" style="border-bottom:2px solid black;">Eintritt: {{ $employee->entry_date }}</td>
                             <td colspan="2" style="border-bottom:2px solid black;">Austritt: {{ $employee->exit_date or '-' }}</td>
                             <td colspan="3" style="border-bottom:2px solid black;">Lohn: {{ $employee->wages()->validAt($date)->exists() ? money($employee->wages()->validAt($date)->first()->amount) : '-' }}</td>

@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-5 form-group">
                         <label>{{trans('admin.Status')}}</label>
-                        <div>{{ client.active ? 'Aktiv' : 'Inaktiv' }}</div>
+                        <div>{{ client.active ? trans('admin.Aktiv') : trans('admin.Inaktiv') }}</div>
                     </div>
                 </div>
                 <div class="row">

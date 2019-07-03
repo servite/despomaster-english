@@ -13,7 +13,7 @@
 
                 <h3 class="profile-username text-center">{{ client.name }}</h3>
 
-                <p class="text-center"><b>Status:</b> {{ client.active ? 'Aktiv' : 'Inaktiv' }}</p>
+                <p class="text-center"><b>Status:</b> {{ client.active ? trans('admin.Aktiv') : trans('admin.Inaktiv') }}</p>
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">

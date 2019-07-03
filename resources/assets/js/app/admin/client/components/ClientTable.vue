@@ -77,7 +77,7 @@
                             <td>{{ row.city }}</td>
                             <td>{{ row.location }}</td>
                             <td>
-                                <span v-if="row.active == 1" class="label label-success">Aktiv</span><span v-if="row.active == 0" class="label label-danger">{{trans('admin.Inaktiv')}}</span>
+                                <span v-if="row.active == 1" class="label label-success">{{trans('admin.Aktiv')}}</span><span v-if="row.active == 0" class="label label-danger">{{trans('admin.Inaktiv')}}</span>
                             </td>
                             <td v-if="canUpdate || canDelete">
                                 <a v-if="canUpdate" @click="editClient(row)" class="btn btn-sm btn-primary">

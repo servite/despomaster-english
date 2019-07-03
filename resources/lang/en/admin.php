@@ -652,9 +652,8 @@ return [
     "Nutzer bearbeiten" => "Edit users",
     "E-Mail Adresse" => "Email Address",
     "E-Mail Adresse (Back-Up)" => "Email Address (Back-Up)",
-    
-
-
-
-
+    "August" => "August",
+    "Abort" => "abortion",
+    "Kundenakte" => "Customer File",
+    "Neuen Kunden angelegt" => "New customer created",
 ];

@@ -15,7 +15,7 @@
         </div>
         <div class="panel-body" v-show="showForm || items.length">
             <div v-if="items.length">
-                <b>{{trans('admin.Aktueller Lohn')}}</b> <span class="pull-right">{{ money(items[0].amount) }} € (Gültig ab {{ moment(items[0].valid_from).format('ll') }})</span>
+                <b>{{trans('admin.Aktueller Lohn')}}</b> <span class="pull-right">{{ money(items[0].amount) }} € ({{trans('admin.Gültig ab')}} {{ moment(items[0].valid_from).format('ll') }})</span>
 
                 <hr>
             </div>
@@ -23,7 +23,7 @@
                 <template slot-scope="form">
                     <div class="row">
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.valid_from }">
-                            <label>Gültig ab</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
+                            <label>{{trans('admin.Gültig ab')}}</label> <i v-if="form.errors.valid_from" class="fa fa-warning text-danger" :title="form.errors.valid_from"></i>
                             <datepicker name="valid_from"></datepicker>
                         </div>
                         <div class="col-md-6 form-group" :class="{'has-error': form.errors.amount }">

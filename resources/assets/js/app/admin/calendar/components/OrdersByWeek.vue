@@ -20,7 +20,7 @@
                                 </li>
                             </ul>
                             <a class="pull-right margin-r-10" :href="'/admin/calendar/orders/by/month?start=' + moment(start).startOf('month').format('YYYY-MM-DD')">
-                                {{ trans('admin.'+ moment(start).locale('de').format('MMMM') )}}
+                                {{ trans('admin.'+ moment(start).locale('de').format('MMMM'))}}
                             </a>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <thead>
                             <tr class="bg-black-light">
                                 <td v-for="(weekday, date) in week" class="padding-5">
-                                    {{ trans('admin.'+ weekday) + ', ' + moment(date).format('l') }}
+                                    {{ trans('admin.'+weekday) + ', ' + moment(date).format('l') }}
                                     <a href="#" @click.prevent="newOrder(date)" class="pull-right">
                                         <i class="fa fa-plus"></i>
                                     </a>

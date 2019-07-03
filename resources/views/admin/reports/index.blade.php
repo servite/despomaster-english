@@ -15,7 +15,7 @@
                                 <select class="form-control input-sm" name="month">
                                     <option value="">{{trans('admin.Monat')}}</option>
                                     @foreach(Date::monthNames() as $key => $month)
-                                        <option value="{{ $key }}">{{ $month['full'] }}</option>
+                                        <option value="{{ $key }}">{{ trans('admin.'.$month['full']) }}</option>
                                     @endforeach
                                 </select>
                             </div>

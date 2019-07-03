@@ -92,7 +92,7 @@
                         let lables = data.datasets[key].label;
                         lables = lables.replace(".", "");
                         this.chart.data.datasets[key].label = trans('admin.'+lables);
-                        this.chart.data.datasets[key].data  = data.datasets[key].values;
+                        this.chart.data.datasets[key].data  = trans('admin.'+data.datasets[key].values);
                     };
 
                     this.chart.update();

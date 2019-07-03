@@ -46,7 +46,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-gears"></i><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li {{ set_active('e/settings*') }}><a href="{{ url('e/settings') }}">Konto</a></li>
+                            <li {{ set_active('e/settings*') }}><a href="{{ url('e/settings') }}">{{trans('employee.Konto')}}</a></li>
                         </ul>
                     </li>
 
@@ -88,7 +88,7 @@
     }
 
 </script>
-
+<script src="{{route('assets.lang.e')}}"></script>
 <script src="{{ asset('/js/employee.js') }}"></script>
 
 <script>

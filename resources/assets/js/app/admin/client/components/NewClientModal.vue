@@ -20,7 +20,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('client.created');
 
-                flash('Neuen Kunden angelegt.');
+                flash(trans('admin.Neuen Kunden angelegt'));
 
                 this.$parent.$emit('close')
             })

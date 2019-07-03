@@ -24,7 +24,7 @@
                             <input class="form-control input-sm" name="email">
                         </div>
                     </div>
-                    <input type="submit" value={{trans('admin.Konto anlegen')}} class="btn btn-success btn-sm pull-right">
+                    <input type="submit" :value="trans('admin.Konto anlegen')" class="btn btn-success btn-sm pull-right">
                 </template>
             </form-wrapper>
         </div>

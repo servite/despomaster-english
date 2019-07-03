@@ -13,7 +13,7 @@
                             <select name="month" id="month" class="form-control input-sm" required>
                                 <option value="">{{trans('admin.Monat')}}</option>
                                 @foreach(config('settings.months') as $key => $month)
-                                    <option value="{{ $key }}">{{ $month }}</option>
+                                    <option value="{{ $key }}">{{ trans('admin.'.$month) }}</option>
                                 @endforeach
                             </select>
                         </div>

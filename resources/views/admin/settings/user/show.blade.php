@@ -33,10 +33,10 @@
                                 <label>{{trans('admin.Status')}}</label>
                                 <br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="active" value="1" {{ $user->active ? 'checked' : ''}}>Aktiv
+                                    <input type="radio" name="active" value="1" {{ $user->active ? 'checked' : ''}}> {{trans('admin.Aktiv')}}
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="active" value="0" {{ ! $user->active ? 'checked' : ''}}>Inaktiv
+                                    <input type="radio" name="active" value="0" {{ ! $user->active ? 'checked' : ''}}> {{trans('admin.Inaktiv')}}
                                 </label>
                             </div>
                         </div>
