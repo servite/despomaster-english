@@ -106,7 +106,7 @@
         }
 
     </script>
-    <script src="{{route('assets.lang')}}"></script>
+    <script src="{{route('assets.lang.admin')}}"></script>
     <script src="{{ asset('/js/all.js') }}"></script>
     
     <trans-view></trans-view>

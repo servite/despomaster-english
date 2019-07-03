@@ -170,7 +170,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     });
 
     Route::get('/js/lang.js', function () {
-        Cache::flush();
+        //Cache::flush();
         $strings = Cache::rememberForever('lang.js', function () {
             $lang = config('app.locale');
 
@@ -188,7 +188,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         header('Content-Type: text/javascript');
         echo('window.i18n = ' . json_encode($strings) . ';');
         exit();
-    })->name('assets.lang');
+    })->name('assets.lang.admin');
 
 
 });
@@ -243,7 +243,7 @@ Route::group(['namespace' => 'Employee', 'prefix' => 'e', 'middleware' => 'auth.
         header('Content-Type: text/javascript');
         echo('window.i18n = ' . json_encode($strings) . ';');
         exit();
-    })->name('assets.lang');
+    })->name('assets.lang.e');
 
 });
 
