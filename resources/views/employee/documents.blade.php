@@ -9,10 +9,10 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                     <li {{ set_active('e/profile*') }}>
-                        <a href="{{ url('/e/profile') }}">Stammdaten</a>
+                        <a href="{{ url('/e/profile') }}">{{trans('employee.Stammdaten')}}</a>
                     </li>
                     <li {{ set_active('e/documents*') }}>
-                        <a href="{{ url('/e/documents') }}">Personalakte</a>
+                        <a href="{{ url('/e/documents') }}">{{trans('employee.Personalakte')}}</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -20,19 +20,19 @@
                     <div class="row">
                         <div class="col-md-7">
 
-                            <p>Innerhalb von zwei Wochen nach Erstellung des Dokumentes, kann gegen dieses Widerspruch eingelegt werden.</p>
+                            <p>{{trans('employee.Innerhalb von zwei Wochen nach Erstellung des Dokumentes, kann gegen dieses Widerspruch eingelegt werden')}}</p>
 
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Gültig bis</th>
-                                    <th>Erstellt am</th>
+                                    <th>{{trans('employee.Name')}}</th>
+                                    <th>{{trans('employee.Gültig bis')}}</th>
+                                    <th>{{trans('employee.Erstellt am')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><a href="{{ url('/e/document/base_data') }}" target="_blank">Stammdaten</a></td>
+                                    <td><a href="{{ url('/e/document/base_data') }}" target="_blank">{{trans('employee.Stammdaten')}}</a></td>
                                     <td></td>
                                     <td>-</td>
                                 </tr>

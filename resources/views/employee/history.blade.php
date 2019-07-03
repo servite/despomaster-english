@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Auftragshistorie</h4>
+                    <h4>{{trans('employee.Auftragshistorie')}}</h4>
                 </div>
                 <div class="panel-body">
                     <employee-history :items="{{ $orders }}"></employee-history>
@@ -17,16 +17,16 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Einsätze beim Kunden</h4>
+                    <h4>{{trans('employee.Einsätze beim Kunden')}}</h4>
                 </div>
                 <div class="panel-body">
                     @if (count($timetrackings_by_client))
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Kunde</th>
-                                <th>Zeiterfasst</th>
-                                <th>Einsätze</th>
+                                <th>{{trans('employee.Kunde')}}</th>
+                                <th>{{trans('employee.Zeiterfasst')}}</th>
+                                <th>{{trans('employee.Einsätze')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,15 +48,15 @@
             @if (count($timetrackings_by_date))
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Erfasste Stunden pro Monat</h4>
+                        <h4>{{('employee.Erfasste Stunden pro Monat')}}</h4>
                     </div>
                     <div class="panel-body">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Monat</th>
-                                <th>Zeiterfasst</th>
-                                <th>Einsätze</th>
+                                <th>{{trans('employee.Monat')}}</th>
+                                <th>{{trans('employee.Zeiterfasst')}}</th>
+                                <th>{{trans('employee.Einsätze')}}</th>
                             </tr>
                             </thead>
                             <tbody>

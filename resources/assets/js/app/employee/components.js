@@ -1,4 +1,5 @@
 // calendar
+Vue.component('trans-view', require('../employee/Main.vue'));
 Vue.component('calendar-by-week', require('../employee/calendar/components/CalendarByWeek.vue'));
 Vue.component('calendar-by-month', require('../employee/calendar/components/CalendarByMonth.vue'));
 Vue.component('order', require('../employee/calendar/components/Order.vue'));

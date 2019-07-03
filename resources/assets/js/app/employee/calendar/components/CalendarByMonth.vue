@@ -10,7 +10,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    {{ moment(start).locale('de').format('MMMM') }}
+                                    {{ trans('employee.'+moment(start).locale('de').format('MMMM')) }}
                                 </li>
                                 <li>
                                     <a href="#" @click="add('months')" class="pointer">
@@ -27,7 +27,7 @@
                         <tr class="bg-black-light">
                             <td style="width:40px;"></td>
                             <td v-for="(weekday, date) in week" class="padding-5">
-                                {{ weekday }}
+                                {{ trans('employee.'+weekday) }}
                                 <!--<a href="#" @click.prevent="newTimeOff(date)" class="pull-right small">-->
                                     <!--<i class="fa fa-plus"></i>-->
                                 <!--</a>-->
