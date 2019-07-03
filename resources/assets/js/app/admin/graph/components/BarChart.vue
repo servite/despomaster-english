@@ -91,7 +91,12 @@
                         this.chart.data.datasets[key].backgroundColor = this.backgroundColor[key];
                         let lables = data.datasets[key].label;
                         lables = lables.replace(".", "");
-                        this.chart.data.datasets[key].label = trans('admin.'+lables);
+                        console.log(lables, trans('admin.'+lables));
+                        if(lables == "Betrag in Euro"){
+                            this.chart.data.datasets[key].label = "Amount in Euro";
+                        }else{
+                            this.chart.data.datasets[key].label = trans('admin.'+lables);
+                        }
                         this.chart.data.datasets[key].data  = trans('admin.'+data.datasets[key].values);
                     };
 

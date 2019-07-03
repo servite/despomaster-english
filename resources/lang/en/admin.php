@@ -656,4 +656,5 @@ return [
     "Abort" => "abortion",
     "Kundenakte" => "Customer File",
     "Neuen Kunden angelegt" => "New customer created",
+    "Betrag in Euro " => "Amount in Euro",
 ];
