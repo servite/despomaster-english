@@ -535,6 +535,8 @@ return [
     'Kunden bearbeiten' => 'Edit customers',
     'Hauptauftrag' => 'Main Contract',
     'Öffentlich' => 'Public',
+    'Eintrag vom' => 'Entry From',
+    'Uhr' => 'clock',
 
 
 

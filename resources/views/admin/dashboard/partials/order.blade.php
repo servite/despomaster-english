@@ -12,7 +12,7 @@
         @foreach($notes['orders'] as $note)
             @continue(! $note->loggable)
             <tr>
-                <td title="Eintrag vom {{ Date::format($note->created_at) . ' ' . Date::format($note->created_at, 'time') }} Uhr">{{ Date::monthYear($note->date, false) }}</td>
+                <td title="{{trans('admin.Eintrag vom')}} {{ Date::format($note->created_at) . ' ' . Date::format($note->created_at, 'time') }} {{trans('admin.Uhr')}}">{{ Date::monthYear($note->date, false) }}</td>
                 <td title="{{ $note->information }}">{{ Str::limit($note->information, 65) }}</td>
                 <td>
                     <a href="{{ url('admin/order/' . $note->loggable_id . '/show') }}">{{ $note->loggable_id }}</a>
