@@ -77,7 +77,7 @@
                     'client': this.client
                 };
 
-                modal('Edit Client Modal', 'Kunden bearbeiten', data);
+                modal('Edit Client Modal', trans('admin.Kunden bearbeiten'), data);
             },
 
             reloadClient() {

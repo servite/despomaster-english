@@ -538,7 +538,13 @@ return [
     'Stundenzettel wurde noch nicht versendet' =>  'Time sheets have not been sent yet',
     'Wird versendet an' => 'Will be shipped to',
     'Zeiterfasssung' => 'Time and Attendance',
-
+    'Vorschau' => 'Preview',
+    'Berechnen' => 'To calculate',
+    'Verrechnungssatz bearbeiten' => 'Edit billing rate',
+    'Kundenhistorie' => 'Customer History',
+    'Monatsübersicht' => 'Monthly Overview',
+    'Eingesetzte Mitarbeiter' => 'Employees',
+    'Dokument wirklich löschen?' => 'Really delete document?',
 
 
 

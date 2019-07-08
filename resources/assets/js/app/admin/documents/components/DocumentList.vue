@@ -23,7 +23,7 @@
                 <td><a :href="'/admin/' + type  + '/' + model.id + '/document/' + document.id" target="_blank">{{ document.name }}</a></td>
                 <td></td>
                 <td>{{ document.valid_to ? moment(document.valid_to).format('L') : '-' }}</td>
-                <td>{{ moment(document.created_at).format('L LT') }} Uhr</td>
+                <td>{{ moment(document.created_at).format('L LT') }} {{trans('admin.Uhr')}}</td>
                 <td>{{ document.user.name }}</td>
                 <td>
                     <button @click="composeMail(document)" class="btn btn-sm btn-default margin-r-5">
@@ -81,13 +81,13 @@
             },
 
             destroy(document, index) {
-                swal({text: 'Dokument wirklich löschen?'}).then(() => {
+                swal({text: trans('admin.Dokument wirklich löschen?')}).then(() => {
                     axios.delete('/api/' + this.type + '/' + this.model.id + '/document/' + document.id).then((response) =>
                         this.documents.splice(index, 1)
                     );
                 }, (dismiss) => {
                     if (dismiss === 'cancel') {
-                        flash('Vorgang abgebrochen.', 'warning')
+                        flash(trans('Vorgang abgebrochen'), 'warning')
                     }
                 });
             }

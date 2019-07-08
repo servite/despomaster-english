@@ -84,7 +84,7 @@
                     'client': this.model
                 }
 
-                modal('Charge Rate Modal', 'Verrechnungssatz bearbeiten', data)
+                modal('Charge Rate Modal', trans('admin.Verrechnungssatz bearbeiten'), data)
             },
 
         },

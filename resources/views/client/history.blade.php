@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Kundenhistorie</h4>
+                    <h4>{{trans('admin.Kundenhistorie')}}</h4>
                 </div>
                 <div class="panel-body">
                     <client-history :items="{{ $client->orders()->with('timetrackings')->get() }}"></client-history>
@@ -17,15 +17,15 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Monatsübersicht</h4>
+                    <h4>{{trans('admin.Monatsübersicht')}}</h4>
                 </div>
                 <div class="panel-body">
                     @if (count($timetrackings_by_date))
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Monat</th>
-                                <th>Zeiterfasst</th>
+                                <th>{{trans('admin.Monat')}}</th>
+                                <th>{{trans('admin.Zeiterfasst')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,14 +46,14 @@
             @if (count($timetrackings_by_employee))
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Eingesetzte Mitarbeiter</h4>
+                        <h4>{{trans('admin.Eingesetzte Mitarbeiter')}}</h4>
                     </div>
                     <div class="panel-body">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Mitarbeiter</th>
-                                <th>Zeiterfasst</th>
+                                <th>{{trans('admin.Mitarbeiter')}}</th>
+                                <th>{{trans('admin.Zeiterfasst')}}</th>
                             </tr>
                             </thead>
                             <tbody>

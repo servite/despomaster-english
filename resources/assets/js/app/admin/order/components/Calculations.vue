@@ -57,7 +57,7 @@
             <div class="tab-pane" :class="{'active' : ! order.time_recorded }" id="calculation">
                 <form-wrapper :action="'/api/order/' + order.id + '/calculation'">
                     <template slot-scope="form">
-                        <strong>{{trans('admin.Eingeplante Mitarbeiter')}} :</strong> {{ order.staff_planned }} von {{ order.staff_required }}
+                        <strong>{{trans('admin.Eingeplante Mitarbeiter')}} :</strong> {{ order.staff_planned }} {{trans('admin.von')}} {{ order.staff_required }}
                         <div class="row margin-t-10">
                             <div class="col-md-4 form-group" :class="{'has-error': form.errors.hours }">
                                 <label>{{trans('admin.Stunden')}}</label>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="col-md-3 text-right">
                                 <br>
-                                <input type="submit" value="Berechnen" class="btn btn-default btn-sm">
+                                <input type="submit" :value="trans('admin.Berechnen')" class="btn btn-default btn-sm">
                             </div>
                         </div>
                     </template>

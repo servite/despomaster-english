@@ -6,7 +6,7 @@
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title">Dokumente</h4>
+                    <h4 class="panel-title">{{trans('admin.Dokumente')}}</h4>
                 </div>
                 <div class="panel-body">
                     <document-list type="client" :model="{{ $client }}"></document-list>
