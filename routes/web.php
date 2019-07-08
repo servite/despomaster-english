@@ -170,7 +170,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     });
 
     Route::get('/js/lang.js', function () {
-        Cache::flush();
+        //Cache::flush();
         $strings = Cache::rememberForever('lang.js', function () {
             $lang = config('app.locale');
 
@@ -225,7 +225,7 @@ Route::group(['namespace' => 'Employee', 'prefix' => 'e', 'middleware' => 'auth.
         Route::post('message',                      'EmployeeController@sendMessage');
 
         Route::get('/js/lang.js', function () {
-        Cache::flush();
+        //Cache::flush();
         $strings = Cache::rememberForever('lang.js', function () {
             $lang = config('app.locale');
 
