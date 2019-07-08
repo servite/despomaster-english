@@ -177,7 +177,7 @@
                     'type': 'create'
                 }
 
-                modal('Contact Form Modal', 'Neuer Kontakt', data);
+                modal('Contact Form Modal', trans('admin.Neuer Kontakt'), data);
             },
 
             editContact(contact) {
@@ -188,7 +188,7 @@
                     'type': 'edit'
                 }
 
-                modal('Contact Form Modal', 'Kontakt bearbeiten', data);
+                modal('Contact Form Modal', trans('admin.Kontakt bearbeiten'), data);
             },
 
             editContacts() {
@@ -197,7 +197,7 @@
                     'contacts': this.contacts
                 }
 
-                modal('Contact Responsibilities Modal', 'Kontakte bearbeiten', data);
+                modal('Contact Responsibilities Modal', trans('admin.Kontakte bearbeiten'), data);
             },
 
             editInvoice(type) {
@@ -207,7 +207,7 @@
                     'type': type
                 }
 
-                modal('Invoice Data Modal', 'Rechnungsdaten bearbeiten', data);
+                modal('Invoice Data Modal', trans('admin.Rechnungsdaten bearbeiten'), data);
             }
 
         },
