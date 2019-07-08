@@ -132,11 +132,11 @@
 
                     <tr>
                         <td colspan="7">
-                            <h4>{{ count($order->children) ? {{trans('admin.Zugehörige Unteraufträge')}} : {{trans('admin.Hauptauftrag')}} }}</h4>
+                            <h4>{{ count($order->children) ? trans('admin.Zugehörige Unteraufträge') : trans('admin.Hauptauftrag') }}</h4>
                         </td>
                     </tr>
                     <tr style="font-weight: bold;">
-                        <td>{{trans('admin.Auftragsnr.')}}</td>
+                        <td>{{trans('admin.Auftragsnr')}}</td>
                         <td></td>
                         <td>{{trans('admin.Beginn')}}</td>
                         <td>{{trans('admin.Ende')}}</td>
