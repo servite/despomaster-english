@@ -11,29 +11,29 @@
                     <div class="row">
                         <div class="col-md-3">
                             <p>
-                                <strong>{{trans('admin.Auftragsnr.:')}}</strong> {{ $order->id }}
+                                <strong>{{trans('admin.Auftragsnr')}}:</strong> {{ $order->id }}
                             </p>
                         </div>
                         <div class="col-md-4">
                             <p>
-                                <strong>{{trans('admin.Kunde:')}}</strong> <a href="{{ url('admin/client/' . $order->client->id . '/show') }}">{{ $order->client->short_name }}</a>
+                                <strong>{{trans('admin.Kunde')}}:</strong> <a href="{{ url('admin/client/' . $order->client->id . '/show') }}">{{ $order->client->short_name }}</a>
                             </p>
                         </div>
                         <div class="col-md-5">
                             <p>
-                                <strong>{{trans('admin.Benötigte Mitarbeiter:')}}</strong> {{ $order->staff_planned . ' von ' . $order->staff_required }}
+                                <strong>{{trans('admin.Benötigte Mitarbeiter')}}:</strong> {{ $order->staff_planned . ' von ' . $order->staff_required }}
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-7">
                             <p>
-                                <strong>{{trans('admin.Datum:')}}</strong> {{ Date::timespan($order->start_date, $order->end_date) }}
+                                <strong>{{trans('admin.Datum')}}:</strong> {{ Date::timespan($order->start_date, $order->end_date) }}
                             </p>
                         </div>
                         <div class="col-md-4">
                             <p>
-                                <strong>{{trans('admin.Startzeit:')}}</strong> {{ Date::format($order->start_time, 'time') }} Uhr
+                                <strong>{{trans('admin.Startzeit')}}:</strong> {{ Date::format($order->start_time, 'time') }} Uhr
                             </p>
                         </div>
                     </div>
@@ -63,15 +63,15 @@
                                 <ul>
                                     @foreach($mails as $mail)
                                         <li>
-                                            am {{ Date::format($mail->created_at, 'date_time') }} Uhr <br>
-                                            durch {{ $mail->user->name }}
+                                            am {{ Date::format($mail->created_at, 'date_time') }} {{trans('admin.Uhr')}} <br>
+                                            {{trans('admin.durch')}} {{ $mail->user->name }}
                                             <br>
                                             {{ $mail->information or '' }}
                                         </li>
                                     @endforeach
                                 </ul>
                             @else
-                                <p>{{trans('admin.Stundenzettel wurde noch nicht versendet.')}}</p>
+                                <p>{{trans('admin.Stundenzettel wurde noch nicht versendet')}}</p>
                             @endif
                         </div>
 
@@ -137,7 +137,7 @@
                                         </div>
 
                                         <div class="form-group {{ $errors->has('subject') ? 'has-error' : '' }}">
-                                            <label>Betreff</label>
+                                            <label>{{trans('admin.Betreff')}}</label>
                                             <input class="form-control input-sm" name="subject" value="{{ 'Servite GmbH - Erinnerung - Zeiterfassung abschliessen' }}">
                                             @if ($errors->has('subject'))
                                                 <span class="help-block">{{ $errors->first('subject') }}</span>
