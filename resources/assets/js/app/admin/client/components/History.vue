@@ -10,7 +10,7 @@
         <table v-if="items" class="table">
             <thead>
             <tr>
-                <th>{{trans('admin.Auftragsnr.')}}</th>
+                <th>{{trans('admin.Auftragsnr')}}</th>
                 <th>{{trans('admin.Datum')}}</th>
                 <th>{{trans('admin.Zeiterfasst')}}</th>
                 <th>{{trans('admin.Status')}}</th>
