@@ -3,11 +3,11 @@
 @section('tab')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2>Zeiterfasssung</h2>
+            <h2>{{trans('admin.Zeiterfasssung')}}</h2>
             <table class="table">
                 <tbody>
                 <tr>
-                    <td>{{trans('admin.Auftragsnr.')}}</td>
+                    <td>{{trans('admin.Auftragsnr')}}</td>
                     <td>{{trans('admin.Kunde')}}</td>
                     <td>{{trans('admin.Beginn')}}</td>
                     <td>{{trans('admin.Ende')}}</td>

@@ -52,7 +52,7 @@
                 <li v-for="(note, index) in visibleItems" class="margin-b-10">
                     <div class="row">
                         <div class="col-md-8">
-                            <strong :title="note.user.name + ' am ' + moment(note.created_at).format('lll') + ' Uhr'">{{ moment(note.date).format('MMM YYYY') }}</strong>
+                            <strong :title="note.user.name + ' am ' + moment(note.created_at).format('lll') + trans('admin.Uhr')">{{trans('admin.'+ moment(note.date).format('MMM') )}} {{ moment(note.date).format('YYYY') }}</strong>
                         </div>
                         <div class="col-md-4">
                             <div class="pull-right">

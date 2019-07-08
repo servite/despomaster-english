@@ -535,8 +535,9 @@ return [
     'Öffentlich' => 'Public',
     'Eintrag vom' => 'Entry From',
     'Uhr' => 'clock',
-
-
+    'Stundenzettel wurde noch nicht versendet' =>  'Time sheets have not been sent yet',
+    'Wird versendet an' => 'Will be shipped to',
+    'Zeiterfasssung' => 'Time and Attendance',
 
 
 
