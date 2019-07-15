@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
 
-                                            <input type="submit" value="Senden" class="btn btn-default btn-md pull-right">
+                                            <input type="submit" value="{{trans('admin.Senden')}}" class="btn btn-default btn-md pull-right">
                                         </template>
                                     </form-wrapper>
                                 </div>

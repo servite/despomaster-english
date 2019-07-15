@@ -116,7 +116,7 @@
                                             @endif
                                         </div>
 
-                                        <input type="submit" value="Senden" class="btn btn-default pull-right">
+                                        <input type="submit" value="{{trans('admin.Senden')}}" class="btn btn-default pull-right">
                                     </form>
                                 </div>
                                 <div class="tab-pane" id="reminder">

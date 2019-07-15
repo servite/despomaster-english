@@ -494,7 +494,7 @@ return [
     "Inaktiv" => 'Inactive',
     "Filtern" => 'Filter',
     "Kundennr" => 'Customer Number',
-    "ID" => '',
+    "ID" => 'ID',
     "Name" => 'Name',
     "Aktion" => 'Action',
     "Inaktiv" => 'Inactive',
