@@ -75,7 +75,7 @@
                                 {{trans('admin.Stadt')}} <i v-html="getSortingIcon('city')"></i>
                             </th>
                             <th>{{trans('admin.Einsatzort')}}</th>
-                            <th>{{trans('admin.Mobil')}}</th>
+                            <th>{{trans('admin.Mobil_')}}</th>
                             <th>{{trans('admin.E-Mail')}}</th>
                             <th>{{trans('admin.Status')}}</th>
                             <th v-if="canUpdate || canDelete">
@@ -125,7 +125,7 @@
                     </table>
                     <div class="table-view__footer">
                         <div class="table-view__footer-item">
-                            <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                            <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
                         </div>
                         <div class="table-view__footer-item">
                             <div class="table-view__footer-sub">

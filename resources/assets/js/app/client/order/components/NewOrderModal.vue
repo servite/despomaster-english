@@ -76,7 +76,7 @@
 
             <div class="pull-right">
                 <input type="submit" :value="trans('admin.Speichern')" class="btn btn-success btn-md">
-                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">Schliessen</a>
+                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">{{trans('admin.Schliessen')}}</a>
             </div>
         </template>
     </form-wrapper>
@@ -95,7 +95,7 @@
             this.$on('form.submitted', function () {
                 events.$emit('order.created');
 
-                flash(trans('Neuen Auftrag erstellt'));
+                flash(trans('admin.Neuen Auftrag erstellt'));
 
                 this.$parent.$emit('close')
             })

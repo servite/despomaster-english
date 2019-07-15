@@ -22,7 +22,7 @@
                             <strong>{{trans('admin.Kunde')}} :</strong> <a :href="'/admin/client/' + order.client.id + '/show'">{{ order.client.name }}</a>
                         </p>
                         <p>
-                            <strong>{{trans('admin.Startzeit')}} :</strong> {{ order.start_time }} Uhr
+                            <strong>{{trans('admin.Startzeit')}} :</strong> {{ order.start_time }} {{trans('admin.Uhr')}}
                         </p>
                     </div>
                     <div class="col-md-3 form-group">
@@ -30,7 +30,7 @@
                             <strong>{{trans('admin.Einsatzort')}} :</strong> {{ order.work_location }}
                         </p>
                         <p>
-                            <strong>{{trans('admin.Treffpunkt')}}</strong> {{ order.meeting_time + ' Uhr - ' + order.meeting_point }}
+                            <strong>{{trans('admin.Treffpunkt')}}</strong> {{ order.meeting_time +  trans('admin.Uhr')+' - ' + order.meeting_point }}
                         </p>
                     </div>
                     <div class="col-md-3 form-group">
@@ -42,8 +42,8 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="pull-left">Mitarbeiter für diesen Auftrag</h4>
-                    <a class="btn btn-primary pull-right" :href="'/admin/operation-plan/send/order/' + order.id">Einsatzpläne senden</a>
+                    <h4 class="pull-left">{{trans('admin.Mitarbeiter für diesen Auftrag')}}</h4>
+                    <a class="btn btn-primary pull-right" :href="'/admin/operation-plan/send/order/' + order.id">{{trans('admin.Einsatzpläne senden')}}</a>
                     <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">

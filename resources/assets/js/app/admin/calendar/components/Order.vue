@@ -43,15 +43,15 @@
         methods: {
 
             assignEmployees() {
-                modal('Assign Employees Modal', 'Mitarbeiter einplanen', {'order': this.order}, '100%');
+                modal('Assign Employees Modal', trans('admin.Mitarbeiter einplanen'), {'order': this.order}, '100%');
             },
 
             editOrder() {
-                modal('Edit Order Modal', 'Auftrag bearbeiten', {'order': this.order});
+                modal('Edit Order Modal', trans('admin.Auftrag bearbeiten'), {'order': this.order});
             },
 
             openOrder() {
-                modal('Show Order Modal', 'Auftrag anzeigen', {'order': this.order});
+                modal('Show Order Modal', trans('admin.uftrag anzeigen'), {'order': this.order});
             }
         }
     }

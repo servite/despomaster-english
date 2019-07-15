@@ -4,14 +4,14 @@
 
             <div class="row">
                 <div class="col-md-4 form-group" :class="{'has-error': form.errors.subject }">
-                    <label v-text="textblocks.subject.label"></label>
+                    <label v-text="trans('admin.'+textblocks.subject.label)"></label>
                     <input name="subject" class="form-control input-sm" v-model="textblocks.subject.value">
                     <span v-if="form.errors.subject" class="help-block">{{ form.errors.subject }}</span>
                 </div>
             </div>
 
             <div class="form-group" :class="{'has-error': form.errors.mail_body }">
-                <label v-text="textblocks.mail_body.label"></label>
+                <label v-text="trans('admin.'+textblocks.mail_body.label)"></label>
                 <html-editor name="mail_body" :model="textblocks.mail_body.value" height="150"></html-editor>
                 <span v-if="form.errors.mail_body" class="help-block">{{ form.errors.mail_body }}</span>
             </div>

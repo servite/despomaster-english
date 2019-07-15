@@ -33,7 +33,7 @@
                 <div class="col-md-6 form-group">
                     <select class="form-control input-sm" v-model="query.role">
                         <option value="">{{trans('admin.Rolle')}}</option>
-                        <option v-for="role in roles" :value="role.shortcut">{{ role.name }}</option>
+                        <option v-for="role in roles" :value="role.shortcut">{{ trans('admin.'+role.name) }}</option>
                     </select>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     <div class="col-md-6 form-group">
                         <select class="form-control input-sm" v-model="query.location">
                             <option value="">{{trans('admin.Einsatzort')}}</option>
-                            <option v-for="location in locations" :value="location">{{ location }}</option>
+                            <option v-for="location in locations" :value="location">{{ trans('admin.'+ location) }}</option>
                         </select>
                     </div>
                     <div class="col-md-6 form-group">

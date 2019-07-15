@@ -69,7 +69,7 @@
                                                     {{--<span v-if="form.errors.mail_subject" class="help-block">@{{ form.errors.mail_subject }}</span>--}}
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>E-Mail - Nachricht</label>
+                                                    <label>E-Mail - {{trans('admin.Nachricht')}}</label>
                                                     <html-editor name="mail_body" model="{{ $textblocks['mail_body']['value'] }}"></html-editor>
                                                     {{--<span v-if="form.errors.mail_body" class="help-block">@{{ form.errors.mail_body }}</span>--}}
                                                 </div>

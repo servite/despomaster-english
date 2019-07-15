@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-md-10 form-group text-justify">
-                <label v-text="textblocks.mail_body.label"></label>
+                <label v-text="trans('admin.'+textblocks.mail_body.label)"></label>
                 <p v-html="textblocks.mail_body.value"></p>
             </div>
         </div>
@@ -25,22 +25,22 @@
         </div>
         <div class="row">
             <div class="col-md-10 form-group text-justify">
-                <label v-text="textblocks.header.label"></label>
+                <label v-text="trans('admin.'+textblocks.header.label)"></label>
                 <p v-html="textblocks.header.value"></p>
             </div>
             <div class="col-md-2">
-                <a class="btn btn-primary pull-right" :href="'/admin/settings/textblocks/attendance-list/pdf'" target="_blank">Vorschau</a>
+                <a class="btn btn-primary pull-right" :href="'/admin/settings/textblocks/attendance-list/pdf'" target="_blank">{{trans('admin.Vorschau')}}</a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 form-group text-justify">
-                <label v-text="textblocks.call_to_action.label"></label>
+                <label v-text="trans('admin.'+textblocks.call_to_action.label)"></label>
                 <p v-html="textblocks.call_to_action.value"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 form-group text-justify">
-                <label v-text="textblocks.disclaimer.label"></label>
+                <label v-text="trans('admin.'+textblocks.disclaimer.label)"></label>
                 <p v-html="textblocks.disclaimer.value"></p>
             </div>
         </div>

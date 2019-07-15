@@ -9,7 +9,7 @@
                         </a>
                     </li>
                     <li>
-                        KW {{ moment(start).week() }}
+                        {{trans('admin.KW')}} {{ moment(start).week() }}
                     </li>
                     <li>
                         <a @click="add('weeks')">

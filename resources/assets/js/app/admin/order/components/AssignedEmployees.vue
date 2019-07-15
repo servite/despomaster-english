@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p><strong>{{trans('admin.Benötigte Mitarbeiter')}} :</strong> {{ staffPlanned + ' von ' + order.staff_required }}</p>
+        <p><strong>{{trans('admin.Benötigte Mitarbeiter')}} :</strong> {{ staffPlanned + ' '+ trans('admin.von') +' '+ order.staff_required }}</p>
 
         <table class="table assigned-employee-list">
             <thead>

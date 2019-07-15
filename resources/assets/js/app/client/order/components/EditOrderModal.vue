@@ -3,7 +3,7 @@
         <template slot-scope="form">
             <div class="row margin-b-10">
                 <div class="col-md-6">
-                    <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">Storniert</div>
+                    <div v-if="order.status == 'canceled'" class="label label-warning margin-l-10">{{trans('admin.Storniert')}}</div>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
             </div>
             <div class="pull-right">
                 <input type="submit" :value="trans('admin.Speichern')" class="btn btn-success btn-md">
-                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">Schliessen</a>
+                <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">{{trans('admin.Schliessen')}}</a>
             </div>
         </template>
 

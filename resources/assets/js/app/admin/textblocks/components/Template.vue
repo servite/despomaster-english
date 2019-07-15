@@ -2,7 +2,7 @@
     <div class="col-md-9">
         <div class="row">
             <div class="col-md-10">
-                <legend>{{ template.title }}</legend>
+                <legend>{{ trans('admin.'+template.title) }}</legend>
             </div>
             <div class="col-md-2"><i @click="edit" class="fa fa-pencil fa-lg pointer"></i></div>
         </div>

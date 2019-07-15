@@ -28,8 +28,8 @@
                         <div class="form-group">
                             <label>{{trans('admin.Zuständigkeit')}}</label>
                             <div v-if="contact.personnel_planning">Personal</div>
-                            <div v-if="contact.accounting">Finanzen/Buchhaltung</div>
-                            <div v-if="contact.other">Sonstiges</div>
+                            <div v-if="contact.accounting">{{trans('admin.Finanzen/Buchhaltung')}}</div>
+                            <div v-if="contact.other">{{trans('admin.Sonstiges')}}</div>
                         </div>
                     </div>
                     <div class="col-md-6">

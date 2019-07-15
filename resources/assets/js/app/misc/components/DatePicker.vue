@@ -19,7 +19,7 @@
             this.$nextTick(() => {
 
                 $(this.$el).datepicker({
-                    language: 'de',
+                    language: 'en',
                     calendarWeeks: true,
                     autoclose: true
                 }).on('changeDate', (event) => {

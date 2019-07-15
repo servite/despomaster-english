@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td height="90px" style="width:40px;vertical-align: middle;">
-                        KW <br>{{ moment(startOfWeek).isoWeek() }}
+                        {{trans('admin.KW')}} <br>{{ moment(startOfWeek).isoWeek() }}
                     </td>
                     <td v-for="(weekday, date) in week" :class="{ 'bg-blue-light' : isToday(date) }">
                         <div class="text-muted small pull-right">{{ moment(date).format('Do') }}</div>

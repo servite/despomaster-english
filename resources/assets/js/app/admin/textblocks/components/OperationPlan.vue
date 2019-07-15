@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-10">
-                <legend v-text="textblocks.disclaimer.label"></legend>
+                <legend v-text="trans('admin.'+textblocks.disclaimer.label)"></legend>
             </div>
             <div class="col-md-2"><i @click="edit('disclaimer')" class="fa fa-pencil fa-lg pointer"></i></div>
             <div class="col-md-10 form-group text-justify">
@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <legend v-text="textblocks.signature.label"></legend>
+                <legend v-text="trans('admin.'+textblocks.signature.label)"></legend>
             </div>
             <div class="col-md-2"><i @click="edit('signature')" class="fa fa-pencil fa-lg pointer"></i></div>
             <div class="col-md-10 form-group text-justify">

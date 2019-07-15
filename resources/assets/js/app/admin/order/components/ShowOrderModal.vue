@@ -63,7 +63,7 @@
                         <p>{{ order.work_location }}</p>
                         <div class="row">
                             <div class="col-md-7 form-group">
-                                <label>Treffpunkt: Ort</label>
+                                <label>{{trans('admin.Treffpunkt: Ort')}}</label>
                                 <p>{{ order.meeting_point }}</p>
                             </div>
                             <div class="col-md-5 form-group">
@@ -80,9 +80,9 @@
             </div>
         </div>
         <div class="text-right">
-            <a :href="'/admin/order/' + order.id + '/timetracking'" class="btn btn-info btn-md">Zeiterfassung</a>
-            <a :href="'/admin/order/' + order.id + '/show'" class="btn btn-primary btn-md">Zum Auftrag</a>
-            <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">Schliessen</a>
+            <a :href="'/admin/order/' + order.id + '/timetracking'" class="btn btn-info btn-md">{{trans('admin.Zeiterfassung')}}</a>
+            <a :href="'/admin/order/' + order.id + '/show'" class="btn btn-primary btn-md">{{trans('admin.Zum Auftrag')}}</a>
+            <a @click.prevent="$parent.$emit('close')" class="btn btn-danger btn-md">{{trans('admin.Schliessen')}}</a>
         </div>
     </div>
 </template>

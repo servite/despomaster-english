@@ -56,7 +56,7 @@
         methods: {
 
             assignEmployees() {
-                modal('Assign Employees Modal', trans('Mitarbeiter einplanen'), {'order': this.order}, '100%');
+                modal('Assign Employees Modal', trans('admin.Mitarbeiter einplanen'), {'order': this.order}, '100%');
             },
 
             reloadOrder() {

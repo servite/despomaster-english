@@ -5,7 +5,7 @@
 
             <div v-if="data.type == 'disclaimer'">
                 <div class="form-group" :class="{'has-error': form.errors.disclaimer }">
-                    <label v-text="textblocks.disclaimer.label"></label>
+                    <label v-text="trans('admin.'+textblocks.disclaimer.label)"></label>
                     <html-editor name="disclaimer" :model="textblocks.disclaimer.value" height="400"></html-editor>
                     <span v-if="form.errors.disclaimer" class="help-block">{{ form.errors.disclaimer }}</span>
                 </div>
@@ -13,7 +13,7 @@
 
             <div v-if="data.type == 'signature'">
                 <div class="form-group" :class="{'has-error': form.errors.signature }">
-                    <label v-text="textblocks.signature.label"></label>
+                    <label v-text="trans('admin.'+textblocks.signature.label)"></label>
                     <html-editor name="signature" :model="textblocks.signature.value" height="400"></html-editor>
                     <span v-if="form.errors.signature" class="help-block">{{ form.errors.signature }}</span>
                 </div>

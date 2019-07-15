@@ -3,7 +3,7 @@
         <template slot-scope="form">
 
             <div class="form-group" :class="{'has-error': form.errors.body }">
-                <label v-text="template.title"></label>
+                <label v-text="trans('admin.'+template.title)"></label>
                 <html-editor name="body" :model="template.text" height="500"></html-editor>
                 <span v-if="form.errors.body" class="help-block">{{ form.errors.body }}</span>
             </div>

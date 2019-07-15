@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <submit-button class="pull-right btn-sm btn-success" text={{trans('admin.Speichern')}} :loading="form.loading"></submit-button>
+            <submit-button class="pull-right btn-sm btn-success" :text="trans('admin.Speichern')" :loading="form.loading"></submit-button>
         </template>
     </form-wrapper>
 </template>
