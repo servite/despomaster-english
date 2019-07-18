@@ -44,7 +44,7 @@
                                             <select name="role" class="form-control input-sm">
                                                 <option value="">{{trans('admin.Auswählen')}}</option>
                                                 @foreach($roles as $role)
-                                                    <option value="{{ $role->id }}">{{ $role->display_name}}</option>
+                                                    <option value="{{ $role->id }}">{{ trans('admin.'.$role->display_name)}}</option>
                                                 @endforeach
                                             </select>
                                             @if ($errors->has('role'))

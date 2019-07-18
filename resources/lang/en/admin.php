@@ -691,5 +691,10 @@ return [
     "Nutzerliste" => "Users List",
     "Neuer Nutzer" => "New User",
     "E-Mail (CC)" => "E-Mail (CC)",
+    "Master Admin" => "Master Admin",
+    "Dispo-Manager" => "Dispo-Manager",
+    "Filialleiter" => "Store Manager",
+    "Lohnbuchhalter" => "Wages clerk",
+
 
 ];
