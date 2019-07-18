@@ -690,5 +690,6 @@ return [
     "Vertrag - Geringfügige Beschäftigung" => "Contract – Agency Worker",
     "Nutzerliste" => "Users List",
     "Neuer Nutzer" => "New User",
+    "E-Mail (CC)" => "E-Mail (CC)",
 
 ];
