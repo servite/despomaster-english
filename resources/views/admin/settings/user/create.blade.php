@@ -8,7 +8,7 @@
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3>Neuer Nutzer</h3>
+                                <h3>{{trans('admin.Neuer Nutzer')}}</h3>
                             </div>
                             <div class="panel-body">
                                 <form action="{{ url('admin/settings/user/store') }}" method="POST">
@@ -57,7 +57,7 @@
                                             @foreach(config('settings.locations') as $location)
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" name="locations[]" value="{{ $location }}">{{ $location }}
+                                                        <input type="checkbox" name="locations[]" value="{{ $location }}">{{ trans('admin.'.$location) }}
                                                     </label>
                                                 </div>
                                             @endforeach
