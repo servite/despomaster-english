@@ -39,7 +39,7 @@ class ReportController extends Controller
         $results['datasets']['1']['label'] = 'Gesamtzeit (Std.)';
 
         foreach($labels as $label) {
-            $results['labels'][] = request('groupBy') == 'week' ? 'KW ' . $label : \Date::monthName($label, false);
+            $results['labels'][] = request('groupBy') == 'week' ?  trans('admin.KW') . $label : \Date::monthName($label, false);
             $results['datasets']['0']['values'][] = isset($orders[$label]) ? $orders[$label]->first()->orders : 0;
             $results['datasets']['1']['values'][] = isset($orders[$label]) ? (int) $orders[$label]->first()->total_time/60 : 0;
         };
@@ -106,7 +106,7 @@ class ReportController extends Controller
         $results['datasets']['1']['label'] = 'Betrag in Euro';
 
         foreach($labels as $label) {
-            $results['labels'][] = request('groupBy') == 'week' ? 'KW ' . $label : \Date::monthName($label, false);
+            $results['labels'][] = request('groupBy') == 'week' ? trans('admin.KW') . $label : \Date::monthName($label, false);
             $results['datasets']['0']['values'][] = isset($invoices[$label]) ? $invoices[$label]->first()->items_count : 0;
             $results['datasets']['1']['values'][] = isset($invoices[$label]) ? $invoices[$label]->first()->sum : 0;
         };

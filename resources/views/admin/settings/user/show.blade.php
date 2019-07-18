@@ -14,7 +14,7 @@
                             <div class="col-md-7 col-md-offset-5 small text-right">
                                 <div>
                                     <label>{{trans('admin.Angelegt am')}}</label>
-                                    {{ Date::format($user->created_at, 'date_time') .' Uhr - ' . $user->user->name }}
+                                    {{ Date::format($user->created_at, 'date_time') . trans('admin.Uhr').' - ' . $user->user->name }}
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" name="locations[]" value="{{ $location }}" {{ in_array($location, $user->locations) ? 'checked' : '' }}>
-                                    {{ $location }}
+                                    {{ trans('admin.'.$location) }}
                                 </label>
                             </div>
                         @endforeach

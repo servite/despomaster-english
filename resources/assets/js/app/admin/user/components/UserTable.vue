@@ -5,11 +5,11 @@
                 <i class="pointer fa fa-refresh text-primary" @click.prevent="reset"></i>
             </div>
             <div class="table-view__header-columns">
-                <input class="form-control input-sm" v-model="query.search_input" placeholder="Suche nach..." @keyup.enter="search">
+                <input class="form-control input-sm" v-model="query.search_input" :placeholder="trans('admin.Suche nach')" @keyup.enter="search">
             </div>
             <div class="table-view__header-columns">
                 <select class="form-control input-sm" v-model="query.usertype" @change="search">
-                    <option value="">{{trans('admin.Typ')}}</option>
+                    <option value="">{{trans('admin.Type')}}</option>
                     <option value="internal">{{trans('admin.Intern')}}</option>
                     <option value="client">{{trans('admin.Kunde')}}</option>
                     <option value="employee">{{trans('admin.Mitarbeiter')}}</option>
@@ -58,8 +58,8 @@
                         </span>
                     </th>
                     <th>E-Mail</th>
-                    <th>Typ</th>
-                    <th>Rolle</th>
+                    <th>{{trans('admin.Typ')}}</th>
+                    <th>{{trans('admin.Rolle')}}</th>
                     <th>Status</th>
                     <th v-if="canUpdate || canDelete">{{trans('admin.Aktion')}}</th>
                 </tr>
@@ -72,7 +72,7 @@
                     <td>{{ row.usertype }}</td>
                     <td>{{ row.roleName }}</td>
                     <td>
-                        <span v-if="row.active == 1" class="label label-success">Aktiv</span>
+                        <span v-if="row.active == 1" class="label label-success">{{trans('admin.Aktiv')}}</span>
                         <span v-else class="label label-warning">{{trans('admin.Inaktiv')}}</span>
                     </td>
                     <td v-if="canUpdate || canDelete">
@@ -89,7 +89,7 @@
         </div>
         <div class="table-view__footer">
             <div class="table-view__footer-item">
-                <span>{{model.from}} - {{model.to}} von {{model.total}}</span>
+                <span>{{model.from}} - {{model.to}} {{trans('admin.von')}} {{model.total}}</span>
             </div>
             <div class="table-view__footer-item">
                 <div class="table-view__footer-sub">

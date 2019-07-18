@@ -47,7 +47,7 @@ class ReportController extends Controller
         }
 
         foreach($labels as $label) {
-            $results['labels'][] = request('groupBy') == 'week' ? 'KW ' . $label : \Date::monthName($label, false);
+            $results['labels'][] = request('groupBy') == 'week' ? trans('admin.KW') . $label : \Date::monthName($label, false);
             $results['orders'][] = isset($orders[$label]) ? $orders[$label]->first()->orders : 0;
             $results['total_time'][] = isset($orders[$label]) ? (int) $orders[$label]->first()->total_time/60 : 0;
         };

@@ -17,7 +17,7 @@
 
         methods: {
             showOrder() {
-                modal('Show Order Modal', trans('Auftrag anzeigen'), {'order': this.order});
+                modal('Show Order Modal', trans('admin.Auftrag anzeigen'), {'order': this.order});
             },
 
             getBackground(){
