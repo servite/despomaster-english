@@ -59,7 +59,8 @@
                                 <li {{ set_active('admin/settings/account*') }}><a href="{{ url('admin/settings/account/credentials') }}">{{trans('admin.Konto')}}</a></li>
                                 @if (Gate::allows('settings'))
                                     <li {{ set_active('admin/settings/textblocks*') }}><a href="{{ url('admin/settings/textblocks/element/signature') }}">{{trans('admin.Textbausteine')}}</a></li>
-                                    <li {{ set_active('admin/settings/misc*') }}><a href="{{ url('admin/settings/misc/salaries/scope') }}">{{trans('admin.Rechtliches')}}</a></li>
+                                    <li {{ set_active('admin/settings/misc*') }}><a href="https://www.gov.uk/" target="_blank">{{trans('admin.Rechtliches')}}</a></li>
+                                    <!-- <li {{ set_active('admin/settings/misc*') }}><a href="{{ url('admin/settings/misc/salaries/scope') }}">{{trans('admin.Rechtliches')}}</a></li> -->
                                 @endif
                                 @if (Gate::allows('user'))
                                     <li {{ set_active('admin/settings/user*') }}><a href="{{ url('admin/settings/user') }}">{{trans('admin.Nutzer')}}</a></li>
