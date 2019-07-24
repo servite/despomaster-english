@@ -71,7 +71,8 @@ return [
 
     'staff_cost_factor' => [
         'temporary' => 1.35,
-        'part_time' => 1.25
+        'part_time' => 1.25,
+        'full_time' => 1.2,
     ],
 
     'locations' => [
