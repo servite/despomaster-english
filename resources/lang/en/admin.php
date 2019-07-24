@@ -695,6 +695,7 @@ return [
     "Dispo-Manager" => "Dispo-Manager",
     "Filialleiter" => "Store Manager",
     "Lohnbuchhalter" => "Wages clerk",
+    "Einsatzbeginn" => "Start Time",
 
 
 ];
